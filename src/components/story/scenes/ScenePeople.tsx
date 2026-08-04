@@ -29,7 +29,7 @@ const teamStructure: DivisionGroup[] = [
     badge: "Pimpinan Utama",
     badgeBg: "bg-teal-500/15 text-teal-300 border-teal-500/40",
     members: [
-      { name: "Muhammad Hatta Rasyahputra", role: "Chief Executive Officer (CEO)", isDirector: true, badgeLabel: "CEO" },
+      { name: "Muhammad Hatta Rasyahputra", role: "Chief Executive Officer (CEO)", isDirector: true, badgeLabel: "CEO", image: "/assets/ceo-hatta.jpg" },
       { name: "Bella Febriana", role: "Corporate Secretary", isDirector: false },
     ],
   },
@@ -162,35 +162,37 @@ export const ScenePeople: React.FC = () => {
                 </h3>
               </div>
 
-              {/* Grid Anggota: Kartu Setara Ukurannya & Director Ditengah */}
-              <div className="flex flex-wrap justify-center items-stretch gap-3.5 sm:gap-6 max-w-5xl mx-auto">
+              {/* Grid Anggota: Ukuran Lebih Besar di Desktop, Pas di Mobile */}
+              <div className="flex flex-wrap justify-center items-stretch gap-4 sm:gap-6 lg:gap-8 max-w-6xl lg:max-w-7xl mx-auto">
                 {group.members.map((member, memberIdx) => (
                   <motion.div
                     key={member.name}
-                    whileHover={{ scale: 1.05, y: -6 }}
+                    whileHover={{ scale: 1.04, y: -6 }}
                     transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                    className={`w-[calc(50%-7px)] sm:w-48 lg:w-52 bg-slate-900/60 hover:bg-slate-900/95 backdrop-blur-md rounded-2xl sm:rounded-3xl p-3.5 sm:p-4 border transition-all duration-300 shadow-lg text-center flex flex-col justify-between items-center group cursor-pointer ${
+                    className={`w-[calc(50%-8px)] sm:w-56 md:w-64 lg:w-72 xl:w-80 bg-slate-900/60 hover:bg-slate-900/95 backdrop-blur-md rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 lg:p-6 border transition-all duration-300 shadow-xl text-center flex flex-col justify-between items-center group cursor-pointer ${
                       member.isDirector
-                        ? "border-[#4BA0A4] bg-gradient-to-b from-teal-950/40 via-slate-900 to-slate-950 shadow-teal-500/20"
+                        ? "border-[#4BA0A4] bg-gradient-to-b from-teal-950/40 via-slate-900 to-slate-950 shadow-teal-500/25 ring-1 ring-teal-500/20"
                         : "border-slate-800/80 hover:border-teal-500/50"
                     }`}
                   >
-                    <div className="w-full space-y-3 flex flex-col items-center">
-                      {/* Frame Foto Ukuran Sama Presisi */}
+                    <div className="w-full space-y-3 sm:space-y-4 flex flex-col items-center">
+                      {/* Frame Foto Ukuran Sama Presisi (Diperbesar di Desktop) */}
                       <div className="relative aspect-[3/4] w-full rounded-xl sm:rounded-2xl overflow-hidden bg-gradient-to-b from-slate-950 to-slate-900 border border-slate-800/80 group-hover:border-[#4BA0A4]/60 transition-colors shadow-inner flex flex-col items-center justify-center">
                         {member.image ? (
                           <Image
                             src={member.image}
                             alt={member.name}
                             fill
-                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                            unoptimized
+                            quality={100}
+                            className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                           />
                         ) : (
                           <div className="flex flex-col items-center justify-center p-2 text-center w-full h-full bg-gradient-to-b from-slate-950 via-slate-900/90 to-slate-950">
-                            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#4BA0A4]/15 border border-[#4BA0A4]/30 text-[#4BA0A4] font-extrabold text-xs sm:text-sm flex items-center justify-center mb-1.5 ring-4 ring-teal-500/5 group-hover:scale-105 transition-transform shadow-md">
+                            <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-full bg-[#4BA0A4]/15 border border-[#4BA0A4]/30 text-[#4BA0A4] font-extrabold text-xs sm:text-base lg:text-xl flex items-center justify-center mb-1.5 sm:mb-2 ring-4 ring-teal-500/5 group-hover:scale-105 transition-transform shadow-md">
                               {getInitials(member.name)}
                             </div>
-                            <span className="text-[9px] sm:text-[10px] text-slate-400 font-medium">
+                            <span className="text-[9px] sm:text-xs text-slate-400 font-medium">
                               Foto Member
                             </span>
                           </div>
@@ -198,9 +200,9 @@ export const ScenePeople: React.FC = () => {
 
                         {/* Top Indicator Badge */}
                         {member.isDirector && (
-                          <div className="absolute top-2 right-2">
-                            <span className="text-[8px] sm:text-[9px] font-black uppercase px-2 py-0.5 rounded-full bg-[#4BA0A4] text-slate-950 tracking-wider shadow-md flex items-center gap-0.5">
-                              <Star className="w-2.5 h-2.5 fill-slate-950 inline" />
+                          <div className="absolute top-2.5 right-2.5">
+                            <span className="text-[8px] sm:text-xs font-black uppercase px-2.5 py-1 rounded-full bg-[#4BA0A4] text-slate-950 tracking-wider shadow-md flex items-center gap-1">
+                              <Star className="w-3 h-3 fill-slate-950 inline" />
                               {member.badgeLabel ?? "Director"}
                             </span>
                           </div>
@@ -208,19 +210,19 @@ export const ScenePeople: React.FC = () => {
                       </div>
 
                       {/* Nama & Role */}
-                      <div className="space-y-1 w-full text-center px-1">
-                        <h4 className="text-xs sm:text-sm font-extrabold text-slate-100 group-hover:text-teal-300 transition-colors leading-snug line-clamp-2">
+                      <div className="space-y-1 sm:space-y-1.5 w-full text-center px-1">
+                        <h4 className="text-xs sm:text-base lg:text-lg font-extrabold text-slate-100 group-hover:text-teal-300 transition-colors leading-snug line-clamp-2">
                           {member.name}
                         </h4>
-                        <p className="text-[10px] sm:text-xs font-bold text-[#4BA0A4] leading-tight">
+                        <p className="text-[10px] sm:text-xs lg:text-sm font-bold text-[#4BA0A4] leading-tight">
                           {member.role}
                         </p>
                       </div>
                     </div>
 
                     {/* Footer Tag Setara */}
-                    <div className="pt-2 mt-3 w-full border-t border-slate-800/60 flex items-center justify-center gap-1.5 text-[9px] text-slate-400 font-semibold">
-                      <ShieldCheck className="w-3 h-3 text-teal-400" />
+                    <div className="pt-2 sm:pt-3 mt-3 sm:mt-4 w-full border-t border-slate-800/60 flex items-center justify-center gap-1.5 sm:gap-2 text-[9px] sm:text-xs text-slate-400 font-semibold">
+                      <ShieldCheck className="w-3.5 h-3.5 text-teal-400" />
                       <span>SMKN 11 Bandung</span>
                     </div>
                   </motion.div>
