@@ -7,9 +7,9 @@ export const COMPANY_TAGLINE = "Pelopor Board Game Edukasi Kesehatan Mental & Pe
 export const NAV_ITEMS: NavItem[] = [
   { label: "Beranda", href: "#hero" },
   { label: "Tentang Kami", href: "#about" },
+  { label: "Filosofi", href: "#philosophy" },
   { label: "Produk", href: "#products" },
   { label: "Perjalanan", href: "#journey" },
-  { label: "Dampak", href: "#impact" },
   { label: "Tim Kami", href: "#team" },
   { label: "Kontak", href: "#contact" },
 ];

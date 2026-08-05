@@ -82,7 +82,10 @@ export const SceneSolution: React.FC = () => {
                   src="/assets/codenopoly.jpg"
                   alt="Board Game LudoLadder YouthMind SMKN 11 Bandung"
                   fill
-                  className="object-cover"
+                  loading="lazy"
+                  quality={85}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover object-center"
                 />
               </div>
             </div>
@@ -101,7 +104,10 @@ export const SceneSolution: React.FC = () => {
                   src="/assets/ludo-ladder.jpg"
                   alt="Board Game Codenopoly YouthMind SMKN 11 Bandung"
                   fill
-                  className="object-cover"
+                  loading="lazy"
+                  quality={85}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover object-center"
                 />
               </div>
             </div>

@@ -3,16 +3,19 @@
 @layer base {
   :root {
     /* YouthMind Official Brand Color Palette (Based on Official Brand Philosophy) */
-    --brand-teal-light: #59AAAA;    /* Soft Cyan Teal */
-    --brand-teal-main: #4BA0A4;     /* Vibrant Primary Teal */
-    --brand-teal-dark: #396E6E;     /* Deep Slate Teal */
-    
+    --brand-teal-light: #59AAAA;
+    /* Soft Cyan Teal */
+    --brand-teal-main: #4BA0A4;
+    /* Vibrant Primary Teal */
+    --brand-teal-dark: #396E6E;
+    /* Deep Slate Teal */
+
     /* Background & Surface Tokens */
     --bg-surface: #FFFFFF;
     --bg-subtle: #F8FAFC;
     --bg-dark: #0F172A;
     --border-subtle: #E2E8F0;
-    
+
     /* Typography Tokens */
     --text-main: #0F172A;
     --text-muted: #64748B;
@@ -23,6 +26,9 @@
     scroll-behavior: smooth;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     -webkit-tap-highlight-color: transparent;
+    /* Prevent text size inflation on iOS landscape */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   body {
@@ -32,6 +38,35 @@
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Improve momentum scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Menghilangkan outline fokus bawaan browser secara global */
+  *,
+  :focus,
+  :focus-visible {
+    outline: none !important;
+  }
+
+  /* Smooth touch scrolling for all elements */
+  @media (pointer: coarse) {
+    * {
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  /* Respect user reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
@@ -79,17 +114,22 @@
   background-color: rgba(75, 160, 164, 0.2);
 }
 
-/* Custom Sleek Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #0F172A;
-}
-::-webkit-scrollbar-thumb {
-  background: #396E6E;
-  border-radius: 5px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #4BA0A4;
+/* Custom Sleek Scrollbar — only show on non-touch devices */
+@media (pointer: fine) {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0F172A;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #396E6E;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4BA0A4;
+  }
 }

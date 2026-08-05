@@ -72,7 +72,8 @@ export const Product: React.FC = () => {
                   src={product.image}
                   alt={product.imageAlt}
                   fill
-                  className="object-cover transition-transform duration-500 hover:scale-105"
+                  quality={100}
+                  className="object-cover object-center transition-transform duration-500 hover:scale-105"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>

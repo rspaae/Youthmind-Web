@@ -22,7 +22,7 @@ export const SceneFinal: React.FC = () => {
 
           <div className="pt-2 sm:pt-4">
             <a
-              href="mailto:contact@youthmindcompany.com"
+              href="mailto:youthmindcompany@gmail.com"
               className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#4BA0A4] hover:bg-[#59AAAA] active:bg-[#396E6E] text-slate-950 font-extrabold text-sm sm:text-base transition-all shadow-lg shadow-teal-500/25 min-h-[48px] w-full sm:w-auto"
             >
               Hubungi Tim YouthMind

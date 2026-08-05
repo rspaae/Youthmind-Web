@@ -29,7 +29,7 @@ const teamStructure: DivisionGroup[] = [
     badge: "Pimpinan Utama",
     badgeBg: "bg-teal-500/15 text-teal-300 border-teal-500/40",
     members: [
-      { name: "Muhammad Hatta Rasyahputra", role: "Chief Executive Officer (CEO)", isDirector: true, badgeLabel: "CEO", image: "/assets/ceo-hatta.jpg" },
+      { name: "Muhammad Hatta Rasyahputra", role: "Chief Executive Officer (CEO)", isDirector: true, badgeLabel: "CEO", image: "/assets/Tim/executive/ceo-hatta.jpg" },
       { name: "Bella Febriana", role: "Corporate Secretary", isDirector: false },
     ],
   },
@@ -129,7 +129,7 @@ export const ScenePeople: React.FC = () => {
           </h2>
 
           <p className="text-slate-300 text-xs sm:text-base max-w-xl mx-auto leading-relaxed">
-            Struktur kepemimpinan simetris dengan ukuran kartu yang setara dan posisi **Director / Pimpinan Utama berada tepat di tengah**.
+            Struktur Kepemimpinan Divisi.
           </p>
 
           {/* Centered Decorative Divider */}
@@ -169,11 +169,10 @@ export const ScenePeople: React.FC = () => {
                     key={member.name}
                     whileHover={{ scale: 1.04, y: -6 }}
                     transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                    className={`w-[calc(50%-8px)] sm:w-56 md:w-64 lg:w-72 xl:w-80 bg-slate-900/60 hover:bg-slate-900/95 backdrop-blur-md rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 lg:p-6 border transition-all duration-300 shadow-xl text-center flex flex-col justify-between items-center group cursor-pointer ${
-                      member.isDirector
+                    className={`w-[calc(50%-8px)] sm:w-56 md:w-64 lg:w-72 xl:w-80 bg-slate-900/60 hover:bg-slate-900/95 backdrop-blur-md rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 lg:p-6 border transition-all duration-300 shadow-xl text-center flex flex-col justify-between items-center group touch-manipulation ${member.isDirector
                         ? "border-[#4BA0A4] bg-gradient-to-b from-teal-950/40 via-slate-900 to-slate-950 shadow-teal-500/25 ring-1 ring-teal-500/20"
                         : "border-slate-800/80 hover:border-teal-500/50"
-                    }`}
+                      }`}
                   >
                     <div className="w-full space-y-3 sm:space-y-4 flex flex-col items-center">
                       {/* Frame Foto Ukuran Sama Presisi (Diperbesar di Desktop) */}
@@ -183,8 +182,9 @@ export const ScenePeople: React.FC = () => {
                             src={member.image}
                             alt={member.name}
                             fill
-                            unoptimized
-                            quality={100}
+                            loading="lazy"
+                            quality={80}
+                            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
                             className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                           />
                         ) : (
@@ -223,7 +223,7 @@ export const ScenePeople: React.FC = () => {
                     {/* Footer Tag Setara */}
                     <div className="pt-2 sm:pt-3 mt-3 sm:mt-4 w-full border-t border-slate-800/60 flex items-center justify-center gap-1.5 sm:gap-2 text-[9px] sm:text-xs text-slate-400 font-semibold">
                       <ShieldCheck className="w-3.5 h-3.5 text-teal-400" />
-                      <span>SMKN 11 Bandung</span>
+                      <span>YouthMind Company</span>
                     </div>
                   </motion.div>
                 ))}

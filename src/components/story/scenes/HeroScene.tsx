@@ -24,7 +24,7 @@ export const HeroScene: React.FC = () => {
   const productRotateX = useTransform(scrollYProgress, [0.15, 0.65], [20, 0]);
 
   return (
-    <div ref={targetRef} className="relative min-h-[135vh] sm:min-h-[140vh] pt-28 pb-16 sm:pt-40 bg-gradient-to-b from-slate-950 via-teal-950/30 to-slate-950 text-white overflow-hidden">
+    <div id="hero" ref={targetRef} className="relative min-h-[135vh] sm:min-h-[140vh] pt-28 pb-16 sm:pt-40 bg-gradient-to-b from-slate-950 via-teal-950/30 to-slate-950 text-white overflow-hidden">
       {/* Background Subtle Glow Spheres */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-72 h-72 sm:w-96 sm:h-96 bg-teal-500/15 rounded-full blur-[100px] pointer-events-none" />
 
@@ -35,9 +35,15 @@ export const HeroScene: React.FC = () => {
             style={{ opacity: headlineOpacity, scale: headlineScale, y: headlineY }}
             className="max-w-4xl mx-auto text-center space-y-5 sm:space-y-8 px-2"
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-300 text-[11px] sm:text-xs font-semibold tracking-wide shadow-inner">
-              <Sparkles className="w-3.5 h-3.5 text-teal-400 animate-pulse" />
-              <span>Student Company · SMKN 11 Bandung</span>
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-[11px] sm:text-xs font-bold tracking-wide shadow-inner">
+                <span className="text-amber-400">🏆</span>
+                <span>The Best Student Company @ ISCC</span>
+              </div>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-300 text-[11px] sm:text-xs font-semibold tracking-wide shadow-inner">
+                <Sparkles className="w-3.5 h-3.5 text-teal-400 animate-pulse" />
+                <span>SMKN 11 Bandung</span>
+              </div>
             </div>
 
             <h1 className="text-3xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.12]">
@@ -78,7 +84,10 @@ export const HeroScene: React.FC = () => {
                 src="/assets/codenopoly.jpg"
                 alt="YouthMind LudoLadder Board Game"
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                priority
+                quality={100}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent opacity-90" />
               <div className="absolute bottom-3.5 left-4 right-4 flex items-center justify-between">
@@ -99,7 +108,10 @@ export const HeroScene: React.FC = () => {
                 src="/assets/ludo-ladder.jpg"
                 alt="YouthMind Codenopoly Board Game"
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                priority
+                quality={100}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent opacity-90" />
               <div className="absolute bottom-3.5 left-4 right-4 flex items-center justify-between">

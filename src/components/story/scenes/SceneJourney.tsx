@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
-import { Rocket, Flame, TrendingUp, Users, Star, ImageIcon } from "lucide-react";
+import { Rocket, Flame, TrendingUp, Users, Star, Trophy, ImageIcon } from "lucide-react";
 
 type Milestone = {
   year: string;
@@ -59,12 +59,25 @@ const milestones: Milestone[] = [
     title: "Grand Launching YouthMind Company",
     desc: "Momen bersejarah. YouthMind resmi diluncurkan — dua board game edukasi kesehatan mental hadir ke publik untuk pertama kalinya, membuka babak baru pembelajaran berbasis permainan di SMKN 11 Bandung.",
     side: "right",
-    highlight: true,
     // photo: "/photos/journey/grand-launching.jpg",
     photoAlt: "Foto Grand Launching YouthMind 2024",
   },
   {
-    year: "Pasca Grand Launching",
+    year: "2024 — 2025",
+    label: "Kompetisi Nasional",
+    icon: Trophy,
+    color: "text-amber-400",
+    borderColor: "border-amber-500/60",
+    badgeColor: "text-amber-300 border-amber-500/40 bg-amber-500/20 font-bold",
+    title: "The Best Student Company @ ISCC",
+    desc: "Puncak prestasi! YouthMind SMKN 11 Bandung berhasil meraih predikat 'The Best Student Company' di ajang Indonesia Student Company Competition (ISCC) oleh Prestasi Junior Indonesia & Zurich.",
+    side: "left",
+    highlight: true,
+    // photo: "/photos/journey/iscc-winner.jpg",
+    photoAlt: "Dokumentasi Kemenangan YouthMind di ISCC",
+  },
+  {
+    year: "Pasca ISCC",
     label: "Pertumbuhan & Ekspansi",
     icon: TrendingUp,
     color: "text-sky-400",
@@ -72,7 +85,7 @@ const milestones: Milestone[] = [
     badgeColor: "text-sky-300 border-sky-500/30 bg-sky-500/15",
     title: "Distribusi & Kemitraan Meluas",
     desc: "YouthMind berkembang menjangkau lebih banyak sekolah, lembaga, dan komunitas pemuda. Produk board game mulai didistribusikan secara lebih luas di Bandung dan sekitarnya.",
-    side: "left",
+    side: "right",
     // photo: "/photos/journey/ekspansi.jpg",
     photoAlt: "Dokumentasi Ekspansi YouthMind",
   },
@@ -84,7 +97,7 @@ const milestones: Milestone[] = [
     borderColor: "border-[#4BA0A4]/60",
     badgeColor: "text-teal-300 border-teal-500/30 bg-teal-500/15",
     title: "YouthMind Second Generation",
-    desc: "Estafet kepemimpinan berpindah tangan. YouthMind Generasi Kedua hadir — 19 siswa-siswi terpilih SMKN 11 Bandung melanjutkan misi, memperbarui struktur organisasi, dan membawa YouthMind ke panggung yang lebih besar.",
+    desc: "Tahun ini giliran kami. Generasi baru SMKN 11 Bandung yang sekarang pegang kendali YouthMind — belajar dari generasi pertama, tapi dengan cerita dan semangat kami sendiri.",
     side: "right",
     isCurrent: true,
     // photo: "/photos/journey/generasi-2.jpg",
@@ -106,9 +119,8 @@ function PhotoSlot({
 }) {
   return (
     <div
-      className={`relative w-full aspect-[4/3] rounded-2xl overflow-hidden border bg-slate-900 ${borderColor} ${
-        highlight ? "ring-1 ring-emerald-500/30 shadow-xl shadow-emerald-500/10" : ""
-      }`}
+      className={`relative w-full aspect-[4/3] rounded-2xl overflow-hidden border bg-slate-900 ${borderColor} ${highlight ? "ring-1 ring-emerald-500/30 shadow-xl shadow-emerald-500/10" : ""
+        }`}
     >
       {photo ? (
         <Image
@@ -136,11 +148,12 @@ function PhotoSlot({
 /* ─── Scene Utama ─────────────────────────────────────────────────── */
 export const SceneJourney: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const shouldReduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start center", "end center"],
   });
-  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const lineHeight = useTransform(scrollYProgress, [0, 1], shouldReduceMotion ? ["100%", "100%"] : ["0%", "100%"]);
 
   return (
     <section
@@ -191,18 +204,16 @@ export const SceneJourney: React.FC = () => {
                 >
                   {/* Dot timeline — selalu di tengah */}
                   <div
-                    className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-7 h-7 sm:w-9 sm:h-9 rounded-full flex items-center justify-center shadow-xl z-10 border-2 ${
-                      item.highlight
+                    className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-7 h-7 sm:w-9 sm:h-9 rounded-full flex items-center justify-center shadow-xl z-10 border-2 ${item.highlight
                         ? "bg-emerald-500 border-emerald-300 shadow-emerald-500/40 scale-125"
                         : item.isCurrent
-                        ? "bg-[#4BA0A4] border-teal-300 shadow-teal-500/40"
-                        : "bg-slate-900 border-slate-700"
-                    }`}
+                          ? "bg-[#4BA0A4] border-teal-300 shadow-teal-500/40"
+                          : "bg-slate-900 border-slate-700"
+                      }`}
                   >
                     <Icon
-                      className={`w-3 h-3 sm:w-3.5 sm:h-3.5 ${
-                        item.highlight || item.isCurrent ? "text-white" : item.color
-                      }`}
+                      className={`w-3 h-3 sm:w-3.5 sm:h-3.5 ${item.highlight || item.isCurrent ? "text-white" : item.color
+                        }`}
                     />
                   </div>
 
@@ -248,13 +259,12 @@ export const SceneJourney: React.FC = () => {
 function ContentCard({ item }: { item: Milestone }) {
   return (
     <div
-      className={`rounded-2xl p-4 sm:p-6 border bg-slate-900/60 hover:bg-slate-900/90 transition-all duration-300 hover:-translate-y-1 cursor-default ${item.borderColor} ${
-        item.highlight
+      className={`rounded-2xl p-4 sm:p-6 border bg-slate-900/60 hover:bg-slate-900/90 transition-all duration-300 hover:-translate-y-1 cursor-default ${item.borderColor} ${item.highlight
           ? "ring-1 ring-emerald-500/30 shadow-xl shadow-emerald-500/10"
           : item.isCurrent
-          ? "ring-1 ring-[#4BA0A4]/30 shadow-xl shadow-teal-500/10"
-          : ""
-      }`}
+            ? "ring-1 ring-[#4BA0A4]/30 shadow-xl shadow-teal-500/10"
+            : ""
+        }`}
     >
       <span
         className={`text-[10px] sm:text-xs font-extrabold uppercase tracking-widest px-2.5 py-0.5 rounded-full border inline-flex items-center gap-1 ${item.badgeColor}`}
@@ -262,9 +272,8 @@ function ContentCard({ item }: { item: Milestone }) {
         {item.year} · {item.label}
       </span>
       <h3
-        className={`text-base sm:text-xl font-black text-white mt-2.5 leading-snug ${
-          item.highlight ? "text-emerald-50" : ""
-        }`}
+        className={`text-base sm:text-xl font-black text-white mt-2.5 leading-snug ${item.highlight ? "text-emerald-50" : ""
+          }`}
       >
         {item.title}
       </h3>

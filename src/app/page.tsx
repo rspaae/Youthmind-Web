@@ -1,4 +1,8 @@
 import HeroScene from "@/components/story/scenes/HeroScene";
+import SceneAbout from "@/components/story/scenes/SceneAbout";
+import ScenePartners from "@/components/story/scenes/ScenePartners";
+import SceneVision from "@/components/story/scenes/SceneVision";
+import SceneMission from "@/components/story/scenes/SceneMission";
 import SceneBeginning from "@/components/story/scenes/SceneBeginning";
 import ScenePhilosophy from "@/components/story/scenes/ScenePhilosophy";
 import SceneChallenge from "@/components/story/scenes/SceneChallenge";
@@ -11,6 +15,10 @@ export default function Home() {
   return (
     <>
       <HeroScene />
+      <SceneAbout />
+      <ScenePartners />
+      <SceneVision />
+      <SceneMission />
       <SceneBeginning />
       <ScenePhilosophy />
       <SceneChallenge />
