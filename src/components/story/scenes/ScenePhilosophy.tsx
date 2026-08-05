@@ -27,7 +27,7 @@ export const ScenePhilosophy: React.FC = () => {
           <div className="lg:col-span-6 space-y-5">
             <YouthMindLogo variant="horizontal" size="lg" />
             <div className="space-y-2">
-              <h3 className="text-xl sm:text-2xl font-bold text-white">Identitas Visual Resmi SMKN 11 Bandung</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-white">Identitas Visual Resmi Youthmind</h3>
               <p className="text-xs sm:text-sm text-[#94D4D4] leading-relaxed font-normal">
                 Penggabungan harmonis antara simbol otak (kesehatan mental), bentuk pohon (pertumbuhan pribadi), serta huruf Y (burung terbang) dan huruf M yang melambangkan YouthMind Company.
               </p>
