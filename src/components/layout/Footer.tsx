@@ -61,7 +61,7 @@ const socialLinks = [
   },
   {
     label: "TikTok",
-    href: "https://tiktok.com/@youthmind11",
+    href: "https://tiktok.com/@youthmind_company",
     icon: TikTokIcon,
     color: "hover:text-white hover:border-slate-400/60",
   },
