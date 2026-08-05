@@ -41,7 +41,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#0F172A",
+  themeColor: "#4BA0A4",
 };
 
 export default function RootLayout({
@@ -51,7 +51,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className={`${inter.variable} ${outfit.variable} ${fredoka.variable} scroll-smooth`}>
-      <body className="antialiased min-h-screen flex flex-col justify-between bg-slate-950 text-white selection:bg-teal-500 selection:text-slate-950">
+      <body className="antialiased min-h-screen flex flex-col justify-between bg-[#0E2A2C] text-white selection:bg-[#4BA0A4] selection:text-[#0E2A2C]">
         <SmoothScrollProvider>
           <Navbar />
           <main className="flex-grow">{children}</main>

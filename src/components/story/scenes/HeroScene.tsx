@@ -1,136 +1,91 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Container from "@/components/ui/Container";
 import Image from "next/image";
-import { Sparkles, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 export const HeroScene: React.FC = () => {
   const targetRef = useRef<HTMLDivElement>(null);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["start start", "end start"],
   });
 
-  // Headline & Subtitle fade out and scale down as user scrolls down
-  const headlineOpacity = useTransform(scrollYProgress, [0, 0.45], [1, 0]);
-  const headlineScale = useTransform(scrollYProgress, [0, 0.45], [1, 0.92]);
-  const headlineY = useTransform(scrollYProgress, [0, 0.45], [0, -40]);
-
-  // Product visual scales up and rotates into position as user scrolls down
-  const productScale = useTransform(scrollYProgress, [0.15, 0.65], [0.8, 1]);
-  const productOpacity = useTransform(scrollYProgress, [0.1, 0.4], [0.4, 1]);
-  const productRotateX = useTransform(scrollYProgress, [0.15, 0.65], [20, 0]);
+  // Logo transform on scroll
+  const logoOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const logoScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.9]);
+  const logoY = useTransform(scrollYProgress, [0, 0.5], [0, -30]);
 
   return (
-    <div id="hero" ref={targetRef} className="relative min-h-[135vh] sm:min-h-[140vh] pt-28 pb-16 sm:pt-40 bg-gradient-to-b from-slate-950 via-teal-950/30 to-slate-950 text-white overflow-hidden">
-      {/* Background Subtle Glow Spheres */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-72 h-72 sm:w-96 sm:h-96 bg-teal-500/15 rounded-full blur-[100px] pointer-events-none" />
+    <section
+      id="hero"
+      ref={targetRef}
+      className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center bg-gradient-to-b from-[#0B2527] via-[#0E2A2C] to-[#123638] overflow-hidden pt-16 pb-12"
+    >
+      {/* Background Ambient Glow Spheres */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-[450px] sm:h-[450px] bg-[#4BA0A4]/25 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-[320px] sm:h-[320px] bg-[#59AAAA]/20 rounded-full blur-[90px] pointer-events-none" />
 
-      <div className="sticky top-20 sm:top-28 z-10 py-6 sm:py-12">
-        <Container>
-          {/* Opening Storytelling Headline */}
+      <Container className="relative z-10 flex flex-col items-center justify-center">
+        {/* Centered YM Logo - Moderate & Crisp */}
+        <motion.div
+          style={isMounted ? { opacity: logoOpacity, scale: logoScale, y: logoY } : { opacity: 1 }}
+          suppressHydrationWarning
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col items-center justify-center"
+        >
           <motion.div
-            style={{ opacity: headlineOpacity, scale: headlineScale, y: headlineY }}
-            className="max-w-4xl mx-auto text-center space-y-5 sm:space-y-8 px-2"
-          >
-            <div className="flex flex-wrap items-center justify-center gap-2">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-[11px] sm:text-xs font-bold tracking-wide shadow-inner">
-                <span className="text-amber-400">🏆</span>
-                <span>The Best Student Company @ ISCC</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-300 text-[11px] sm:text-xs font-semibold tracking-wide shadow-inner">
-                <Sparkles className="w-3.5 h-3.5 text-teal-400 animate-pulse" />
-                <span>SMKN 11 Bandung</span>
-              </div>
-            </div>
-
-            <h1 className="text-3xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.12]">
-              Berani Bicara.<br />
-              <span className="text-image-clip inline-block">
-                Mulai Dari Meja Permainan.
-              </span>
-            </h1>
-
-            <p className="text-sm sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed px-2">
-              YouthMind menghadirkan board game edukatif yang membuka ruang diskusi hangat tentang kesehatan mental — dibuat dengan hati oleh siswa-siswi SMKN 11 Bandung.
-            </p>
-
-            {/* Subtle Scroll Hint */}
-            <div className="pt-3 sm:pt-6 flex flex-col items-center gap-1.5 text-slate-400 text-[10px] sm:text-xs tracking-widest uppercase font-semibold">
-              <span>Scroll untuk Cerita Kami</span>
-              <motion.div
-                animate={{ y: [0, 6, 0] }}
-                transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-              >
-                <ChevronDown className="w-4 h-4 text-[#4BA0A4]" />
-              </motion.div>
-            </div>
-          </motion.div>
-
-          {/* Real Product Showcase Images Reveal Slot */}
-          <motion.div
-            style={{
-              scale: productScale,
-              opacity: productOpacity,
-              rotateX: productRotateX,
-              transformPerspective: 1000,
+            animate={{ y: [0, -8, 0] }}
+            transition={{
+              duration: 3.5,
+              repeat: Infinity,
+              ease: "easeInOut",
             }}
-            className="mt-8 sm:mt-12 max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 px-2"
+            className="relative w-40 sm:w-52 md:w-60 lg:w-64 aspect-square flex items-center justify-center filter drop-shadow-[0_15px_35px_rgba(0,0,0,0.4)]"
           >
-            <div className="relative aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-[#4BA0A4]/30 bg-slate-900 group">
-              <Image
-                src="/assets/codenopoly.jpg"
-                alt="YouthMind LudoLadder Board Game"
-                fill
-                priority
-                quality={100}
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent opacity-90" />
-              <div className="absolute bottom-3.5 left-4 right-4 flex items-center justify-between">
-                <div>
-                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-[#4BA0A4] text-slate-950 uppercase tracking-wider">
-                    LudoLadder
-                  </span>
-                  <p className="text-[11px] text-slate-200 mt-1 font-medium">Board Game Kesehatan Mental</p>
-                </div>
-                <span className="text-[10px] text-teal-300 bg-slate-950/80 px-2 py-1 rounded-lg border border-teal-500/30 font-semibold">
-                  Slide to Open!
-                </span>
-              </div>
-            </div>
-
-            <div className="relative aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-[#4BA0A4]/30 bg-slate-900 group">
-              <Image
-                src="/assets/ludo-ladder.jpg"
-                alt="YouthMind Codenopoly Board Game"
-                fill
-                priority
-                quality={100}
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent opacity-90" />
-              <div className="absolute bottom-3.5 left-4 right-4 flex items-center justify-between">
-                <div>
-                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-[#59AAAA] text-slate-950 uppercase tracking-wider">
-                    Codenopoly
-                  </span>
-                  <p className="text-[11px] text-slate-200 mt-1 font-medium">Board Game Edukasi Interaktif</p>
-                </div>
-                <span className="text-[10px] text-teal-300 bg-slate-950/80 px-2 py-1 rounded-lg border border-teal-500/30 font-semibold">
-                  Slide to Open!
-                </span>
-              </div>
-            </div>
+            <Image
+              src="/assets/logo-ym.png"
+              alt="YouthMind Logo"
+              fill
+              priority
+              quality={100}
+              unoptimized
+              sizes="(max-width: 640px) 160px, (max-width: 768px) 208px, (max-width: 1024px) 240px, 256px"
+              className="object-contain"
+            />
           </motion.div>
-        </Container>
-      </div>
-    </div>
+        </motion.div>
+      </Container>
+
+      {/* Subtle Scroll Hint */}
+      <motion.div
+        style={isMounted ? { opacity: logoOpacity } : { opacity: 1 }}
+        suppressHydrationWarning
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#94D4D4] text-xs tracking-widest uppercase font-medium pointer-events-none opacity-80"
+      >
+        <span>Scroll untuk jelajahi</span>
+        <motion.div
+          animate={{ y: [0, 5, 0] }}
+          transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+        >
+          <ChevronDown className="w-5 h-5 text-[#4BA0A4]" />
+        </motion.div>
+      </motion.div>
+    </section>
   );
 };
 
 export default HeroScene;
+
+
+

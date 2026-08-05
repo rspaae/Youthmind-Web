@@ -2,66 +2,53 @@
 
 @layer base {
   :root {
-    /* YouthMind Official Brand Color Palette (Based on Official Brand Philosophy) */
-    --brand-teal-light: #59AAAA;
-    /* Soft Cyan Teal */
-    --brand-teal-main: #4BA0A4;
-    /* Vibrant Primary Teal */
-    --brand-teal-dark: #396E6E;
-    /* Deep Slate Teal */
+    /* ── YouthMind Official Brand Palette ───────────────────────── */
+    --ym-light:  #59AAAA;   /* Soft Cyan Teal  */
+    --ym-main:   #4BA0A4;   /* Vibrant Cyan Teal */
+    --ym-dark:   #396E6E;   /* Deep Slate Teal */
 
-    /* Background & Surface Tokens */
-    --bg-surface: #FFFFFF;
-    --bg-subtle: #F8FAFC;
-    --bg-dark: #0F172A;
-    --border-subtle: #E2E8F0;
+    /* ── Rich Teal Surfaces (No plain white dominance) ──────────── */
+    --bg-page:   #0E2A2C;   /* Deep Rich Teal */
+    --bg-card:   #194447;   /* Rich Teal Card */
+    --bg-subtle: #23585C;   /* Soft Cyan Teal Surface */
 
-    /* Typography Tokens */
-    --text-main: #0F172A;
-    --text-muted: #64748B;
-    --text-inverse: #FFFFFF;
+    /* ── Typography Tokens ──────────────────────────────────────── */
+    --text-heading: #FFFFFF; /* Pure crisp white for headings */
+    --text-body:    #E0F4F4; /* Light cyan-tinted text */
+    --text-muted:   #94D4D4; /* Soft teal muted text */
+    --text-accent:  #59AAAA;
   }
 
   html {
     scroll-behavior: smooth;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     -webkit-tap-highlight-color: transparent;
-    /* Prevent text size inflation on iOS landscape */
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
   }
 
   body {
-    background-color: var(--bg-dark);
-    color: var(--text-inverse);
+    background-color: #0E2A2C;
+    color: #E0F4F4;
     font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* Improve momentum scrolling on iOS */
     -webkit-overflow-scrolling: touch;
   }
 
-  /* Menghilangkan outline fokus bawaan browser secara global */
   *,
   :focus,
   :focus-visible {
     outline: none !important;
   }
 
-  /* Smooth touch scrolling for all elements */
   @media (pointer: coarse) {
-    * {
-      -webkit-overflow-scrolling: touch;
-    }
+    * { -webkit-overflow-scrolling: touch; }
   }
 
-  /* Respect user reduced motion preferences */
   @media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
+    *, *::before, *::after {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
@@ -70,66 +57,46 @@
   }
 }
 
-/* Modern Typography Utilities - Official YouthMind Palette Text Fill */
+/* ── Gradient Text (YouthMind brand gradient) ──────────────────── */
 .text-image-clip {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  background-size: cover;
-  background-position: center;
-  background-image: linear-gradient(135deg, #59AAAA 0%, #4BA0A4 50%, #396E6E 100%);
+  background-image: linear-gradient(135deg, #396E6E 0%, #4BA0A4 55%, #59AAAA 100%);
 }
 
 .text-gradient-youthmind {
-  background: linear-gradient(135deg, #59AAAA 0%, #4BA0A4 50%, #396E6E 100%);
+  background: linear-gradient(135deg, #396E6E 0%, #4BA0A4 55%, #59AAAA 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Glassmorphism System */
+/* ── Glassmorphism (light frosted) ─────────────────────────────── */
 .glass-panel {
-  background: rgba(57, 110, 110, 0.15);
+  background: rgba(255, 255, 255, 0.70);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(75, 160, 164, 0.25);
+  border: 1px solid rgba(75, 160, 164, 0.28);
 }
 
-.dark-glass-panel {
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(57, 110, 110, 0.4);
+.card-ym {
+  background: #FFFFFF;
+  border: 1px solid rgba(89, 170, 170, 0.30);
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 24px rgba(75, 160, 164, 0.08);
+  transition: box-shadow 0.2s, border-color 0.2s;
 }
 
-/* Placeholder Container Styling for Blueprint */
-.placeholder-slot {
-  border: 2px dashed #4BA0A4;
-  background-color: rgba(57, 110, 110, 0.1);
-  border-radius: 1rem;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+.card-ym:hover {
+  border-color: rgba(75, 160, 164, 0.55);
+  box-shadow: 0 8px 32px rgba(75, 160, 164, 0.15);
 }
 
-.placeholder-slot:hover {
-  border-color: #59AAAA;
-  background-color: rgba(75, 160, 164, 0.2);
-}
-
-/* Custom Sleek Scrollbar — only show on non-touch devices */
+/* ── Scrollbar ──────────────────────────────────────────────────── */
 @media (pointer: fine) {
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: #0F172A;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: #396E6E;
-    border-radius: 5px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #4BA0A4;
-  }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #D4F0F0; }
+  ::-webkit-scrollbar-thumb { background: #59AAAA; border-radius: 5px; }
+  ::-webkit-scrollbar-thumb:hover { background: #4BA0A4; }
 }
+

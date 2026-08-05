@@ -69,14 +69,14 @@ const socialLinks = [
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-950 text-slate-400 border-t border-[#396E6E]/40">
+    <footer className="bg-[#0A2022] text-[#E0F4F4] border-t border-[#4BA0A4]/30">
       {/* Top Section */}
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 py-14 border-b border-slate-800/80">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 py-14 border-b border-[#4BA0A4]/20">
           {/* Brand */}
           <div className="md:col-span-5 space-y-5">
             <YouthMindLogo variant="horizontal" size="lg" showBadge />
-            <p className="text-sm text-slate-400 max-w-xs leading-relaxed">
+            <p className="text-sm text-[#94D4D4] max-w-xs leading-relaxed">
               {COMPANY_TAGLINE}
             </p>
 
@@ -89,7 +89,7 @@ export const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className={`w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 transition-all duration-200 ${s.color}`}
+                  className={`w-9 h-9 rounded-xl bg-[#13393C] border border-[#4BA0A4]/30 flex items-center justify-center text-[#59AAAA] transition-all duration-200 ${s.color}`}
                 >
                   <s.icon />
                 </a>
@@ -99,10 +99,10 @@ export const Footer: React.FC = () => {
             {/* Gmail contact */}
             <a
               href="mailto:youthmindcompany@gmail.com"
-              className="inline-flex items-center gap-2.5 mt-1 px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-[#4BA0A4]/60 hover:bg-slate-800/80 transition-all duration-200 group"
+              className="inline-flex items-center gap-2.5 mt-1 px-4 py-2.5 rounded-xl bg-[#13393C] border border-[#4BA0A4]/30 hover:border-[#4BA0A4] hover:bg-[#194447] transition-all duration-200 group"
             >
               <MailIcon />
-              <span className="text-xs text-slate-300 group-hover:text-white transition-colors font-medium">
+              <span className="text-xs text-[#E0F4F4] group-hover:text-white transition-colors font-semibold">
                 youthmindcompany@gmail.com
               </span>
             </a>
@@ -116,9 +116,9 @@ export const Footer: React.FC = () => {
                 <li key={item.label}>
                   <a
                     href={item.href}
-                    className="text-slate-400 hover:text-[#59AAAA] transition-colors inline-flex items-center gap-1.5 group"
+                    className="text-[#94D4D4] hover:text-[#59AAAA] transition-colors inline-flex items-center gap-1.5 group font-medium"
                   >
-                    <span className="w-1 h-1 rounded-full bg-[#396E6E] group-hover:bg-[#59AAAA] transition-colors flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#4BA0A4] group-hover:bg-[#59AAAA] transition-colors flex-shrink-0" />
                     {item.label}
                   </a>
                 </li>
@@ -129,7 +129,7 @@ export const Footer: React.FC = () => {
           {/* Institusi */}
           <div className="md:col-span-4 space-y-4">
             <h4 className="text-xs font-bold text-white uppercase tracking-widest">Institusi & Lokasi</h4>
-            <div className="space-y-3 text-sm text-slate-400">
+            <div className="space-y-3 text-sm text-[#94D4D4]">
               <div className="flex items-start gap-2.5">
                 {/* Map pin icon */}
                 <svg viewBox="0 0 24 24" className="w-4 h-4 text-[#4BA0A4] flex-shrink-0 mt-0.5" fill="currentColor">
@@ -137,7 +137,7 @@ export const Footer: React.FC = () => {
                 </svg>
                 <div>
                   <p className="font-semibold text-white">SMKN 11 Bandung</p>
-                  <p className="text-xs text-slate-500 mt-0.5 leading-relaxed">Jl. Budhi, Cilember, Kec. Cicendo,<br />Kota Bandung, Jawa Barat</p>
+                  <p className="text-xs text-[#94D4D4]/80 mt-0.5 leading-relaxed">Jl. Budhi, Cilember, Kec. Cicendo,<br />Kota Bandung, Jawa Barat</p>
                 </div>
               </div>
               <div className="flex items-center gap-2.5">
@@ -145,20 +145,20 @@ export const Footer: React.FC = () => {
                 <svg viewBox="0 0 24 24" className="w-4 h-4 text-[#4BA0A4] flex-shrink-0" fill="currentColor">
                   <path d="M21.41 11.58L12.41 2.58C12.05 2.22 11.55 2 11 2H4C2.9 2 2 2.9 2 4V11C2 11.55 2.22 12.05 2.59 12.42L11.59 21.42C11.95 21.78 12.45 22 13 22C13.55 22 14.05 21.78 14.41 21.41L21.41 14.41C21.78 14.05 22 13.55 22 13C22 12.45 21.77 11.94 21.41 11.58ZM5.5 7C4.67 7 4 6.33 4 5.5C4 4.67 4.67 4 5.5 4C6.33 4 7 4.67 7 5.5C7 6.33 6.33 7 5.5 7Z" />
                 </svg>
-                <p className="text-[#4BA0A4] font-semibold text-xs">Student Company · Board Game Edukasi Kesehatan Mental</p>
+                <p className="text-[#59AAAA] font-semibold text-xs">Student Company · Board Game Edukasi Kesehatan Mental</p>
               </div>
-              <div className="pt-2 text-[11px] text-slate-400 border-t border-slate-800/80">
-                <span className="text-slate-300 font-bold block mb-1">Dukungan Program:</span>
-                Didukung oleh <span className="text-amber-300 font-medium">Prestasi Junior Indonesia</span> & <span className="text-sky-300 font-medium">Zurich Indonesia</span> (JA Student Company Program).
+              <div className="pt-2 text-[11px] text-[#94D4D4]/80 border-t border-[#4BA0A4]/20">
+                <span className="text-white font-bold block mb-1">Dukungan Program:</span>
+                Didukung oleh <span className="text-amber-300 font-semibold">Prestasi Junior Indonesia</span> & <span className="text-cyan-300 font-semibold">Zurich Indonesia</span> (JA Student Company Program).
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-5 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3 border-t border-slate-800/60">
+        <div className="py-5 flex flex-col sm:flex-row items-center justify-between text-xs text-[#94D4D4]/80 gap-3 border-t border-[#4BA0A4]/20">
           <p className="flex items-center gap-1.5">
-            <span className="text-[#4BA0A4]">©</span>
+            <span className="text-[#4BA0A4] font-bold">©</span>
             {new Date().getFullYear()}{" "}
             <span className="text-white font-semibold tracking-wide">Youthmind Company</span>.
             {" "}Hak Cipta Dilindungi.
@@ -167,7 +167,7 @@ export const Footer: React.FC = () => {
             href="https://instagram.com/youthmind_company"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-slate-500 hover:text-pink-400 transition-colors duration-200 group"
+            className="inline-flex items-center gap-1.5 text-[#94D4D4] hover:text-[#59AAAA] transition-colors duration-200 group font-medium"
           >
             <InstagramIcon />
             <span className="group-hover:underline">@youthmind_company</span>

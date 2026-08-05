@@ -119,7 +119,7 @@ function PhotoSlot({
 }) {
   return (
     <div
-      className={`relative w-full aspect-[4/3] rounded-2xl overflow-hidden border bg-slate-900 ${borderColor} ${highlight ? "ring-1 ring-emerald-500/30 shadow-xl shadow-emerald-500/10" : ""
+      className={`relative w-full aspect-[4/3] rounded-2xl overflow-hidden border bg-[#0E2A2C] ${borderColor} ${highlight ? "ring-2 ring-emerald-400/40 shadow-md" : ""
         }`}
     >
       {photo ? (
@@ -132,11 +132,11 @@ function PhotoSlot({
         />
       ) : (
         /* Placeholder cantik saat foto belum diisi */
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-slate-900/80">
-          <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center border border-slate-700">
-            <ImageIcon className="w-4 h-4 text-slate-500" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-[#194447]/80">
+          <div className="w-10 h-10 rounded-full bg-[#0E2A2C] flex items-center justify-center border border-[#4BA0A4]/40 shadow-sm">
+            <ImageIcon className="w-4 h-4 text-[#59AAAA]" />
           </div>
-          <p className="text-[11px] text-slate-500 text-center px-4 leading-snug">
+          <p className="text-[11px] text-[#94D4D4] text-center px-4 leading-snug font-medium">
             {alt ?? "Foto akan ditambahkan"}
           </p>
         </div>
@@ -159,21 +159,21 @@ export const SceneJourney: React.FC = () => {
     <section
       id="journey"
       ref={containerRef}
-      className="py-20 sm:py-36 bg-slate-950 text-white relative border-t border-slate-900 overflow-hidden"
+      className="py-20 sm:py-36 bg-[#123638] text-white relative border-t border-[#4BA0A4]/20 overflow-hidden"
     >
       {/* Ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-500/[0.06] rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#59AAAA]/15 rounded-full blur-[180px] pointer-events-none" />
 
       <Container>
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center space-y-3 sm:space-y-4 mb-16 sm:mb-24 px-2">
-          <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#4BA0A4] bg-teal-500/10 px-3 py-1 rounded-full border border-teal-500/20 inline-block">
+          <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#59AAAA] bg-[#4BA0A4]/20 px-3 py-1 rounded-full border border-[#4BA0A4]/30 inline-block">
             Perjalanan & Rekam Jejak
           </span>
           <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
             Jejak Sejarah YouthMind
           </h2>
-          <p className="text-slate-300 text-xs sm:text-base leading-relaxed max-w-xl mx-auto">
+          <p className="text-[#E0F4F4] text-xs sm:text-base leading-relaxed max-w-xl mx-auto font-normal">
             Dari satu ide di ruang kelas SMKN 11 Bandung — hingga Grand Launching dan regenerasi yang penuh semangat.
           </p>
         </div>
@@ -181,17 +181,17 @@ export const SceneJourney: React.FC = () => {
         {/* Timeline */}
         <div className="relative max-w-4xl mx-auto px-2 sm:px-4">
           {/* Garis background */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-slate-800/80 -translate-x-1/2" />
+          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-[#4BA0A4]/30 -translate-x-1/2" />
           {/* Garis scroll animasi */}
           <motion.div
             style={{ height: lineHeight }}
-            className="absolute left-1/2 top-0 w-0.5 bg-gradient-to-b from-amber-400 via-teal-500 to-[#4BA0A4] -translate-x-1/2 origin-top"
+            className="absolute left-1/2 top-0 w-0.5 bg-gradient-to-b from-amber-500 via-[#4BA0A4] to-[#396E6E] -translate-x-1/2 origin-top"
           />
 
           <div className="space-y-10 sm:space-y-20">
             {milestones.map((item, idx) => {
               const Icon = item.icon;
-              const isEven = idx % 2 === 0; // even = teks kiri, foto kanan | odd = foto kiri, teks kanan
+              const isEven = idx % 2 === 0;
 
               return (
                 <motion.div
@@ -204,15 +204,15 @@ export const SceneJourney: React.FC = () => {
                 >
                   {/* Dot timeline — selalu di tengah */}
                   <div
-                    className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-7 h-7 sm:w-9 sm:h-9 rounded-full flex items-center justify-center shadow-xl z-10 border-2 ${item.highlight
-                        ? "bg-emerald-500 border-emerald-300 shadow-emerald-500/40 scale-125"
+                    className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-7 h-7 sm:w-9 sm:h-9 rounded-full flex items-center justify-center shadow-md z-10 border-2 ${item.highlight
+                        ? "bg-emerald-500 border-emerald-300 shadow-emerald-400/40 scale-125"
                         : item.isCurrent
-                          ? "bg-[#4BA0A4] border-teal-300 shadow-teal-500/40"
-                          : "bg-slate-900 border-slate-700"
+                          ? "bg-[#4BA0A4] border-white shadow-teal-400/40"
+                          : "bg-[#194447] border-[#4BA0A4]/60"
                       }`}
                   >
                     <Icon
-                      className={`w-3 h-3 sm:w-3.5 sm:h-3.5 ${item.highlight || item.isCurrent ? "text-white" : item.color
+                      className={`w-3 h-3 sm:w-3.5 sm:h-3.5 ${item.highlight || item.isCurrent ? "text-white" : "text-[#396E6E]"
                         }`}
                     />
                   </div>
@@ -259,10 +259,10 @@ export const SceneJourney: React.FC = () => {
 function ContentCard({ item }: { item: Milestone }) {
   return (
     <div
-      className={`rounded-2xl p-4 sm:p-6 border bg-slate-900/60 hover:bg-slate-900/90 transition-all duration-300 hover:-translate-y-1 cursor-default ${item.borderColor} ${item.highlight
-          ? "ring-1 ring-emerald-500/30 shadow-xl shadow-emerald-500/10"
+      className={`rounded-2xl p-4 sm:p-6 border bg-[#194447] hover:bg-[#1E5256] transition-all duration-300 hover:-translate-y-1 cursor-default shadow-md hover:shadow-lg ${item.borderColor} ${item.highlight
+          ? "ring-2 ring-emerald-400/40"
           : item.isCurrent
-            ? "ring-1 ring-[#4BA0A4]/30 shadow-xl shadow-teal-500/10"
+            ? "ring-2 ring-[#4BA0A4]/40"
             : ""
         }`}
     >
@@ -272,17 +272,16 @@ function ContentCard({ item }: { item: Milestone }) {
         {item.year} · {item.label}
       </span>
       <h3
-        className={`text-base sm:text-xl font-black text-white mt-2.5 leading-snug ${item.highlight ? "text-emerald-50" : ""
-          }`}
+        className="text-base sm:text-xl font-black text-white mt-2.5 leading-snug"
       >
         {item.title}
       </h3>
-      <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mt-2">
+      <p className="text-xs sm:text-sm text-[#94D4D4] leading-relaxed mt-2">
         {item.desc}
       </p>
       {item.isCurrent && (
-        <div className="mt-3 inline-flex items-center gap-1.5 text-[10px] text-teal-300 font-extrabold">
-          <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse inline-block" />
+        <div className="mt-3 inline-flex items-center gap-1.5 text-[10px] text-[#59AAAA] font-extrabold">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#4BA0A4] animate-pulse inline-block" />
           Aktif Saat Ini
         </div>
       )}

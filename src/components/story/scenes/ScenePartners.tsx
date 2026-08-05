@@ -42,18 +42,18 @@ const partners = [
 
 export const ScenePartners: React.FC = () => {
   return (
-    <section id="partners" className="py-20 sm:py-28 bg-slate-950 text-white border-t border-slate-900">
+    <section id="partners" className="py-20 sm:py-28 bg-[#123638] text-white border-t border-[#4BA0A4]/20">
       <Container>
         <div className="space-y-12 max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center space-y-3 max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold uppercase tracking-widest text-[#4BA0A4]">
+            <span className="text-[11px] font-bold uppercase tracking-widest text-[#59AAAA] bg-[#4BA0A4]/20 px-3 py-1 rounded-full border border-[#4BA0A4]/30 inline-block">
               Mitra & Pendukung
             </span>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
               Didukung Oleh Organisasi Terkemuka
             </h2>
-            <p className="text-sm sm:text-base text-slate-400 leading-relaxed font-normal">
+            <p className="text-sm sm:text-base text-[#E0F4F4] leading-relaxed font-normal">
               Inovasi dan operasional YouthMind Company berjalan dengan dukungan dan pembinaan dari berbagai lembaga resmi.
             </p>
           </div>
@@ -67,11 +67,11 @@ export const ScenePartners: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
-                className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-slate-700 transition-all duration-200"
+                className="bg-[#194447] border border-[#4BA0A4]/30 rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-[#4BA0A4] hover:bg-[#1E5256] transition-all duration-200 shadow-sm hover:shadow-md"
               >
                 <div className="space-y-6">
                   {/* Logo Container */}
-                  <div className="bg-white rounded-xl p-4 flex items-center justify-center h-20 border border-slate-200/80 shadow-sm">
+                  <div className="bg-white rounded-xl p-4 flex items-center justify-center h-20 border border-[#4BA0A4]/30 shadow-sm">
                     <div className="relative w-full h-full flex items-center justify-center">
                       {partner.logo ? (
                         <Image
@@ -82,7 +82,7 @@ export const ScenePartners: React.FC = () => {
                           className="max-h-12 w-auto object-contain"
                         />
                       ) : (
-                        <span className="text-slate-700 font-black text-sm text-center leading-tight px-2">
+                        <span className="text-[#1A4A4A] font-black text-sm text-center leading-tight px-2">
                           {partner.name}
                         </span>
                       )}
@@ -94,7 +94,7 @@ export const ScenePartners: React.FC = () => {
                     <h3 className="text-base font-bold text-white leading-snug">
                       {partner.name}
                     </h3>
-                    <p className="text-xs font-semibold text-[#4BA0A4]">
+                    <p className="text-xs font-semibold text-[#59AAAA]">
                       {partner.role}
                     </p>
                   </div>

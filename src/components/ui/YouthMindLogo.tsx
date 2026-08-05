@@ -16,17 +16,17 @@ export const YouthMindLogo: React.FC<YouthMindLogoProps> = ({
 }) => {
   /* ── icon-only ─────────────────────────────────────────────────── */
   if (variant === "iconOnly") {
-    const px = { sm: 32, md: 40, lg: 52 };
+    const px = { sm: 32, md: 40, lg: 48 };
     return (
-      <div className={`inline-flex ${className}`}>
+      <div className={`inline-flex items-center justify-center ${className}`}>
         <div className="relative" style={{ width: px[size], height: px[size] }}>
           <Image
-            src="/assets/logo.jpg"
+            src="/assets/logo-ym.png"
             alt="YouthMind Logo"
             fill
             quality={100}
-            className="object-contain rounded-full"
-            style={{ mixBlendMode: "screen" }}
+            unoptimized
+            className="object-contain filter drop-shadow-sm"
             priority
           />
         </div>
@@ -36,18 +36,18 @@ export const YouthMindLogo: React.FC<YouthMindLogoProps> = ({
 
   /* ── vertical ───────────────────────────────────────────────────── */
   if (variant === "vertical") {
-    const heights = { sm: 80, md: 100, lg: 130 };
-    const widths = { sm: 72, md: 90, lg: 115 };
+    const heights = { sm: 70, md: 90, lg: 110 };
+    const widths = { sm: 70, md: 90, lg: 110 };
     return (
       <div className={`inline-flex flex-col items-center gap-1 ${className}`}>
         <div style={{ width: widths[size], height: heights[size], position: "relative" }}>
           <Image
-            src="/assets/logo.png"
+            src="/assets/logo-ym.png"
             alt="YouthMind Company"
             fill
             quality={100}
-            className="object-contain"
-            style={{ mixBlendMode: "screen" }}
+            unoptimized
+            className="object-contain filter drop-shadow-sm"
             priority
           />
         </div>
@@ -61,29 +61,29 @@ export const YouthMindLogo: React.FC<YouthMindLogoProps> = ({
   }
 
   /* ── horizontal (navbar default) ───────────────────────────────── */
-  const iconPx = { sm: 36, md: 44, lg: 54 };
+  const iconPx = { sm: 36, md: 44, lg: 52 };
   const px = iconPx[size];
 
   return (
-    <div className={`inline-flex items-center gap-0 ${className}`}>
-      {/* Logo mark — JPG dark bg blended via screen so bg disappears */}
+    <div className={`inline-flex items-center gap-2 ${className}`}>
+      {/* Logo mark — New YM Sticker logo */}
       <div
         className="relative flex-shrink-0"
         style={{ width: px, height: px }}
       >
         <Image
-          src="/assets/logo.jpg"
+          src="/assets/logo-ym.png"
           alt="YouthMind"
           fill
           quality={100}
-          className="object-contain"
-          style={{ mixBlendMode: "screen" }}
+          unoptimized
+          className="object-contain filter drop-shadow-sm"
           priority
         />
       </div>
 
       {/* Wordmark */}
-      <div className="flex flex-col leading-none -ml-0.5">
+      <div className="flex flex-col leading-none">
         <span
           className={`font-black tracking-tight text-white ${
             size === "sm"
@@ -111,3 +111,4 @@ export const YouthMindLogo: React.FC<YouthMindLogoProps> = ({
 };
 
 export default YouthMindLogo;
+

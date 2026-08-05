@@ -32,10 +32,10 @@ export const SceneMission: React.FC = () => {
   return (
     <section
       id="mission"
-      className="py-20 sm:py-32 bg-slate-950 text-white relative border-t border-slate-900 overflow-hidden"
+      className="py-20 sm:py-32 bg-[#123638] text-white relative border-t border-[#4BA0A4]/20 overflow-hidden"
     >
       {/* Ambient glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-teal-500/6 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#59AAAA]/15 rounded-full blur-[130px] pointer-events-none" />
 
       <Container size="small">
         <motion.div
@@ -48,10 +48,10 @@ export const SceneMission: React.FC = () => {
           {/* Header */}
           <div className="text-center space-y-4">
             <div className="inline-flex flex-col items-center gap-3">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-teal-500/15 border border-teal-500/30 flex items-center justify-center shadow-md shadow-teal-500/10">
-                <Target className="w-6 h-6 sm:w-7 sm:h-7 text-teal-400" />
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#4BA0A4]/20 border border-[#4BA0A4]/40 flex items-center justify-center shadow-md">
+                <Target className="w-6 h-6 sm:w-7 sm:h-7 text-[#59AAAA]" />
               </div>
-              <span className="text-[11px] sm:text-xs font-extrabold uppercase tracking-widest text-teal-300 bg-teal-500/10 border border-teal-500/20 px-4 py-1.5 rounded-full">
+              <span className="text-[11px] sm:text-xs font-extrabold uppercase tracking-widest text-[#59AAAA] bg-[#4BA0A4]/20 border border-[#4BA0A4]/30 px-4 py-1.5 rounded-full">
                 Misi Perusahaan
               </span>
             </div>
@@ -78,22 +78,22 @@ export const SceneMission: React.FC = () => {
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{ duration: 0.45, delay: idx * 0.08, ease: "easeOut" }}
                 whileHover={{ scale: 1.015, x: 4 }}
-                className="group flex items-center gap-4 sm:gap-6 bg-slate-900/60 hover:bg-slate-900/90 backdrop-blur-md border border-slate-800/80 hover:border-[#4BA0A4]/50 rounded-2xl px-5 sm:px-7 py-4 sm:py-5 transition-all duration-300 shadow-lg cursor-default"
+                className="group flex items-center gap-4 sm:gap-6 bg-[#194447] hover:bg-[#1E5256] border border-[#4BA0A4]/30 hover:border-[#4BA0A4] rounded-2xl px-5 sm:px-7 py-4 sm:py-5 transition-all duration-300 shadow-md hover:shadow-lg cursor-default"
               >
                 {/* Number badge */}
-                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-[#4BA0A4]/20 to-[#396E6E]/20 border border-[#4BA0A4]/30 group-hover:border-[#4BA0A4]/70 flex items-center justify-center transition-colors shadow-inner">
-                  <span className="text-xs sm:text-sm font-black text-teal-400 group-hover:text-teal-300 transition-colors">
+                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#4BA0A4]/20 border border-[#4BA0A4]/40 group-hover:border-[#4BA0A4] flex items-center justify-center transition-colors">
+                  <span className="text-xs sm:text-sm font-black text-[#59AAAA] group-hover:text-white transition-colors">
                     {mission.number}
                   </span>
                 </div>
 
                 {/* Text */}
-                <p className="text-sm sm:text-base lg:text-lg text-slate-300 group-hover:text-white font-medium leading-snug transition-colors">
+                <p className="text-sm sm:text-base lg:text-lg text-[#E0F4F4] group-hover:text-white font-semibold leading-snug transition-colors">
                   {mission.text}
                 </p>
 
                 {/* Right accent line */}
-                <div className="ml-auto flex-shrink-0 w-0.5 h-6 sm:h-8 rounded-full bg-slate-800 group-hover:bg-[#4BA0A4]/60 transition-colors" />
+                <div className="ml-auto flex-shrink-0 w-0.5 h-6 sm:h-8 rounded-full bg-teal-200 group-hover:bg-[#4BA0A4] transition-colors" />
               </motion.div>
             ))}
           </div>

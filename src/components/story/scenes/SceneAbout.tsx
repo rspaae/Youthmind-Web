@@ -34,22 +34,22 @@ const companyValues = [
 
 export const SceneAbout: React.FC = () => {
   return (
-    <section id="about" className="py-20 sm:py-32 bg-slate-950 text-white border-t border-slate-900">
+    <section id="about" className="py-20 sm:py-32 bg-[#0E2A2C] border-t border-[#4BA0A4]/20 text-white">
       <Container>
         <div className="space-y-16 max-w-5xl mx-auto">
           {/* Main Statement */}
           <div className="text-center space-y-4 max-w-3xl mx-auto">
-            <span className="text-[11px] font-bold uppercase tracking-widest text-[#4BA0A4]">
+            <span className="text-[11px] font-bold uppercase tracking-widest text-[#59AAAA] bg-[#4BA0A4]/20 px-3.5 py-1 rounded-full border border-[#4BA0A4]/30 inline-block">
               Tentang YouthMind
             </span>
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
               Apa itu YouthMind Company?
             </h2>
-            <p className="text-base sm:text-xl text-slate-300 leading-relaxed font-normal pt-2">
+            <p className="text-base sm:text-xl text-[#E0F4F4] leading-relaxed font-normal pt-2">
               YouthMind Company adalah perusahaan inovatif dari SMKN 11 Bandung yang berfokus pada{" "}
-              <span className="text-[#4BA0A4] font-semibold">pengembangan board game edukasi</span>{" "}
+              <span className="text-[#4BA0A4] font-bold">pengembangan board game edukasi</span>{" "}
               serta rutin menggelar{" "}
-              <span className="text-teal-300 font-semibold">sosialisasi & workshop kesehatan mental</span>{" "}
+              <span className="text-[#59AAAA] font-bold">sosialisasi & workshop kesehatan mental</span>{" "}
               ke sekolah-sekolah se-Kota Bandung.
             </p>
           </div>
@@ -57,7 +57,7 @@ export const SceneAbout: React.FC = () => {
           {/* Company Value */}
           <div className="space-y-8">
             <div className="text-center space-y-1">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-slate-400">
+              <span className="text-[11px] font-bold uppercase tracking-widest text-[#94D4D4]">
                 Company Value
               </span>
               <h3 className="text-lg sm:text-xl font-bold text-white">
@@ -75,7 +75,7 @@ export const SceneAbout: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4 }}
-                    className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-4 hover:border-slate-700 transition-all duration-200"
+                    className="bg-[#194447] border border-[#4BA0A4]/30 rounded-2xl p-6 sm:p-8 space-y-4 hover:border-[#4BA0A4] hover:shadow-xl transition-all duration-200"
                   >
                     <div className={`w-11 h-11 rounded-xl border flex items-center justify-center ${val.color}`}>
                       <IconComp className="w-5 h-5" />
@@ -84,7 +84,7 @@ export const SceneAbout: React.FC = () => {
                       <h4 className="text-lg font-bold text-white">
                         {val.title}
                       </h4>
-                      <p className="text-xs text-slate-400 font-normal leading-relaxed">
+                      <p className="text-xs text-[#94D4D4] font-normal leading-relaxed">
                         {val.desc}
                       </p>
                     </div>

@@ -29,8 +29,8 @@ const teamStructure: DivisionGroup[] = [
     badge: "Pimpinan Utama",
     badgeBg: "bg-teal-500/15 text-teal-300 border-teal-500/40",
     members: [
-      { name: "Muhammad Hatta Rasyahputra", role: "Chief Executive Officer (CEO)", isDirector: true, badgeLabel: "CEO", image: "/assets/Tim/executive/ceo-hatta.jpg" },
-      { name: "Bella Febriana", role: "Corporate Secretary", isDirector: false },
+      { name: "Muhammad Hatta Rasyahputra", role: "Chief Executive Officer (CEO)", isDirector: true, badgeLabel: "CEO", image: "/assets/TeamYM/CEO/Edit.png" },
+      { name: "Bella Febriana", role: "Corporate Secretary", isDirector: false, image: "/assets/TeamYM/Corporate Secretary/Edit.png" },
     ],
   },
   {
@@ -39,9 +39,9 @@ const teamStructure: DivisionGroup[] = [
     badge: "Pengembangan SDM",
     badgeBg: "bg-sky-500/15 text-sky-300 border-sky-500/40",
     members: [
-      { name: "Felita Nandatama Futura", role: "Attendance & Payroll Specialist", isDirector: false },
-      { name: "Aurel Desiana Putri", role: "Director of HRD", isDirector: true }, // CENTERED!
-      { name: "Meylie Marta Indah Hutajulu", role: "Training & Development Manager", isDirector: false },
+      { name: "Felita Nandatama Futura", role: "Attendance & Payroll Specialist", isDirector: false, image: "/assets/TeamYM/HRD/Felita/Edit.png" },
+      { name: "Aurel Desiana Putri", role: "Director of HRD", isDirector: true, image: "/assets/TeamYM/HRD/Aurel/Edit.png" },
+      { name: "Meylie Marta Indah Hutajulu", role: "Training & Development Manager", isDirector: false, image: "/assets/TeamYM/HRD/Meylie/Edit.png" },
     ],
   },
   {
@@ -50,9 +50,9 @@ const teamStructure: DivisionGroup[] = [
     badge: "Relasi Publik & Komunitas",
     badgeBg: "bg-emerald-500/15 text-emerald-300 border-emerald-500/40",
     members: [
-      { name: "Miska Okta Diva Aria", role: "Public Relations Manager", isDirector: false },
-      { name: "Rafa Ramdani", role: "Director of Public Relations", isDirector: true }, // CENTERED!
-      { name: "Nisrina Maharani", role: "Community Relations Manager", isDirector: false },
+      { name: "Miska Okta Diva Aria", role: "Public Relations Manager", isDirector: false, image: "/assets/TeamYM/Public Relations/Miska/Edit.png" },
+      { name: "Rafa Ramdani", role: "Director of Public Relations", isDirector: true, image: "/assets/TeamYM/Public Relations/Rafa/Edit.png" },
+      { name: "Nisrina Maharani", role: "Community Relations Manager", isDirector: false, image: "/assets/TeamYM/Public Relations/Nisrina/Edit.png" },
     ],
   },
   {
@@ -61,10 +61,10 @@ const teamStructure: DivisionGroup[] = [
     badge: "Pemasaran & Desain",
     badgeBg: "bg-teal-500/15 text-teal-300 border-teal-500/40",
     members: [
-      { name: "Jessica Olivia", role: "Creative Design Manager", isDirector: false },
-      { name: "Nabila Safa Lesmana", role: "Director of Marketing", isDirector: true }, // CENTERED!
-      { name: "Nadila", role: "Event Manager", isDirector: false },
-      { name: "Alyya Izzati Fadhilah", role: "Brand Manager", isDirector: false },
+      { name: "Jessica Olivia", role: "Creative Design Manager", isDirector: false, image: "/assets/TeamYM/Marketing/Jessica/Edit.png" },
+      { name: "Nabila Safa Lesmana", role: "Director of Marketing", isDirector: true, image: "/assets/TeamYM/Marketing/Nabila/Edit.png" },
+      { name: "Nadila", role: "Event Manager", isDirector: false, image: "/assets/TeamYM/Marketing/Nadila/Gif.png" },
+      { name: "Alyya Izzati Fadhilah", role: "Brand Manager", isDirector: false, image: "/assets/TeamYM/Marketing/Alyya/Edit.png" },
     ],
   },
   {
@@ -73,7 +73,7 @@ const teamStructure: DivisionGroup[] = [
     badge: "Penjualan & Kemitraan",
     badgeBg: "bg-amber-500/15 text-amber-300 border-amber-500/40",
     members: [
-      { name: "Nurianti Naesya Putriatna", role: "Director of Sales", isDirector: true }, // CENTERED!
+      { name: "Nurianti Naesya Putriatna", role: "Director of Sales", isDirector: true, image: "/assets/TeamYM/Sales/Nuri/Edit.png" },
     ],
   },
   {
@@ -82,9 +82,9 @@ const teamStructure: DivisionGroup[] = [
     badge: "Keuangan & Akuntansi",
     badgeBg: "bg-cyan-500/15 text-cyan-300 border-cyan-500/40",
     members: [
-      { name: "Muhammad Azriel Setiawan", role: "Finance Manager", isDirector: false },
-      { name: "Senita Aprilia", role: "Director of Finance", isDirector: true }, // CENTERED!
-      { name: "Muhammad Attariq Zildjian", role: "Finance Manager", isDirector: false },
+      { name: "Muhammad Azriel Setiawan", role: "Finance Manager", isDirector: false, image: "/assets/TeamYM/Finance/Azriel/Edit.png" },
+      { name: "Senita Aprilia", role: "Director of Finance", isDirector: true, image: "/assets/TeamYM/Finance/Senita/Edit.png" },
+      { name: "Muhammad Attariq Zildjian", role: "Finance Manager", isDirector: false, image: "/assets/TeamYM/Finance/Tariq/Edit.png" },
     ],
   },
   {
@@ -93,11 +93,11 @@ const teamStructure: DivisionGroup[] = [
     badge: "Manufaktur & Game Design",
     badgeBg: "bg-indigo-500/15 text-indigo-300 border-indigo-500/40",
     members: [
-      { name: "Ziffara Anindya Putri", role: "R&D Manager", isDirector: false },
-      { name: "Bilqist Aulya Zahra", role: "Production Manager", isDirector: false },
-      { name: "Muhammad Fahri Ismail", role: "Director of Production", isDirector: true }, // CENTERED!
-      { name: "Charisa Rivani Salsabila", role: "Purchasing Manager", isDirector: false },
-      { name: "Maura Natali Putri", role: "Quality Control Manager", isDirector: false },
+      { name: "Ziffara Anindya Putri", role: "R&D Manager", isDirector: false, image: "/assets/TeamYM/Production/Ziffara/Edit.png" },
+      { name: "Bilqist Aulya Zahra", role: "Production Manager", isDirector: false, image: "/assets/TeamYM/Production/Bilqist/Edit.png" },
+      { name: "Muhammad Fahri Ismail", role: "Director of Production", isDirector: true, image: "/assets/TeamYM/Production/Fahri/Edit.png" },
+      { name: "Charisa Rivani Salsabila", role: "Purchasing Manager", isDirector: false, image: "/assets/TeamYM/Production/Charisa/Edit.png" },
+      { name: "Maura Natali Putri", role: "Quality Control Manager", isDirector: false, image: "/assets/TeamYM/Production/Maura/Edit.png" },
     ],
   },
 ];
@@ -111,15 +111,15 @@ const getInitials = (name: string) => {
 
 export const ScenePeople: React.FC = () => {
   return (
-    <section id="team" className="py-20 sm:py-36 bg-slate-950 text-white relative border-t border-slate-900 overflow-hidden">
+    <section id="team" className="py-20 sm:py-36 bg-[#0E2A2C] text-white relative border-t border-[#4BA0A4]/20 overflow-hidden">
       {/* Background Glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-teal-500/10 rounded-full blur-[170px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#59AAAA]/15 rounded-full blur-[170px] pointer-events-none" />
 
       <Container>
         {/* Header Seksi Terpusat */}
         <div className="max-w-3xl mx-auto text-center space-y-4 mb-16 sm:mb-24 px-2">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-300 text-[11px] sm:text-xs font-extrabold tracking-wide shadow-inner">
-            <Sparkles className="w-3.5 h-3.5 text-teal-400 animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4BA0A4]/20 border border-[#4BA0A4]/30 text-[#59AAAA] text-[11px] sm:text-xs font-extrabold tracking-wide">
+            <Sparkles className="w-3.5 h-3.5 text-[#4BA0A4] animate-pulse" />
             <span>Struktur Perusahaan Resmi · Second Generation</span>
           </div>
 
@@ -128,7 +128,7 @@ export const ScenePeople: React.FC = () => {
             <span className="text-image-clip inline-block">YouthMind Company</span>
           </h2>
 
-          <p className="text-slate-300 text-xs sm:text-base max-w-xl mx-auto leading-relaxed">
+          <p className="text-[#94D4D4] text-xs sm:text-base max-w-xl mx-auto leading-relaxed font-medium">
             Struktur Kepemimpinan Divisi.
           </p>
 
@@ -169,30 +169,31 @@ export const ScenePeople: React.FC = () => {
                     key={member.name}
                     whileHover={{ scale: 1.04, y: -6 }}
                     transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                    className={`w-[calc(50%-8px)] sm:w-56 md:w-64 lg:w-72 xl:w-80 bg-slate-900/60 hover:bg-slate-900/95 backdrop-blur-md rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 lg:p-6 border transition-all duration-300 shadow-xl text-center flex flex-col justify-between items-center group touch-manipulation ${member.isDirector
-                        ? "border-[#4BA0A4] bg-gradient-to-b from-teal-950/40 via-slate-900 to-slate-950 shadow-teal-500/25 ring-1 ring-teal-500/20"
-                        : "border-slate-800/80 hover:border-teal-500/50"
+                    className={`w-[calc(50%-8px)] sm:w-56 md:w-64 lg:w-72 xl:w-80 bg-[#194447] hover:bg-[#1E5256] backdrop-blur-md rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 lg:p-6 border transition-all duration-300 shadow-lg text-center flex flex-col justify-between items-center group touch-manipulation ${member.isDirector
+                        ? "border-[#4BA0A4] ring-2 ring-[#4BA0A4]/30 shadow-teal-900/60"
+                        : "border-[#4BA0A4]/30 hover:border-[#4BA0A4]/60"
                       }`}
                   >
                     <div className="w-full space-y-3 sm:space-y-4 flex flex-col items-center">
-                      {/* Frame Foto Ukuran Sama Presisi (Diperbesar di Desktop) */}
-                      <div className="relative aspect-[3/4] w-full rounded-xl sm:rounded-2xl overflow-hidden bg-gradient-to-b from-slate-950 to-slate-900 border border-slate-800/80 group-hover:border-[#4BA0A4]/60 transition-colors shadow-inner flex flex-col items-center justify-center">
+                      {/* Frame Foto Ukuran Sama Presisi (Tampilan Penuh Tanpa Zoom Tight) */}
+                      <div className="relative aspect-square w-full rounded-xl sm:rounded-2xl overflow-hidden bg-[#0E2A2C] border border-[#4BA0A4]/30 group-hover:border-[#4BA0A4]/60 transition-colors shadow-inner flex flex-col items-center justify-center p-1">
                         {member.image ? (
                           <Image
                             src={member.image}
                             alt={member.name}
                             fill
                             loading="lazy"
-                            quality={80}
+                            quality={100}
+                            unoptimized
                             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
-                            className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                            className="object-contain object-center group-hover:scale-105 transition-transform duration-500"
                           />
                         ) : (
-                          <div className="flex flex-col items-center justify-center p-2 text-center w-full h-full bg-gradient-to-b from-slate-950 via-slate-900/90 to-slate-950">
-                            <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-full bg-[#4BA0A4]/15 border border-[#4BA0A4]/30 text-[#4BA0A4] font-extrabold text-xs sm:text-base lg:text-xl flex items-center justify-center mb-1.5 sm:mb-2 ring-4 ring-teal-500/5 group-hover:scale-105 transition-transform shadow-md">
+                          <div className="flex flex-col items-center justify-center p-2 text-center w-full h-full bg-gradient-to-b from-[#123638] via-[#194447] to-[#123638]">
+                            <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-full bg-[#4BA0A4]/20 border border-[#4BA0A4]/40 text-[#59AAAA] font-extrabold text-xs sm:text-base lg:text-xl flex items-center justify-center mb-1.5 sm:mb-2 ring-4 ring-teal-500/10 group-hover:scale-105 transition-transform shadow-md">
                               {getInitials(member.name)}
                             </div>
-                            <span className="text-[9px] sm:text-xs text-slate-400 font-medium">
+                            <span className="text-[9px] sm:text-xs text-[#94D4D4] font-medium">
                               Foto Member
                             </span>
                           </div>
@@ -201,8 +202,8 @@ export const ScenePeople: React.FC = () => {
                         {/* Top Indicator Badge */}
                         {member.isDirector && (
                           <div className="absolute top-2.5 right-2.5">
-                            <span className="text-[8px] sm:text-xs font-black uppercase px-2.5 py-1 rounded-full bg-[#4BA0A4] text-slate-950 tracking-wider shadow-md flex items-center gap-1">
-                              <Star className="w-3 h-3 fill-slate-950 inline" />
+                            <span className="text-[8px] sm:text-xs font-black uppercase px-2.5 py-1 rounded-full bg-[#4BA0A4] text-white tracking-wider shadow-md flex items-center gap-1">
+                              <Star className="w-3 h-3 fill-white inline" />
                               {member.badgeLabel ?? "Director"}
                             </span>
                           </div>
@@ -211,18 +212,18 @@ export const ScenePeople: React.FC = () => {
 
                       {/* Nama & Role */}
                       <div className="space-y-1 sm:space-y-1.5 w-full text-center px-1">
-                        <h4 className="text-xs sm:text-base lg:text-lg font-extrabold text-slate-100 group-hover:text-teal-300 transition-colors leading-snug line-clamp-2">
+                        <h4 className="text-xs sm:text-base lg:text-lg font-extrabold text-white group-hover:text-[#59AAAA] transition-colors leading-snug line-clamp-2">
                           {member.name}
                         </h4>
-                        <p className="text-[10px] sm:text-xs lg:text-sm font-bold text-[#4BA0A4] leading-tight">
+                        <p className="text-[10px] sm:text-xs lg:text-sm font-bold text-[#94D4D4] leading-tight">
                           {member.role}
                         </p>
                       </div>
                     </div>
 
                     {/* Footer Tag Setara */}
-                    <div className="pt-2 sm:pt-3 mt-3 sm:mt-4 w-full border-t border-slate-800/60 flex items-center justify-center gap-1.5 sm:gap-2 text-[9px] sm:text-xs text-slate-400 font-semibold">
-                      <ShieldCheck className="w-3.5 h-3.5 text-teal-400" />
+                    <div className="pt-2 sm:pt-3 mt-3 sm:mt-4 w-full border-t border-[#4BA0A4]/20 flex items-center justify-center gap-1.5 sm:gap-2 text-[9px] sm:text-xs text-[#94D4D4] font-semibold">
+                      <ShieldCheck className="w-3.5 h-3.5 text-[#4BA0A4]" />
                       <span>YouthMind Company</span>
                     </div>
                   </motion.div>
