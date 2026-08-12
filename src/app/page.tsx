@@ -12,7 +12,6 @@ const SceneChallenge = dynamic(() => import("@/components/story/scenes/SceneChal
 const SceneSolution = dynamic(() => import("@/components/story/scenes/SceneSolution"));
 const SceneJourney = dynamic(() => import("@/components/story/scenes/SceneJourney"));
 const ScenePeople = dynamic(() => import("@/components/story/scenes/ScenePeople"));
-const SceneNews = dynamic(() => import("@/components/story/scenes/SceneNews"));
 const SceneFinal = dynamic(() => import("@/components/story/scenes/SceneFinal"));
 
 export default function Home() {
@@ -31,7 +30,6 @@ export default function Home() {
       <SceneSolution />
       <SceneJourney />
       <ScenePeople />
-      <SceneNews />
       <SceneFinal />
     </>
   );
