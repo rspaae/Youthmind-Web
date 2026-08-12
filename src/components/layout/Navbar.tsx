@@ -92,7 +92,7 @@ export const Navbar: React.FC = () => {
             </a>
 
             {/* Desktop Nav Items */}
-            <nav className="hidden lg:flex items-center gap-1 bg-[#194447]/80 p-1.5 rounded-full border border-[#4BA0A4]/30 backdrop-blur-md shadow-xl shadow-black/30 ring-1 ring-white/10">
+            <nav aria-label="Navigasi Utama" className="hidden lg:flex items-center gap-1 bg-[#194447]/80 p-1.5 rounded-full border border-[#4BA0A4]/30 backdrop-blur-md shadow-xl shadow-black/30 ring-1 ring-white/10">
               {NAV_ITEMS.map((item) => {
                 const sectionId = item.href.replace("#", "");
                 const isActive = activeSection === sectionId;
@@ -147,7 +147,7 @@ export const Navbar: React.FC = () => {
       </header>
 
       {/* ── App-Style Floating Bottom Dock (Mobile) ────────────────────────────── */}
-      <nav className="lg:hidden fixed bottom-4 inset-x-4 z-40 max-w-md mx-auto">
+      <nav aria-label="Navigasi Cepat Mobile" className="lg:hidden fixed bottom-4 inset-x-4 z-40 max-w-md mx-auto">
         <div className="bg-[#0E2A2C]/95 backdrop-blur-2xl border border-[#4BA0A4]/30 rounded-2xl p-1.5 shadow-2xl shadow-black/80 flex items-center justify-around ring-1 ring-white/10">
           {QUICK_DOCK_ITEMS.map((item) => {
             const sectionId = item.href.replace("#", "");
@@ -175,6 +175,7 @@ export const Navbar: React.FC = () => {
           {/* Full Menu Trigger Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle Menu Navigasi Lengkap"
             className={clsx(
               "flex flex-col items-center justify-center py-1.5 px-3 rounded-xl transition-all duration-200 text-[10px] font-bold gap-1 flex-1 text-center border",
               isMobileMenuOpen
@@ -213,7 +214,7 @@ export const Navbar: React.FC = () => {
               </div>
 
               {/* Navigation Items List */}
-              <nav className="grid gap-2.5">
+              <nav aria-label="Navigasi Seluler Lengkap" className="grid gap-2.5">
                 {NAV_ITEMS.map((item, idx) => {
                   const sectionId = item.href.replace("#", "");
                   const isActive = activeSection === sectionId;

@@ -35,6 +35,9 @@ export const HeroScene: React.FC = () => {
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-[320px] sm:h-[320px] bg-[#59AAAA]/20 rounded-full blur-[90px] pointer-events-none" />
 
       <Container className="relative z-10 flex flex-col items-center justify-center">
+        {/* Visually Hidden Accessible H1 Heading for Page Hierarchy */}
+        <h1 className="sr-only">YouthMind Company — Student Company SMKN 11 Bandung</h1>
+
         {/* Centered YM Logo - Moderate & Crisp */}
         <motion.div
           style={isMounted ? { opacity: logoOpacity, scale: logoScale, y: logoY } : { opacity: 1 }}
@@ -55,9 +58,10 @@ export const HeroScene: React.FC = () => {
           >
             <Image
               src="/assets/logo-ym.png"
-              alt="YouthMind Logo"
+              alt="YouthMind Company — Student Company SMKN 11 Bandung"
               fill
               priority
+              fetchPriority="high"
               quality={100}
               unoptimized
               sizes="(max-width: 640px) 160px, (max-width: 768px) 208px, (max-width: 1024px) 240px, 256px"

@@ -120,6 +120,8 @@ export const ScenePartners: React.FC = () => {
                             alt={`${partner.name} Logo`}
                             width={180}
                             height={60}
+                            loading="lazy"
+                            sizes="180px"
                             className="max-h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                           />
                         ) : (

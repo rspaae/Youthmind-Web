@@ -185,7 +185,7 @@ export const ScenePeople: React.FC = () => {
                         {member.image ? (
                           <Image
                             src={member.image}
-                            alt={member.name}
+                            alt={`Foto ${member.name} — ${member.role}`}
                             fill
                             loading="lazy"
                             quality={100}

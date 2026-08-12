@@ -192,10 +192,11 @@ export const SceneFinal: React.FC = () => {
                       <form onSubmit={handleSubmit} className="space-y-4 pt-2">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div className="space-y-1.5">
-                            <label className="text-xs font-extrabold text-[#E0F4F4] uppercase tracking-wider block">
+                            <label htmlFor="contact-name" className="text-xs font-extrabold text-[#E0F4F4] uppercase tracking-wider block">
                               Nama Lengkap / Instansi *
                             </label>
                             <input
+                              id="contact-name"
                               type="text"
                               required
                               value={formData.name}
@@ -206,10 +207,11 @@ export const SceneFinal: React.FC = () => {
                           </div>
 
                           <div className="space-y-1.5">
-                            <label className="text-xs font-extrabold text-[#E0F4F4] uppercase tracking-wider block">
+                            <label htmlFor="contact-email" className="text-xs font-extrabold text-[#E0F4F4] uppercase tracking-wider block">
                               Alamat Email / WhatsApp *
                             </label>
                             <input
+                              id="contact-email"
                               type="text"
                               required
                               value={formData.email}
@@ -221,10 +223,11 @@ export const SceneFinal: React.FC = () => {
                         </div>
 
                         <div className="space-y-1.5">
-                          <label className="text-xs font-extrabold text-[#E0F4F4] uppercase tracking-wider block">
+                          <label htmlFor="contact-category" className="text-xs font-extrabold text-[#E0F4F4] uppercase tracking-wider block">
                             Kategori Keperluan *
                           </label>
                           <select
+                            id="contact-category"
                             value={formData.category}
                             onChange={(e) => setFormData({ ...formData, category: e.target.value })}
                             className="w-full px-4 py-3 rounded-xl bg-[#0E2A2C] border border-[#4BA0A4]/35 text-white text-xs sm:text-sm focus:outline-none focus:border-[#4BA0A4] focus:ring-1 focus:ring-[#4BA0A4] transition-all"
@@ -237,10 +240,11 @@ export const SceneFinal: React.FC = () => {
                         </div>
 
                         <div className="space-y-1.5">
-                          <label className="text-xs font-extrabold text-[#E0F4F4] uppercase tracking-wider block">
+                          <label htmlFor="contact-message" className="text-xs font-extrabold text-[#E0F4F4] uppercase tracking-wider block">
                             Pesan / Detail Kerjasama *
                           </label>
                           <textarea
+                            id="contact-message"
                             rows={4}
                             required
                             value={formData.message}
@@ -257,7 +261,7 @@ export const SceneFinal: React.FC = () => {
                         >
                           {isLoading ? (
                             <>
-                              <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none">
+                              <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
                               </svg>

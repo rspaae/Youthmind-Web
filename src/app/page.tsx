@@ -1,21 +1,27 @@
+import dynamic from "next/dynamic";
 import HeroScene from "@/components/story/scenes/HeroScene";
 import SceneAbout from "@/components/story/scenes/SceneAbout";
-import ScenePartners from "@/components/story/scenes/ScenePartners";
-import SceneVision from "@/components/story/scenes/SceneVision";
-import SceneMission from "@/components/story/scenes/SceneMission";
-import SceneBeginning from "@/components/story/scenes/SceneBeginning";
-import ScenePhilosophy from "@/components/story/scenes/ScenePhilosophy";
-import SceneChallenge from "@/components/story/scenes/SceneChallenge";
-import SceneSolution from "@/components/story/scenes/SceneSolution";
-import SceneJourney from "@/components/story/scenes/SceneJourney";
-import ScenePeople from "@/components/story/scenes/ScenePeople";
-import SceneFinal from "@/components/story/scenes/SceneFinal";
+
+// Dynamically import below-fold heavy scenes to reduce initial JS bundle + DOM size
+const ScenePartners = dynamic(() => import("@/components/story/scenes/ScenePartners"));
+const SceneVision = dynamic(() => import("@/components/story/scenes/SceneVision"));
+const SceneMission = dynamic(() => import("@/components/story/scenes/SceneMission"));
+const SceneBeginning = dynamic(() => import("@/components/story/scenes/SceneBeginning"));
+const ScenePhilosophy = dynamic(() => import("@/components/story/scenes/ScenePhilosophy"));
+const SceneChallenge = dynamic(() => import("@/components/story/scenes/SceneChallenge"));
+const SceneSolution = dynamic(() => import("@/components/story/scenes/SceneSolution"));
+const SceneJourney = dynamic(() => import("@/components/story/scenes/SceneJourney"));
+const ScenePeople = dynamic(() => import("@/components/story/scenes/ScenePeople"));
+const SceneNews = dynamic(() => import("@/components/story/scenes/SceneNews"));
+const SceneFinal = dynamic(() => import("@/components/story/scenes/SceneFinal"));
 
 export default function Home() {
   return (
     <>
+      {/* Above-fold: loaded immediately */}
       <HeroScene />
       <SceneAbout />
+      {/* Below-fold: lazy-loaded to cut initial JS & DOM */}
       <ScenePartners />
       <SceneVision />
       <SceneMission />
@@ -25,6 +31,7 @@ export default function Home() {
       <SceneSolution />
       <SceneJourney />
       <ScenePeople />
+      <SceneNews />
       <SceneFinal />
     </>
   );

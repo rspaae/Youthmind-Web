@@ -72,8 +72,10 @@ export const ScenePhilosophy: React.FC = () => {
             <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden shadow-2xl border border-[#4BA0A4]/40 bg-[#0E2A2C]">
               <Image
                 src="/assets/brand-philosophy.jpg"
-                alt="Filosofi Logo & Warna YouthMind"
+                alt="Filosofi Logo & Warna YouthMind — Identitas visual YouthMind Company"
                 fill
+                loading="lazy"
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
