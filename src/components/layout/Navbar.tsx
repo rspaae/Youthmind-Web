@@ -197,7 +197,7 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="lg:hidden fixed inset-0 z-40 bg-[#0E2A2C]/98 backdrop-blur-3xl pt-24 pb-28 px-6 overflow-y-auto flex flex-col justify-between"
+            className="lg:hidden fixed inset-0 z-40 bg-[#0E2A2C]/98 backdrop-blur-xl pt-24 pb-28 px-6 overflow-y-auto flex flex-col justify-between"
           >
             <div className="space-y-6 max-w-lg mx-auto w-full">
               {/* Drawer Header Badge */}

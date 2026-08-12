@@ -24,8 +24,8 @@ export const YouthMindLogo: React.FC<YouthMindLogoProps> = ({
             src="/assets/logo-ym.png"
             alt="YouthMind Logo"
             fill
-            quality={100}
-            unoptimized
+            quality={85}
+            sizes="48px"
             className="object-contain filter drop-shadow-sm"
             priority
           />
@@ -45,8 +45,8 @@ export const YouthMindLogo: React.FC<YouthMindLogoProps> = ({
             src="/assets/logo-ym.png"
             alt="YouthMind Company"
             fill
-            quality={100}
-            unoptimized
+            quality={85}
+            sizes="110px"
             className="object-contain filter drop-shadow-sm"
             priority
           />
@@ -75,8 +75,8 @@ export const YouthMindLogo: React.FC<YouthMindLogoProps> = ({
           src="/assets/logo-ym.png"
           alt="YouthMind"
           fill
-          quality={100}
-          unoptimized
+          quality={85}
+          sizes="52px"
           className="object-contain filter drop-shadow-sm"
           priority
         />

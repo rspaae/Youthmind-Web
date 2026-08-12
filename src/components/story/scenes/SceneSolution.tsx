@@ -45,6 +45,7 @@ const ProductGallery: React.FC<ProductGalleryProps> = ({ images, title }) => {
               src={images[activeIdx]}
               alt={`${title} Preview ${activeIdx + 1}`}
               fill
+              loading="lazy"
               quality={85}
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover object-center"

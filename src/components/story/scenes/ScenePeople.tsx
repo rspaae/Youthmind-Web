@@ -188,8 +188,7 @@ export const ScenePeople: React.FC = () => {
                             alt={`Foto ${member.name} — ${member.role}`}
                             fill
                             loading="lazy"
-                            quality={100}
-                            unoptimized
+                            quality={85}
                             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
                             className="object-contain object-center group-hover:scale-105 transition-transform duration-500"
                           />
