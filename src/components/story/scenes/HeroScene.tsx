@@ -62,8 +62,7 @@ export const HeroScene: React.FC = () => {
               fill
               priority
               fetchPriority="high"
-              quality={100}
-              unoptimized
+              quality={90}
               sizes="(max-width: 640px) 160px, (max-width: 768px) 208px, (max-width: 1024px) 240px, 256px"
               className="object-contain"
             />
