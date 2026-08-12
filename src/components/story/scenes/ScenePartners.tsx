@@ -60,6 +60,11 @@ const partners = [
 export const ScenePartners: React.FC = () => {
   return (
     <section id="partners" className="py-24 sm:py-32 bg-[#123638] text-white border-t border-[#4BA0A4]/20 relative overflow-hidden">
+      {/* Giant Translucent Watermark */}
+      <span className="absolute -top-8 sm:-top-12 left-1/2 -translate-x-1/2 text-5xl sm:text-9xl lg:text-[11rem] font-black text-[#4BA0A4]/5 pointer-events-none select-none font-mono tracking-tighter uppercase whitespace-nowrap z-0">
+        PARTNERS
+      </span>
+
       {/* Ambient Glow Effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#4BA0A4]/10 rounded-full blur-[160px] pointer-events-none" />
 

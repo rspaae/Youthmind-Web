@@ -57,6 +57,11 @@ const companyValues = [
 export const SceneAbout: React.FC = () => {
   return (
     <section id="about" className="py-24 sm:py-36 bg-[#0E2A2C] border-t border-[#4BA0A4]/20 text-white relative overflow-hidden">
+      {/* Giant Translucent Watermark */}
+      <span className="absolute -top-8 sm:-top-12 left-1/2 -translate-x-1/2 text-5xl sm:text-9xl lg:text-[11rem] font-black text-[#4BA0A4]/5 pointer-events-none select-none font-mono tracking-tighter uppercase whitespace-nowrap z-0">
+        ABOUT US
+      </span>
+
       {/* Background Ambient Glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#4BA0A4]/10 rounded-full blur-[180px] pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[350px] h-[350px] bg-[#59AAAA]/10 rounded-full blur-[140px] pointer-events-none" />

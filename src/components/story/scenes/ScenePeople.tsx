@@ -112,6 +112,11 @@ const getInitials = (name: string) => {
 export const ScenePeople: React.FC = () => {
   return (
     <section id="team" className="py-20 sm:py-36 bg-[#0E2A2C] text-white relative border-t border-[#4BA0A4]/20 overflow-hidden">
+      {/* Giant Translucent Watermark */}
+      <span className="absolute -top-8 sm:-top-12 left-1/2 -translate-x-1/2 text-5xl sm:text-9xl lg:text-[11rem] font-black text-[#4BA0A4]/5 pointer-events-none select-none font-mono tracking-tighter uppercase whitespace-nowrap z-0">
+        OUR TEAM
+      </span>
+
       {/* Background Glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#59AAAA]/15 rounded-full blur-[170px] pointer-events-none" />
 

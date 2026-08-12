@@ -121,7 +121,12 @@ export const SceneSolution: React.FC = () => {
   const codeImages = ["/assets/ludo-ladder.jpg", "/assets/codenopoly.jpg", "/assets/brand-philosophy.jpg"];
 
   return (
-    <section id="products" ref={containerRef} className="py-20 sm:py-36 bg-[#0E2A2C] text-white relative border-t border-[#4BA0A4]/20">
+    <section id="products" ref={containerRef} className="py-20 sm:py-36 bg-[#0E2A2C] text-white relative border-t border-[#4BA0A4]/20 overflow-hidden">
+      {/* Giant Translucent Watermark */}
+      <span className="absolute -top-8 sm:-top-12 left-1/2 -translate-x-1/2 text-5xl sm:text-9xl lg:text-[11rem] font-black text-[#4BA0A4]/5 pointer-events-none select-none font-mono tracking-tighter uppercase whitespace-nowrap z-0">
+        PRODUCTS
+      </span>
+
       <Container>
         {/* Header Seksi */}
         <div className="max-w-3xl mx-auto text-center space-y-3 sm:space-y-4 mb-12 sm:mb-20 px-2">

@@ -96,7 +96,12 @@ export const SceneNews: React.FC = () => {
   );
 
   return (
-    <section id="news" className="py-20 sm:py-32 bg-[#0E2A2C] text-white border-t border-[#4BA0A4]/20">
+    <section id="news" className="py-20 sm:py-32 bg-[#0E2A2C] text-white border-t border-[#4BA0A4]/20 relative overflow-hidden">
+      {/* Giant Translucent Watermark */}
+      <span className="absolute -top-8 sm:-top-12 left-1/2 -translate-x-1/2 text-5xl sm:text-9xl lg:text-[11rem] font-black text-[#4BA0A4]/5 pointer-events-none select-none font-mono tracking-tighter uppercase whitespace-nowrap z-0">
+        NEWS
+      </span>
+
       <Container>
         <div className="max-w-6xl mx-auto space-y-12">
           {/* Header Editorial */}
