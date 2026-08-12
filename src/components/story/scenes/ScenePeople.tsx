@@ -19,7 +19,7 @@ interface DivisionGroup {
   title: string;
   badge: string;
   badgeBg: string;
-  members: Member[]; // Members ordered so Director is centered!
+  members: Member[]; // Members ordered so Director/Higher position is on the left!
 }
 
 const teamStructure: DivisionGroup[] = [
@@ -39,8 +39,8 @@ const teamStructure: DivisionGroup[] = [
     badge: "Pengembangan SDM",
     badgeBg: "bg-sky-500/15 text-sky-300 border-sky-500/40",
     members: [
-      { name: "Felita Nandatama Futura", role: "Attendance & Payroll Specialist", isDirector: false, image: "/assets/TeamYM/HRD/Felita/Edit.png" },
       { name: "Aurel Desiana Putri", role: "Director of HRD", isDirector: true, image: "/assets/TeamYM/HRD/Aurel/Edit.png" },
+      { name: "Felita Nandatama Futura", role: "Attendance & Payroll Specialist", isDirector: false, image: "/assets/TeamYM/HRD/Felita/Edit.png" },
       { name: "Meylie Marta Indah Hutajulu", role: "Training & Development Manager", isDirector: false, image: "/assets/TeamYM/HRD/Meylie/Edit.png" },
     ],
   },
@@ -50,8 +50,8 @@ const teamStructure: DivisionGroup[] = [
     badge: "Relasi Publik & Komunitas",
     badgeBg: "bg-emerald-500/15 text-emerald-300 border-emerald-500/40",
     members: [
-      { name: "Miska Okta Diva Aria", role: "Public Relations Manager", isDirector: false, image: "/assets/TeamYM/Public Relations/Miska/Edit.png" },
       { name: "Rafa Ramdani", role: "Director of Public Relations", isDirector: true, image: "/assets/TeamYM/Public Relations/Rafa/Edit.png" },
+      { name: "Miska Okta Diva Aria", role: "Public Relations Manager", isDirector: false, image: "/assets/TeamYM/Public Relations/Miska/Edit.png" },
       { name: "Nisrina Maharani", role: "Community Relations Manager", isDirector: false, image: "/assets/TeamYM/Public Relations/Nisrina/Edit.png" },
     ],
   },
@@ -61,8 +61,8 @@ const teamStructure: DivisionGroup[] = [
     badge: "Pemasaran & Desain",
     badgeBg: "bg-teal-500/15 text-teal-300 border-teal-500/40",
     members: [
-      { name: "Jessica Olivia", role: "Creative Design Manager", isDirector: false, image: "/assets/TeamYM/Marketing/Jessica/Edit.png" },
       { name: "Nabila Safa Lesmana", role: "Director of Marketing", isDirector: true, image: "/assets/TeamYM/Marketing/Nabila/Edit.png" },
+      { name: "Jessica Olivia", role: "Creative Design Manager", isDirector: false, image: "/assets/TeamYM/Marketing/Jessica/Edit.png" },
       { name: "Nadila", role: "Event Manager", isDirector: false, image: "/assets/TeamYM/Marketing/Nadila/Gif.png" },
       { name: "Alyya Izzati Fadhilah", role: "Brand Manager", isDirector: false, image: "/assets/TeamYM/Marketing/Alyya/Edit.png" },
     ],
@@ -82,8 +82,8 @@ const teamStructure: DivisionGroup[] = [
     badge: "Keuangan & Akuntansi",
     badgeBg: "bg-cyan-500/15 text-cyan-300 border-cyan-500/40",
     members: [
-      { name: "Muhammad Azriel Setiawan", role: "Finance Manager", isDirector: false, image: "/assets/TeamYM/Finance/Azriel/Edit.png" },
       { name: "Senita Aprilia", role: "Director of Finance", isDirector: true, image: "/assets/TeamYM/Finance/Senita/Edit.png" },
+      { name: "Muhammad Azriel Setiawan", role: "Finance Manager", isDirector: false, image: "/assets/TeamYM/Finance/Azriel/Edit.png" },
       { name: "Muhammad Attariq Zildjian", role: "Finance Manager", isDirector: false, image: "/assets/TeamYM/Finance/Tariq/Edit.png" },
     ],
   },
@@ -93,9 +93,9 @@ const teamStructure: DivisionGroup[] = [
     badge: "Manufaktur & Game Design",
     badgeBg: "bg-indigo-500/15 text-indigo-300 border-indigo-500/40",
     members: [
+      { name: "Muhammad Fahri Ismail", role: "Director of Production", isDirector: true, image: "/assets/TeamYM/Production/Fahri/Edit.png" },
       { name: "Ziffara Anindya Putri", role: "R&D Manager", isDirector: false, image: "/assets/TeamYM/Production/Ziffara/Edit.png" },
       { name: "Bilqist Aulya Zahra", role: "Production Manager", isDirector: false, image: "/assets/TeamYM/Production/Bilqist/Edit.png" },
-      { name: "Muhammad Fahri Ismail", role: "Director of Production", isDirector: true, image: "/assets/TeamYM/Production/Fahri/Edit.png" },
       { name: "Charisa Rivani Salsabila", role: "Purchasing Manager", isDirector: false, image: "/assets/TeamYM/Production/Charisa/Edit.png" },
       { name: "Maura Natali Putri", role: "Quality Control Manager", isDirector: false, image: "/assets/TeamYM/Production/Maura/Edit.png" },
     ],
@@ -140,7 +140,7 @@ export const ScenePeople: React.FC = () => {
           </div>
         </div>
 
-        {/* Struktur Divisi Rapi: Ukuran Kartu Setara dengan Director di Tengah */}
+        {/* Struktur Divisi Rapi: Ukuran Kartu Setara dengan Director di Sebelah Kiri */}
         <div className="space-y-16 sm:space-y-24">
           {teamStructure.map((group) => (
             <motion.div

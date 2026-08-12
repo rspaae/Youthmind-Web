@@ -9,91 +9,51 @@ export const SceneVision: React.FC = () => {
   return (
     <section
       id="vision"
-      className="py-20 sm:py-32 bg-[#0E2A2C] text-white relative border-t border-[#4BA0A4]/20 overflow-hidden"
+      className="py-24 sm:py-36 bg-[#0E2A2C] text-white relative border-t border-[#4BA0A4]/20 overflow-hidden"
     >
-      {/* Ambient background glow */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#4BA0A4]/15 rounded-full blur-[140px]" />
-      </div>
+      {/* Background Ambient Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#4BA0A4]/12 rounded-full blur-[180px] pointer-events-none" />
 
-      <Container size="small">
+      <Container>
         <motion.div
-          initial={{ opacity: 0, y: 32 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.65, ease: "easeOut" }}
-          className="relative"
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-5xl mx-auto relative z-10"
         >
-          {/* Glass card */}
-          <div className="bg-[#194447] backdrop-blur-xl rounded-3xl border border-[#4BA0A4]/40 shadow-2xl overflow-hidden">
-            {/* Top accent bar */}
-            <div className="h-1 w-full bg-gradient-to-r from-transparent via-[#4BA0A4] to-transparent" />
+          {/* Main Vision Glass Banner */}
+          <div className="relative bg-gradient-to-b from-[#133A3D] via-[#0F2F31] to-[#0E2A2C] border border-[#4BA0A4]/35 rounded-3xl p-8 sm:p-14 lg:p-16 shadow-2xl overflow-hidden group">
+            {/* Top Glowing Edge */}
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#4BA0A4] to-transparent opacity-80" />
 
-            <div className="px-6 sm:px-12 py-10 sm:py-14 space-y-8 text-center">
-              {/* Badge */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.1 }}
-                className="flex flex-col items-center gap-3"
-              >
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#4BA0A4]/20 border border-[#4BA0A4]/40 flex items-center justify-center shadow-md">
-                  <Eye className="w-6 h-6 sm:w-7 sm:h-7 text-[#59AAAA]" />
-                </div>
-                <span className="text-[11px] sm:text-xs font-extrabold uppercase tracking-widest text-[#59AAAA] bg-[#4BA0A4]/20 border border-[#4BA0A4]/30 px-4 py-1.5 rounded-full inline-block">
-                  Visi Perusahaan
-                </span>
-              </motion.div>
+            {/* Giant Watermark Background Text */}
+            <span className="absolute -top-4 sm:-top-6 right-4 sm:right-8 text-5xl sm:text-9xl font-black text-[#4BA0A4]/10 pointer-events-none select-none font-mono tracking-tighter">
+              VISION
+            </span>
 
-              {/* Label Visi */}
-              <motion.h2
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.15 }}
-                className="text-xl sm:text-3xl font-black tracking-tight text-white"
-              >
-                <span className="text-image-clip">Visi</span>
-              </motion.h2>
-
-              {/* Divider */}
-              <div className="flex items-center justify-center gap-2">
-                <div className="h-px w-16 bg-gradient-to-r from-transparent to-[#4BA0A4]" />
-                <div className="w-1.5 h-1.5 rounded-full bg-[#4BA0A4]" />
-                <div className="h-px w-16 bg-gradient-to-l from-transparent to-[#4BA0A4]" />
+            <div className="relative z-10 space-y-8 text-center max-w-4xl mx-auto">
+              {/* Badge Header */}
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4BA0A4]/20 border border-[#4BA0A4]/30 text-[#59AAAA] text-[11px] sm:text-xs font-extrabold uppercase tracking-widest">
+                <Eye className="w-3.5 h-3.5 text-[#4BA0A4]" />
+                <span>Our North Star · Visi Perusahaan</span>
               </div>
 
-              {/* Teks Visi */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-10px" }}
-                transition={{ duration: 0.5, delay: 0.22 }}
-                className="text-base sm:text-xl lg:text-2xl text-white leading-relaxed sm:leading-loose font-normal max-w-2xl mx-auto"
-              >
-                Menjadi{" "}
-                <span className="text-[#59AAAA] font-extrabold">
-                  pelopor dalam menciptakan pengalaman permainan yang seru dan
-                  edukatif
-                </span>{" "}
-                untuk meningkatkan kesehatan mental, mendorong kebahagiaan dan
-                ketenangan melalui{" "}
-                <span className="text-[#59AAAA] font-extrabold">
-                  kesadaran dan kepekaan terhadap lingkungan sekitar
-                </span>
-                .
-              </motion.p>
-
-              {/* Decorative quote marks */}
-              <div className="flex items-center justify-center gap-4 pt-2 opacity-30 select-none">
-                <span className="text-5xl sm:text-7xl font-black text-[#4BA0A4] leading-none">"</span>
-                <span className="text-5xl sm:text-7xl font-black text-[#4BA0A4] leading-none">"</span>
+              {/* Main Statement */}
+              <div className="space-y-4">
+                <p className="text-2xl sm:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight">
+                  "Menjadi pelopor permainan edukatif yang menginspirasi{" "}
+                  <span className="text-[#59AAAA]">kebahagiaan, ketenangan,</span>{" "}
+                  dan kesadaran{" "}
+                  <span className="text-image-clip">kesehatan mental</span>."
+                </p>
               </div>
+
+              {/* Description Detail */}
+              <p className="text-xs sm:text-base text-[#94D4D4] font-medium leading-relaxed max-w-2xl mx-auto pt-2">
+                YouthMind Company berkomitmen mendorong kesehatan emosional generasi muda melalui pengalaman belajar berbasis board game yang edukatif, empati, dan ramah lingkungan.
+              </p>
             </div>
-
-            {/* Bottom accent bar */}
-            <div className="h-px w-full bg-gradient-to-r from-transparent via-[#4BA0A4]/40 to-transparent" />
           </div>
         </motion.div>
       </Container>
