@@ -38,14 +38,14 @@ export const HeroScene: React.FC = () => {
         {/* Visually Hidden Accessible H1 Heading for Page Hierarchy */}
         <h1 className="sr-only">YouthMind Company — Student Company SMKN 11 Bandung</h1>
 
-        {/* Centered YM Logo - Moderate & Crisp */}
+        {/* Centered YM Logo & Tagline */}
         <motion.div
           style={isMounted ? { opacity: logoOpacity, scale: logoScale, y: logoY } : { opacity: 1 }}
           suppressHydrationWarning
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-center justify-center"
+          className="flex flex-col items-center justify-center text-center space-y-3"
         >
           <motion.div
             animate={{ y: [0, -8, 0] }}
@@ -67,6 +67,15 @@ export const HeroScene: React.FC = () => {
               className="object-contain"
             />
           </motion.div>
+
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#194447] border border-[#4BA0A4]/40 text-[#94D4D4] text-[10px] sm:text-xs font-bold shadow-lg">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#4BA0A4] animate-ping" />
+            <span>Student Company SMKN 11 Bandung</span>
+          </div>
+
+          <p className="text-xs sm:text-sm text-[#E0F4F4] font-medium max-w-xs sm:max-w-md leading-relaxed px-2">
+            Pelopor Board Game Edukasi Kesehatan Mental Remaja
+          </p>
         </motion.div>
       </Container>
 

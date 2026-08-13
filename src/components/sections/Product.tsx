@@ -16,7 +16,7 @@ const products = [
     description:
       "Permainan papan berbasis ludo yang dirancang untuk membuka percakapan tentang kesehatan mental. Setiap langkah di papan membawa pemain pada skenario nyata tentang emosi, dukungan sosial, dan cara menghadapi tekanan.",
     specs: [
-      { label: "Usia", value: "12+ Tahun" },
+      { label: "Usia", value: "13+ Tahun" },
       { label: "Pemain", value: "3–6 Orang" },
       { label: "Durasi", value: "30–45 Menit" },
     ],
@@ -31,7 +31,7 @@ const products = [
     description:
       "Adaptasi Monopoly bertemakan dunia coding dan teknologi, dipadukan dengan momen refleksi kesehatan mental. Pemain belajar kolaborasi, manajemen stres, dan resiliensi dalam atmosfer kompetisi yang menyenangkan.",
     specs: [
-      { label: "Usia", value: "12+ Tahun" },
+      { label: "Usia", value: "13+ Tahun" },
       { label: "Pemain", value: "2–6 Orang" },
       { label: "Durasi", value: "20–30 Menit" },
     ],

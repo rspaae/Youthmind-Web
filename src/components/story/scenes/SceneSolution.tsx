@@ -171,7 +171,7 @@ export const SceneSolution: React.FC = () => {
               <div className="grid grid-cols-3 gap-2 text-center text-xs text-[#E0F4F4] font-semibold pt-1">
                 <div className="p-2.5 sm:p-3 rounded-xl bg-[#0E2A2C] border border-[#4BA0A4]/30 shadow-sm">
                   <span className="block text-[#4BA0A4] text-[9px] sm:text-[10px] uppercase font-bold">Rekomendasi</span>
-                  <span className="text-[11px] sm:text-xs font-bold text-white">Usia 15+</span>
+                  <span className="text-[11px] sm:text-xs font-bold text-white">Usia 13+</span>
                 </div>
                 <div className="p-2.5 sm:p-3 rounded-xl bg-[#0E2A2C] border border-[#4BA0A4]/30 shadow-sm">
                   <span className="block text-[#4BA0A4] text-[9px] sm:text-[10px] uppercase font-bold">Kapasitas</span>
@@ -221,7 +221,7 @@ export const SceneSolution: React.FC = () => {
               <div className="grid grid-cols-3 gap-2 text-center text-xs text-[#E0F4F4] font-semibold pt-1">
                 <div className="p-2.5 sm:p-3 rounded-xl bg-[#0E2A2C] border border-[#4BA0A4]/30 shadow-sm">
                   <span className="block text-[#4BA0A4] text-[9px] sm:text-[10px] uppercase font-bold">Rekomendasi</span>
-                  <span className="text-[11px] sm:text-xs font-bold text-white">Usia 15+</span>
+                  <span className="text-[11px] sm:text-xs font-bold text-white">Usia 13+</span>
                 </div>
                 <div className="p-2.5 sm:p-3 rounded-xl bg-[#0E2A2C] border border-[#4BA0A4]/30 shadow-sm">
                   <span className="block text-[#4BA0A4] text-[9px] sm:text-[10px] uppercase font-bold">Durasi</span>

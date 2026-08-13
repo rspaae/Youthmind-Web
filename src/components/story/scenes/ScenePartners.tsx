@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
 import Image from "next/image";
-import { Handshake, Award, Building2, GraduationCap, Globe, CheckCircle2 } from "lucide-react";
+import { Handshake, Award, Building2, GraduationCap, Globe, CheckCircle2, Radio, Users } from "lucide-react";
 
 const partners = [
   {
@@ -55,6 +55,30 @@ const partners = [
     topGradient: "from-emerald-400 via-teal-400 to-transparent",
     hoverBorder: "hover:border-emerald-400/50",
   },
+  {
+    id: "oz-cool-school",
+    name: "OZ Cool School",
+    role: "Mitra Media & Komunitas Sekolah",
+    category: "Youth Media Partner",
+    desc: "Wadah ekspresi & publikasi media bagi pelajar serta dukungan kampanye edukasi di lingkungan sekolah.",
+    logo: "/assets/partners/oz-cool-school.png",
+    icon: Radio,
+    badgeColor: "bg-orange-500/15 text-orange-300 border-orange-500/30",
+    topGradient: "from-orange-400 via-amber-400 to-transparent",
+    hoverBorder: "hover:border-orange-400/50",
+  },
+  {
+    id: "fkkmbk-upi",
+    name: "FKKMBK UPI",
+    role: "Mitra Kolaborasi Bimbingan Konseling",
+    category: "Academic Partner",
+    desc: "Forum Komunikasi Keluarga Mahasiswa BK UPI — mitra akademis dalam kajian dan edukasi bimbingan konseling.",
+    logo: "/assets/partners/fkkmbk-upi.png",
+    icon: Users,
+    badgeColor: "bg-cyan-500/15 text-cyan-300 border-cyan-500/30",
+    topGradient: "from-cyan-400 via-blue-400 to-transparent",
+    hoverBorder: "hover:border-cyan-400/50",
+  },
 ];
 
 export const ScenePartners: React.FC = () => {
@@ -87,7 +111,7 @@ export const ScenePartners: React.FC = () => {
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {partners.map((partner, idx) => {
               const CategoryIcon = partner.icon;
               return (
@@ -112,17 +136,13 @@ export const ScenePartners: React.FC = () => {
                     </div>
 
                     {/* Logo Display Frame */}
-                    <div className="bg-white/95 rounded-2xl p-4 flex items-center justify-center h-24 border border-[#4BA0A4]/25 shadow-inner group-hover:border-[#4BA0A4] transition-colors">
+                    <div className="bg-white/95 rounded-2xl p-3 flex items-center justify-center h-24 border border-[#4BA0A4]/25 shadow-inner group-hover:border-[#4BA0A4] transition-colors">
                       <div className="relative w-full h-full flex items-center justify-center">
                         {partner.logo ? (
-                          <Image
+                          <img
                             src={partner.logo}
                             alt={`${partner.name} Logo`}
-                            width={180}
-                            height={60}
-                            loading="lazy"
-                            sizes="180px"
-                            className="max-h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                            className="max-h-16 max-w-[180px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105"
                           />
                         ) : (
                           <span className="text-[#0E2A2C] font-extrabold text-sm text-center">

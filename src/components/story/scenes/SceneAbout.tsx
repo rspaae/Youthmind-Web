@@ -128,33 +128,19 @@ export const SceneAbout: React.FC = () => {
             {/* Top Glowing Edge */}
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#4BA0A4] to-transparent opacity-80" />
 
-            {/* Floating Element 1: Top Left Pill Badge */}
-            <motion.div
-              animate={{
-                x: [-8, 8, -8],
-                y: [-6, 6, -6],
-              }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-3 left-4 sm:left-12 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#194447] border-2 border-[#4BA0A4] text-[#94D4D4] text-[9px] sm:text-xs font-black shadow-xl flex items-center gap-1.5 sm:gap-2 pointer-events-none z-20"
-            >
-              <span className="w-2 h-2 rounded-full bg-[#4BA0A4] animate-ping" />
-              <span className="truncate">SMKN 11 Bandung</span>
-            </motion.div>
-
-            {/* Floating Element 2: Bottom Right Interactive Tag */}
-            <motion.div
-              animate={{
-                x: [8, -8, 8],
-                y: [6, -6, 6],
-              }}
-              transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-3 right-4 sm:right-12 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#194447] border-2 border-[#4BA0A4] text-[#59AAAA] text-[9px] sm:text-xs font-black shadow-xl flex items-center gap-1 sm:gap-1.5 pointer-events-none z-20"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-[#4BA0A4]" />
-              <span className="truncate">Student Company</span>
-            </motion.div>
-
             <div className="max-w-3xl mx-auto text-center space-y-5">
+              {/* Static Badges (SMKN 11 Bandung & Student Company) */}
+              <div className="flex flex-wrap items-center justify-center gap-2.5 mb-1">
+                <div className="px-3.5 py-1.5 rounded-full bg-[#194447] border border-[#4BA0A4]/40 text-[#94D4D4] text-xs font-bold flex items-center gap-2 shadow-sm">
+                  <img src="/assets/partners/smkn11.png" alt="SMKN 11 Bandung Logo" className="w-4 h-4 object-contain" />
+                  <span>SMKN 11 Bandung</span>
+                </div>
+                <div className="px-3.5 py-1.5 rounded-full bg-[#194447] border border-[#4BA0A4]/40 text-[#59AAAA] text-xs font-bold flex items-center gap-2 shadow-sm">
+                  <img src="/assets/logo-ym.png" alt="YouthMind Logo" className="w-4 h-4 object-contain" />
+                  <span>Student Company</span>
+                </div>
+              </div>
+
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4BA0A4]/20 border border-[#4BA0A4]/30 text-[#59AAAA] text-[11px] sm:text-xs font-extrabold tracking-wider uppercase">
                 <Zap className="w-3.5 h-3.5 text-[#4BA0A4] animate-pulse" />
                 <span>Tentang YouthMind Company</span>
