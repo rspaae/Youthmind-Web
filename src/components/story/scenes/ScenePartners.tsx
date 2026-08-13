@@ -3,8 +3,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
+import Image from "next/image";
 import { Handshake, Award, Building2, GraduationCap, Globe, CheckCircle2, Radio, Users } from "lucide-react";
-import { useIsMobile } from "@/hooks/useIsMobile";
 
 const partners = [
   {
@@ -82,8 +82,6 @@ const partners = [
 ];
 
 export const ScenePartners: React.FC = () => {
-  const isMobile = useIsMobile();
-
   return (
     <section id="partners" className="py-24 sm:py-32 bg-[#123638] text-white border-t border-[#4BA0A4]/20 relative overflow-hidden">
       {/* Giant Translucent Watermark */}
@@ -119,10 +117,10 @@ export const ScenePartners: React.FC = () => {
               return (
                 <motion.div
                   key={partner.id}
-                  initial={isMobile ? false : { opacity: 0, y: 25 }}
-                  whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
-                  viewport={isMobile ? undefined : { once: true }}
-                  transition={{ duration: 0.4, delay: isMobile ? 0 : idx * 0.1 }}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: idx * 0.1 }}
                   className={`relative bg-gradient-to-b from-[#194447] via-[#143B3D] to-[#0E2A2C] border border-[#4BA0A4]/30 rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 shadow-xl group hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#4BA0A4]/15 ${partner.hoverBorder}`}
                 >
                   {/* Glowing Top Edge Line */}
@@ -187,3 +185,4 @@ export const ScenePartners: React.FC = () => {
 };
 
 export default ScenePartners;
+

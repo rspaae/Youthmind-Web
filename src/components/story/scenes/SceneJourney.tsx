@@ -5,7 +5,6 @@ import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import { Rocket, Flame, TrendingUp, Users, Star, Trophy, ImageIcon } from "lucide-react";
-import { useIsMobile } from "@/hooks/useIsMobile";
 
 type Milestone = {
   year: string;
@@ -148,19 +147,13 @@ function PhotoSlot({
 
 /* ─── Scene Utama ─────────────────────────────────────────────────── */
 export const SceneJourney: React.FC = () => {
-  const isMobile = useIsMobile();
   const containerRef = useRef<HTMLDivElement>(null);
   const shouldReduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start center", "end center"],
   });
-  
-  const lineHeight = useTransform(
-    scrollYProgress,
-    [0, 1],
-    shouldReduceMotion || isMobile ? ["100%", "100%"] : ["0%", "100%"]
-  );
+  const lineHeight = useTransform(scrollYProgress, [0, 1], shouldReduceMotion ? ["100%", "100%"] : ["0%", "100%"]);
 
   return (
     <section
@@ -208,10 +201,10 @@ export const SceneJourney: React.FC = () => {
               return (
                 <motion.div
                   key={idx}
-                  initial={isMobile ? false : { opacity: 0, y: 24 }}
-                  whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
-                  viewport={isMobile ? undefined : { once: true, margin: "-60px" }}
-                  transition={{ duration: 0.5, delay: isMobile ? 0 : 0.06 }}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.5, delay: 0.06 }}
                   className="relative grid grid-cols-2 gap-3 sm:gap-10 items-center"
                 >
                   {/* Dot timeline — selalu di tengah */}

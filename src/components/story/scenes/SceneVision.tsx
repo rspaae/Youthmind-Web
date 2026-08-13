@@ -4,11 +4,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
 import { Eye } from "lucide-react";
-import { useIsMobile } from "@/hooks/useIsMobile";
 
 export const SceneVision: React.FC = () => {
-  const isMobile = useIsMobile();
-
   return (
     <section
       id="vision"
@@ -19,9 +16,9 @@ export const SceneVision: React.FC = () => {
 
       <Container>
         <motion.div
-          initial={isMobile ? false : { opacity: 0, y: 30 }}
-          whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
-          viewport={isMobile ? undefined : { once: true }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="max-w-5xl mx-auto relative z-10"
         >

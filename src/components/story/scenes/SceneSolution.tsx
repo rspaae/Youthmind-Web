@@ -5,7 +5,6 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import Container from "@/components/ui/Container";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Layers } from "lucide-react";
-import { useIsMobile } from "@/hooks/useIsMobile";
 
 interface ProductGalleryProps {
   images: string[];
@@ -107,7 +106,6 @@ const ProductGallery: React.FC<ProductGalleryProps> = ({ images, title }) => {
 };
 
 export const SceneSolution: React.FC = () => {
-  const isMobile = useIsMobile();
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -147,8 +145,8 @@ export const SceneSolution: React.FC = () => {
         {/* Real Product Card 1: LudoLadder */}
         <div className="space-y-10 sm:space-y-16">
           <motion.div
-            style={isMobile ? undefined : { scale: scaleProduct1, opacity: opacityProduct1 }}
-            whileHover={isMobile ? undefined : { scale: 1.02, y: -6 }}
+            style={{ scale: scaleProduct1, opacity: opacityProduct1 }}
+            whileHover={{ scale: 1.02, y: -6 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
             className="bg-[#194447] hover:bg-[#1E5256] text-white rounded-3xl p-5 sm:p-12 border border-[#4BA0A4]/40 hover:border-[#4BA0A4] shadow-2xl hover:shadow-teal-500/20 overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center cursor-pointer transition-all duration-300"
           >
@@ -193,7 +191,7 @@ export const SceneSolution: React.FC = () => {
 
           {/* Real Product Card 2: Codenopoly */}
           <motion.div
-            style={isMobile ? undefined : { scale: scaleProduct2, opacity: opacityProduct2 }}
+            style={{ scale: scaleProduct2, opacity: opacityProduct2 }}
             whileHover={{ scale: 1.02, y: -6 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
             className="bg-[#194447] hover:bg-[#1E5256] text-white rounded-3xl p-5 sm:p-12 border border-[#4BA0A4]/40 hover:border-[#4BA0A4] shadow-2xl hover:shadow-teal-500/20 overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center cursor-pointer transition-all duration-300"
