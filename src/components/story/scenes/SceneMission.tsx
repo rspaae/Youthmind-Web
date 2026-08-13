@@ -3,7 +3,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
-import { Target, CheckCircle2, Sparkles } from "lucide-react";
+import { Target, CheckCircle2 } from "lucide-react";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const missions = [
   {
@@ -29,6 +30,8 @@ const missions = [
 ];
 
 export const SceneMission: React.FC = () => {
+  const isMobile = useIsMobile();
+
   return (
     <section
       id="mission"
@@ -65,10 +68,10 @@ export const SceneMission: React.FC = () => {
             {missions.map((mission, idx) => (
               <motion.div
                 key={mission.number}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.08 }}
+                initial={isMobile ? false : { opacity: 0, x: -20 }}
+                whileInView={isMobile ? undefined : { opacity: 1, x: 0 }}
+                viewport={isMobile ? undefined : { once: true }}
+                transition={{ duration: 0.4, delay: isMobile ? 0 : idx * 0.08 }}
                 className="relative group bg-gradient-to-r from-[#194447] via-[#143B3D] to-[#0E2A2C] border border-[#4BA0A4]/30 hover:border-[#4BA0A4] rounded-2xl sm:rounded-3xl p-5 sm:p-6 flex items-center justify-between gap-5 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-[#4BA0A4]/15 hover:translate-x-2"
               >
                 {/* Left Glowing Accent Edge */}
@@ -102,5 +105,3 @@ export const SceneMission: React.FC = () => {
 };
 
 export default SceneMission;
-
-

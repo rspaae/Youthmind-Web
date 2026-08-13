@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
 import Image from "next/image";
 import { Sparkles, ShieldCheck, Star } from "lucide-react";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 interface Member {
   name: string;
@@ -110,6 +111,8 @@ const getInitials = (name: string) => {
 };
 
 export const ScenePeople: React.FC = () => {
+  const isMobile = useIsMobile();
+
   return (
     <section id="team" className="py-20 sm:py-36 bg-[#0E2A2C] text-white relative border-t border-[#4BA0A4]/20 overflow-hidden">
       {/* Giant Translucent Watermark */}
@@ -123,26 +126,18 @@ export const ScenePeople: React.FC = () => {
       <Container>
         {/* Header Seksi Terpusat */}
         <div className="max-w-3xl mx-auto text-center space-y-4 mb-16 sm:mb-24 px-2">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4BA0A4]/20 border border-[#4BA0A4]/30 text-[#59AAAA] text-[11px] sm:text-xs font-extrabold tracking-wide">
-            <Sparkles className="w-3.5 h-3.5 text-[#4BA0A4] animate-pulse" />
-            <span>Struktur Perusahaan Resmi · Second Generation</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#194447] border border-[#4BA0A4]/30 text-[#94D4D4] text-[11px] font-extrabold uppercase tracking-widest">
+            <Sparkles className="w-3.5 h-3.5 text-[#4BA0A4]" />
+            <span>Talenta & Kreator Muda</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
-            Board of Directors & Management<br />
-            <span className="text-image-clip inline-block">YouthMind Company</span>
+          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
+            Tim Dibalik YouthMind Company
           </h2>
 
-          <p className="text-[#94D4D4] text-xs sm:text-base max-w-xl mx-auto leading-relaxed font-medium">
-            Struktur Kepemimpinan Divisi.
+          <p className="text-xs sm:text-base text-[#94D4D4] leading-relaxed font-medium">
+            Siswa-siswi SMKN 11 Bandung yang berdedikasi menciptakan karya edukatif dan berdampak positif bagi kesehatan mental remaja.
           </p>
-
-          {/* Centered Decorative Divider */}
-          <div className="flex items-center justify-center gap-2 pt-2">
-            <div className="h-[2px] w-12 bg-gradient-to-r from-transparent via-[#4BA0A4] to-[#4BA0A4]" />
-            <div className="w-2.5 h-2.5 rounded-full bg-[#4BA0A4] shadow-md shadow-teal-400" />
-            <div className="h-[2px] w-12 bg-gradient-to-l from-transparent via-[#4BA0A4] to-[#4BA0A4]" />
-          </div>
         </div>
 
         {/* Struktur Divisi Rapi: Ukuran Kartu Setara dengan Director di Sebelah Kiri */}
@@ -150,9 +145,9 @@ export const ScenePeople: React.FC = () => {
           {teamStructure.map((group) => (
             <motion.div
               key={group.id}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
+              initial={isMobile ? false : { opacity: 0, y: 25 }}
+              whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
+              viewport={isMobile ? undefined : { once: true, margin: "-40px" }}
               transition={{ duration: 0.4 }}
               className="space-y-6 sm:space-y-8"
             >

@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
 import { Leaf, Heart, Sparkles, ShieldCheck, Zap, Star } from "lucide-react";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const companyValues = [
   {
@@ -55,6 +56,7 @@ const companyValues = [
 ];
 
 export const SceneAbout: React.FC = () => {
+  const isMobile = useIsMobile();
   return (
     <section id="about" className="py-24 sm:py-36 bg-[#0E2A2C] border-t border-[#4BA0A4]/20 text-white relative overflow-hidden">
       {/* Giant Translucent Watermark */}
@@ -183,10 +185,10 @@ export const SceneAbout: React.FC = () => {
                 return (
                   <motion.div
                     key={val.id}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: idx * 0.15 }}
+                    initial={isMobile ? false : { opacity: 0, y: 30 }}
+                    whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
+                    viewport={isMobile ? undefined : { once: true }}
+                    transition={{ duration: 0.5, delay: isMobile ? 0 : idx * 0.15 }}
                     className={`relative bg-gradient-to-b from-[#163E41] via-[#123638] to-[#0E2A2C] border border-[#4BA0A4]/30 rounded-3xl p-7 sm:p-8 flex flex-col justify-between transition-all duration-500 shadow-xl group hover:shadow-2xl hover:shadow-[#4BA0A4]/15 ${val.hoverBorder} ${
                       val.isFeatured ? "lg:-translate-y-3 lg:border-[#4BA0A4]/60 ring-1 ring-[#4BA0A4]/30" : ""
                     }`}
