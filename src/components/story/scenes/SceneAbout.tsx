@@ -195,7 +195,7 @@ export const SceneAbout: React.FC = () => {
                     <div className={`absolute top-0 left-8 right-8 h-[2px] bg-gradient-to-r ${val.topGradient} opacity-70 group-hover:opacity-100 transition-opacity duration-300`} />
 
                     {/* Giant Translucent Watermark Number */}
-                    <span className="absolute top-4 right-6 text-6xl font-black font-mono tracking-tighter text-ym-muted/20 group-hover:text-ym-accent/40 transition-colors duration-500 pointer-events-none select-none">
+                    <span className="absolute bottom-6 right-6 text-6xl font-black font-mono tracking-tighter text-ym-muted/20 group-hover:text-ym-accent/40 transition-colors duration-500 pointer-events-none select-none">
                       {val.num}
                     </span>
 

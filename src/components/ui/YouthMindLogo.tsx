@@ -31,7 +31,7 @@ export const YouthMindLogo: React.FC<YouthMindLogoProps> = ({
     setMounted(true);
   }, []);
 
-  const logoSrc = mounted && isLight ? "/assets/logo-ym-light.png?v=2" : "/assets/logo-ym.png?v=2";
+  const logoSrc = mounted && isLight ? "/assets/logo-ym-light.png" : "/assets/logo-ym.png";
 
   /* ── icon-only ─────────────────────────────────────────────────── */
   if (variant === "iconOnly") {

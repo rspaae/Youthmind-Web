@@ -33,7 +33,7 @@ export const HeroScene: React.FC = () => {
   const logoScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.9]);
   const logoY = useTransform(scrollYProgress, [0, 0.5], [0, -30]);
 
-  const logoSrc = isMounted && isLight ? "/assets/logo-ym-light.png?v=2" : "/assets/logo-ym.png?v=2";
+  const logoSrc = isMounted && isLight ? "/assets/logo-ym-light.png" : "/assets/logo-ym.png";
 
   return (
     <section

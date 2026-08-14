@@ -28,9 +28,9 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         document.documentElement.classList.remove("dark");
       }
     } else {
-      // Default to dark for YouthMind brand unless system explicitly prefers light
+      // Follow system preference for first-time visitors
       const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-      const initial = prefersLight ? "light" : "dark";
+      const initial: Theme = prefersLight ? "light" : "dark";
       setThemeState(initial);
       document.documentElement.setAttribute("data-theme", initial);
       if (initial === "dark") {
