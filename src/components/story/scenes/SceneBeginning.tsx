@@ -14,7 +14,7 @@ export const SceneBeginning: React.FC = () => {
 
       <Container size="small">
         <div className="space-y-6 sm:space-y-8 text-center px-2">
-          <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-teal-900 dark:text-teal-200 bg-[#4BA0A4]/15 px-3.5 py-1 rounded-full border border-[#4BA0A4]/30 inline-block">
+          <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-ym-accent bg-[#4BA0A4]/15 px-3.5 py-1 rounded-full border border-[#4BA0A4]/30 inline-block">
             Ruang Rasa & Cerita
           </span>
 

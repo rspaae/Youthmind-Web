@@ -16,7 +16,7 @@ export const ScenePhilosophy: React.FC = () => {
       <Container>
         {/* Header Seksi */}
         <div className="max-w-3xl mx-auto text-center space-y-3 sm:space-y-4 mb-12 sm:mb-20 px-2">
-          <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-teal-900 dark:text-teal-200 bg-[#4BA0A4]/15 px-3.5 py-1 rounded-full border border-[#4BA0A4]/30 inline-block">
+          <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-ym-accent bg-[#4BA0A4]/15 px-3.5 py-1 rounded-full border border-[#4BA0A4]/30 inline-block">
             Identitas & Filosofi
           </span>
           <h2 className="text-2xl sm:text-5xl font-black tracking-tight text-ym-heading">

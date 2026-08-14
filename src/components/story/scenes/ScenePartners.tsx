@@ -96,7 +96,7 @@ export const ScenePartners: React.FC = () => {
         <div className="space-y-16 max-w-6xl mx-auto relative z-10">
           {/* Header */}
           <div className="text-center space-y-4 max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#4BA0A4]/15 border border-[#4BA0A4]/30 text-teal-900 dark:text-teal-200 text-[11px] font-extrabold uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#4BA0A4]/15 border border-[#4BA0A4]/30 text-ym-accent text-[11px] font-extrabold uppercase tracking-widest">
               <Handshake className="w-3.5 h-3.5 text-[#4BA0A4]" />
               <span>Kemitraan Strategis</span>
             </div>

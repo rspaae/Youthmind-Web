@@ -72,7 +72,7 @@ export const SceneFinal: React.FC = () => {
         <div className="space-y-16 max-w-6xl mx-auto relative z-10">
           {/* Header Seksi Perusahaan */}
           <div className="text-center space-y-4 max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4BA0A4]/15 border border-[#4BA0A4]/30 text-teal-900 dark:text-teal-200 text-[11px] sm:text-xs font-black uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4BA0A4]/15 border border-[#4BA0A4]/30 text-ym-accent text-[11px] sm:text-xs font-black uppercase tracking-widest">
               <Building2 className="w-4 h-4 text-[#4BA0A4]" />
               <span>Kantor Pusat & Layanan Kemitraan</span>
             </div>

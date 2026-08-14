@@ -119,7 +119,7 @@ export const SceneSolution: React.FC = () => {
       <Container>
         {/* Header Seksi */}
         <div className="max-w-3xl mx-auto text-center space-y-3 sm:space-y-4 mb-12 sm:mb-20 px-2">
-          <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-teal-900 dark:text-teal-200 bg-[#4BA0A4]/15 px-3.5 py-1 rounded-full border border-[#4BA0A4]/30 inline-block">
+          <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-ym-accent bg-[#4BA0A4]/15 px-3.5 py-1 rounded-full border border-[#4BA0A4]/30 inline-block">
             Inovasi Permainan Edukasi
           </span>
           <h2 className="text-2xl sm:text-5xl font-black tracking-tight text-ym-heading">
@@ -142,7 +142,7 @@ export const SceneSolution: React.FC = () => {
           >
             <div className="lg:col-span-6 space-y-4 sm:space-y-6">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full bg-[#4BA0A4]/15 text-teal-900 dark:text-teal-200 border border-[#4BA0A4]/30">
+                <span className="text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full bg-[#4BA0A4]/15 text-ym-accent border border-[#4BA0A4]/30">
                   Board Game Edukasi 01
                 </span>
                 <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-md bg-[#4BA0A4] text-[#0E2A2C]">
@@ -194,7 +194,7 @@ export const SceneSolution: React.FC = () => {
 
             <div className="lg:col-span-6 order-1 lg:order-2 space-y-4 sm:space-y-6">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full bg-[#4BA0A4]/15 text-teal-900 dark:text-teal-200 border border-[#4BA0A4]/30">
+                <span className="text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full bg-[#4BA0A4]/15 text-ym-accent border border-[#4BA0A4]/30">
                   Board Game Edukasi 02
                 </span>
                 <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-md bg-[#4BA0A4] text-[#0E2A2C]">

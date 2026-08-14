@@ -46,8 +46,8 @@ export const SceneMission: React.FC = () => {
         <div className="space-y-14 max-w-4xl mx-auto relative z-10">
           {/* Header */}
           <div className="text-center space-y-4 max-w-xl mx-auto relative z-10">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4BA0A4]/15 border border-[#4BA0A4]/30 text-teal-900 dark:text-teal-200 text-[11px] sm:text-xs font-extrabold uppercase tracking-widest">
-              <Target className="w-3.5 h-3.5 text-[#4BA0A4]" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4BA0A4]/15 border border-[#4BA0A4]/30 text-ym-accent text-[11px] sm:text-xs font-extrabold uppercase tracking-widest">
+              <Target className="w-3.5 h-3.5" />
               <span>Misi Utama Perusahaan</span>
             </div>
 

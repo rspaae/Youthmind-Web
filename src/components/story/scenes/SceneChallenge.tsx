@@ -27,7 +27,7 @@ export const SceneChallenge: React.FC = () => {
 
       <Container>
         <div className="max-w-3xl mx-auto text-center space-y-4 mb-12 sm:mb-20 px-2">
-          <span className="text-xs font-bold uppercase tracking-widest text-teal-900 dark:text-teal-200 bg-[#4BA0A4]/15 px-3.5 py-1 rounded-full border border-[#4BA0A4]/30 inline-block">
+          <span className="text-xs font-bold uppercase tracking-widest text-ym-accent bg-[#4BA0A4]/15 px-3.5 py-1 rounded-full border border-[#4BA0A4]/30 inline-block">
             Mengapa YouthMind Ada
           </span>
           <h2 className="text-2xl sm:text-5xl font-black tracking-tight text-ym-heading leading-tight">
@@ -42,7 +42,7 @@ export const SceneChallenge: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8">
           {/* Card 1 */}
           <motion.div style={{ y: card1Y }} className="bg-ym-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-ym space-y-4 shadow-xl backdrop-blur-md hover:border-[#4BA0A4] transition-all">
-            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#4BA0A4]/15 text-teal-900 dark:text-teal-200 flex items-center justify-center font-black text-base sm:text-lg border border-[#4BA0A4]/30">
+            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#4BA0A4]/15 text-ym-accent flex items-center justify-center font-black text-base sm:text-lg border border-[#4BA0A4]/30">
               01
             </div>
             <h3 className="text-lg sm:text-xl font-bold text-ym-heading">Empati & Regulasi Emosi</h3>

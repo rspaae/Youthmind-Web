@@ -123,7 +123,7 @@ export const ScenePeople: React.FC = () => {
       <Container>
         {/* Header Seksi Terpusat */}
         <div className="max-w-3xl mx-auto text-center space-y-4 mb-16 sm:mb-24 px-2">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4BA0A4]/15 border border-[#4BA0A4]/30 text-teal-900 dark:text-teal-200 text-[11px] sm:text-xs font-extrabold tracking-wide">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4BA0A4]/15 border border-[#4BA0A4]/30 text-ym-accent text-[11px] sm:text-xs font-extrabold tracking-wide">
             <Sparkles className="w-3.5 h-3.5 text-[#4BA0A4]" />
             <span>Struktur Perusahaan Resmi · Second Generation</span>
           </div>

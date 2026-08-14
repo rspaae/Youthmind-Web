@@ -34,7 +34,7 @@ export const SceneVision: React.FC = () => {
 
             <div className="relative z-10 space-y-8 text-center max-w-4xl mx-auto">
               {/* Badge Header */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4BA0A4]/15 border border-[#4BA0A4]/30 text-teal-900 dark:text-teal-200 text-[11px] sm:text-xs font-extrabold uppercase tracking-widest">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4BA0A4]/15 border border-[#4BA0A4]/30 text-ym-accent text-[11px] sm:text-xs font-extrabold uppercase tracking-widest">
                 <Eye className="w-3.5 h-3.5 text-[#4BA0A4]" />
                 <span>Our North Star · Visi Perusahaan</span>
               </div>

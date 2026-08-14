@@ -167,7 +167,7 @@ export const SceneJourney: React.FC = () => {
       <Container>
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center space-y-3 sm:space-y-4 mb-16 sm:mb-24 px-2">
-          <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-teal-900 dark:text-teal-200 bg-[#4BA0A4]/15 px-3 py-1 rounded-full border border-[#4BA0A4]/30 inline-block">
+          <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-ym-accent bg-[#4BA0A4]/15 px-3 py-1 rounded-full border border-[#4BA0A4]/30 inline-block">
             Perjalanan & Rekam Jejak
           </span>
           <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-ym-heading leading-tight">
