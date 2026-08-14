@@ -15,11 +15,11 @@ const companyValues = [
     highlight: "Eco-Conscious",
     icon: Leaf,
     badge: "Keberlanjutan",
-    badgeColor: "bg-emerald-500/15 text-emerald-300 border-emerald-500/30",
+    badgeColor: "bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 border-emerald-500/30",
     topGradient: "from-emerald-400 via-teal-400 to-transparent",
     hoverBorder: "hover:border-emerald-400/50",
     glowBg: "group-hover:bg-emerald-500/10",
-    iconBox: "bg-emerald-500/10 text-emerald-300 border-emerald-500/30 shadow-emerald-950/40",
+    iconBox: "bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border-emerald-500/30 shadow-sm",
   },
   {
     id: "positive-impact",
@@ -30,11 +30,11 @@ const companyValues = [
     highlight: "Ruang Aman & Empati",
     icon: Heart,
     badge: "Empati & Edukasi",
-    badgeColor: "bg-rose-500/15 text-rose-300 border-rose-500/30",
+    badgeColor: "bg-rose-500/15 text-rose-800 dark:text-rose-300 border-rose-500/30",
     topGradient: "from-rose-400 via-pink-400 to-transparent",
     hoverBorder: "hover:border-rose-400/50",
     glowBg: "group-hover:bg-rose-500/10",
-    iconBox: "bg-rose-500/10 text-rose-300 border-rose-500/30 shadow-rose-950/40",
+    iconBox: "bg-rose-500/15 text-rose-700 dark:text-rose-300 border-rose-500/30 shadow-sm",
     isFeatured: true,
   },
   {
@@ -46,19 +46,19 @@ const companyValues = [
     highlight: "Interaktif & Edukatif",
     icon: Sparkles,
     badge: "Inovasi Permainan",
-    badgeColor: "bg-amber-500/15 text-amber-300 border-amber-500/30",
+    badgeColor: "bg-amber-500/15 text-amber-800 dark:text-amber-300 border-amber-500/30",
     topGradient: "from-amber-400 via-yellow-400 to-transparent",
     hoverBorder: "hover:border-amber-400/50",
     glowBg: "group-hover:bg-amber-500/10",
-    iconBox: "bg-amber-500/10 text-amber-300 border-amber-500/30 shadow-amber-950/40",
+    iconBox: "bg-amber-500/15 text-amber-700 dark:text-amber-300 border-amber-500/30 shadow-sm",
   },
 ];
 
 export const SceneAbout: React.FC = () => {
   return (
-    <section id="about" className="py-24 sm:py-36 bg-[#0E2A2C] border-t border-[#4BA0A4]/20 text-white relative overflow-hidden">
+    <section id="about" className="py-24 sm:py-36 bg-ym-page border-t border-ym text-ym-body relative overflow-hidden transition-colors duration-300">
       {/* Giant Translucent Watermark */}
-      <span className="absolute -top-8 sm:-top-12 left-1/2 -translate-x-1/2 text-5xl sm:text-9xl lg:text-[11rem] font-black text-[#4BA0A4]/5 pointer-events-none select-none font-mono tracking-tighter uppercase whitespace-nowrap z-0">
+      <span className="absolute -top-6 sm:-top-10 left-1/2 -translate-x-1/2 text-5xl sm:text-9xl lg:text-[11rem] font-black text-[#4BA0A4] opacity-[0.04] dark:opacity-[0.07] pointer-events-none select-none font-mono tracking-tighter uppercase whitespace-nowrap z-0">
         ABOUT US
       </span>
 
@@ -76,9 +76,9 @@ export const SceneAbout: React.FC = () => {
             rotate: [-15, 15, -15],
           }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-16 left-[5%] flex items-center justify-center w-12 h-12 lg:w-14 lg:h-14 rounded-2xl border-2 border-emerald-400/60 bg-emerald-950/70 backdrop-blur-md shadow-xl shadow-emerald-500/25"
+          className="absolute top-16 left-[5%] flex items-center justify-center w-12 h-12 lg:w-14 lg:h-14 rounded-2xl border border-emerald-500/40 bg-ym-card shadow-lg"
         >
-          <Leaf className="w-6 h-6 lg:w-7 lg:h-7 text-emerald-300 fill-emerald-500/20 drop-shadow-[0_0_12px_rgba(16,185,129,0.9)] animate-pulse" />
+          <Leaf className="w-6 h-6 lg:w-7 lg:h-7 text-emerald-600 dark:text-emerald-300 fill-emerald-500/20 drop-shadow-[0_0_10px_rgba(16,185,129,0.5)] animate-pulse" />
         </motion.div>
 
         {/* Element 2: Glowing Heart (Love Bersinar) - Top Right */}
@@ -89,9 +89,9 @@ export const SceneAbout: React.FC = () => {
             scale: [1, 1.15, 1],
           }}
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-20 right-[6%] flex items-center justify-center w-12 h-12 lg:w-14 lg:h-14 rounded-2xl border-2 border-rose-400/60 bg-rose-950/70 backdrop-blur-md shadow-xl shadow-rose-500/25"
+          className="absolute top-20 right-[6%] flex items-center justify-center w-12 h-12 lg:w-14 lg:h-14 rounded-2xl border border-rose-500/40 bg-ym-card shadow-lg"
         >
-          <Heart className="w-6 h-6 lg:w-7 lg:h-7 text-rose-300 fill-rose-500/30 drop-shadow-[0_0_14px_rgba(244,63,94,0.95)] animate-pulse" />
+          <Heart className="w-6 h-6 lg:w-7 lg:h-7 text-rose-600 dark:text-rose-300 fill-rose-500/20 drop-shadow-[0_0_10px_rgba(244,63,94,0.5)] animate-pulse" />
         </motion.div>
 
         {/* Element 3: Glowing Star (Bintang Bersinar) - Bottom Left */}
@@ -102,9 +102,9 @@ export const SceneAbout: React.FC = () => {
             rotate: [0, 45, 0],
           }}
           transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-24 left-[5%] flex items-center justify-center w-12 h-12 lg:w-14 lg:h-14 rounded-2xl border-2 border-amber-400/60 bg-amber-950/70 backdrop-blur-md shadow-xl shadow-amber-500/25"
+          className="absolute bottom-24 left-[5%] flex items-center justify-center w-12 h-12 lg:w-14 lg:h-14 rounded-2xl border border-amber-500/40 bg-ym-card shadow-lg"
         >
-          <Star className="w-6 h-6 lg:w-7 lg:h-7 text-amber-300 fill-amber-400/30 drop-shadow-[0_0_14px_rgba(245,158,11,0.95)] animate-pulse" />
+          <Star className="w-6 h-6 lg:w-7 lg:h-7 text-amber-600 dark:text-amber-300 fill-amber-500/20 drop-shadow-[0_0_10px_rgba(245,158,11,0.5)] animate-pulse" />
         </motion.div>
 
         {/* Element 4: Glowing Sparkle Star (Bintang Kilau Teal) - Bottom Right */}
@@ -115,45 +115,45 @@ export const SceneAbout: React.FC = () => {
             rotate: [0, -45, 0],
           }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-28 right-[6%] flex items-center justify-center w-12 h-12 lg:w-14 lg:h-14 rounded-2xl border-2 border-[#4BA0A4]/60 bg-[#163E41]/90 backdrop-blur-md shadow-xl shadow-[#4BA0A4]/25"
+          className="absolute bottom-28 right-[6%] flex items-center justify-center w-12 h-12 lg:w-14 lg:h-14 rounded-2xl border border-[#4BA0A4]/40 bg-ym-card shadow-lg"
         >
-          <Sparkles className="w-6 h-6 lg:w-7 lg:h-7 text-[#94D4D4] drop-shadow-[0_0_14px_rgba(75,160,164,0.95)] animate-pulse" />
+          <Sparkles className="w-6 h-6 lg:w-7 lg:h-7 text-teal-700 dark:text-teal-300 drop-shadow-[0_0_10px_rgba(75,160,164,0.5)] animate-pulse" />
         </motion.div>
       </div>
 
       <Container>
         <div className="space-y-16 sm:space-y-20 max-w-6xl mx-auto relative z-10">
           {/* Main Statement Card with Mobile Optimized Padding & Floating Micro-Badges */}
-          <div className="relative bg-gradient-to-b from-[#133A3D] to-[#0F2F31] border border-[#4BA0A4]/35 rounded-2xl sm:rounded-3xl p-6 sm:p-12 lg:p-16 shadow-2xl overflow-hidden group">
+          <div className="relative bg-ym-card border border-ym rounded-2xl sm:rounded-3xl p-6 sm:p-12 lg:p-16 shadow-2xl overflow-hidden group transition-colors duration-300">
             {/* Top Glowing Edge */}
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#4BA0A4] to-transparent opacity-80" />
 
             <div className="max-w-3xl mx-auto text-center space-y-5">
               {/* Static Badges (SMKN 11 Bandung & Student Company) */}
               <div className="flex flex-wrap items-center justify-center gap-2.5 mb-1">
-                <div className="px-3.5 py-1.5 rounded-full bg-[#194447] border border-[#4BA0A4]/40 text-[#94D4D4] text-xs font-bold flex items-center gap-2 shadow-sm">
+                <div className="px-3.5 py-1.5 rounded-full bg-ym-subtle border border-ym text-ym-muted text-xs font-bold flex items-center gap-2 shadow-sm">
                   <img src="/assets/partners/smkn11.png" alt="SMKN 11 Bandung Logo" className="w-4 h-4 object-contain" />
                   <span>SMKN 11 Bandung</span>
                 </div>
-                <div className="px-3.5 py-1.5 rounded-full bg-[#194447] border border-[#4BA0A4]/40 text-[#59AAAA] text-xs font-bold flex items-center gap-2 shadow-sm">
+                <div className="px-3.5 py-1.5 rounded-full bg-ym-subtle border border-ym text-ym-accent text-xs font-bold flex items-center gap-2 shadow-sm">
                   <img src="/assets/logo-ym.png" alt="YouthMind Logo" className="w-4 h-4 object-contain" />
                   <span>Student Company</span>
                 </div>
               </div>
 
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4BA0A4]/20 border border-[#4BA0A4]/30 text-[#59AAAA] text-[11px] sm:text-xs font-extrabold tracking-wider uppercase">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4BA0A4]/20 border border-[#4BA0A4]/30 text-ym-accent text-[11px] sm:text-xs font-extrabold tracking-wider uppercase">
                 <Zap className="w-3.5 h-3.5 text-[#4BA0A4] animate-pulse" />
                 <span>Tentang YouthMind Company</span>
               </div>
 
-              <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+              <h2 className="text-3xl sm:text-5xl font-black text-ym-heading tracking-tight leading-tight">
                 Membangun Generasi Muda Berdaya Melalui{" "}
                 <span className="text-image-clip inline-block">Board Game Edukasi</span>
               </h2>
 
-              <p className="text-sm sm:text-xl text-[#E0F4F4] leading-relaxed font-medium pt-2">
+              <p className="text-sm sm:text-xl text-ym-body leading-relaxed font-medium pt-2">
                 YouthMind Company adalah student company inovatif dari SMKN 11 Bandung yang berfokus pada{" "}
-                <span className="text-[#59AAAA] font-bold underline decoration-[#4BA0A4]/50 underline-offset-4">
+                <span className="text-ym-accent font-bold underline decoration-[#4BA0A4]/50 underline-offset-4">
                   pengembangan board game kesehatan mental
                 </span>{" "}
                 serta aktif menggelar sosialisasi dan workshop interaktif ke berbagai sekolah di Kota Bandung.
@@ -164,14 +164,14 @@ export const SceneAbout: React.FC = () => {
           {/* Company Values Section Header */}
           <div className="space-y-12">
             <div className="text-center space-y-3 max-w-xl mx-auto">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#194447] border border-[#4BA0A4]/30 text-[#94D4D4] text-[11px] font-extrabold uppercase tracking-widest">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-ym-subtle border border-ym text-ym-muted text-[11px] font-extrabold uppercase tracking-widest">
                 <ShieldCheck className="w-3.5 h-3.5 text-[#4BA0A4]" />
                 <span>Company Values</span>
               </div>
-              <h3 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
+              <h3 className="text-2xl sm:text-4xl font-black text-ym-heading tracking-tight">
                 Nilai & Pilar Utama Perusahaan
               </h3>
-              <p className="text-xs sm:text-sm text-[#94D4D4] font-medium leading-relaxed">
+              <p className="text-xs sm:text-sm text-ym-muted font-medium leading-relaxed">
                 Tiga prinsip utama yang mendasari setiap karya, produk, dan aksi sosial YouthMind Company.
               </p>
             </div>
@@ -187,7 +187,7 @@ export const SceneAbout: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.15 }}
-                    className={`relative bg-gradient-to-b from-[#163E41] via-[#123638] to-[#0E2A2C] border border-[#4BA0A4]/30 rounded-3xl p-7 sm:p-8 flex flex-col justify-between transition-all duration-500 shadow-xl group hover:shadow-2xl hover:shadow-[#4BA0A4]/15 ${val.hoverBorder} ${
+                    className={`relative bg-ym-card border border-ym rounded-3xl p-7 sm:p-8 flex flex-col justify-between transition-all duration-500 shadow-xl group hover:shadow-2xl hover:shadow-[#4BA0A4]/15 ${val.hoverBorder} ${
                       val.isFeatured ? "lg:-translate-y-3 lg:border-[#4BA0A4]/60 ring-1 ring-[#4BA0A4]/30" : ""
                     }`}
                   >
@@ -195,7 +195,7 @@ export const SceneAbout: React.FC = () => {
                     <div className={`absolute top-0 left-8 right-8 h-[2px] bg-gradient-to-r ${val.topGradient} opacity-70 group-hover:opacity-100 transition-opacity duration-300`} />
 
                     {/* Giant Translucent Watermark Number */}
-                    <span className="absolute top-4 right-6 text-6xl font-black font-mono tracking-tighter text-[#4BA0A4]/15 group-hover:text-[#4BA0A4]/30 transition-colors duration-500 pointer-events-none select-none">
+                    <span className="absolute top-4 right-6 text-6xl font-black font-mono tracking-tighter text-ym-muted/20 group-hover:text-ym-accent/40 transition-colors duration-500 pointer-events-none select-none">
                       {val.num}
                     </span>
 
@@ -217,21 +217,21 @@ export const SceneAbout: React.FC = () => {
 
                       {/* Header Text Group */}
                       <div className="space-y-2 pt-2">
-                        <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#94D4D4] block">
+                        <span className="text-[11px] font-extrabold uppercase tracking-widest text-ym-muted block">
                           {val.subtitle}
                         </span>
-                        <h4 className="text-xl sm:text-2xl font-black text-white group-hover:text-[#59AAAA] transition-colors leading-tight">
+                        <h4 className="text-xl sm:text-2xl font-black text-ym-heading group-hover:text-ym-accent transition-colors leading-tight">
                           {val.title}
                         </h4>
-                        <p className="text-xs sm:text-sm text-[#B2E2E2] leading-relaxed font-normal pt-1">
+                        <p className="text-xs sm:text-sm text-ym-body leading-relaxed font-normal pt-1">
                           {val.desc}
                         </p>
                       </div>
                     </div>
 
                     {/* Bottom Highlight Pill */}
-                    <div className="relative z-10 pt-6 mt-6 border-t border-[#4BA0A4]/20 flex items-center justify-between">
-                      <div className="px-3.5 py-1.5 rounded-xl bg-[#0E2A2C]/80 border border-[#4BA0A4]/25 text-[11px] font-bold text-[#59AAAA] group-hover:border-[#4BA0A4]/50 transition-colors">
+                    <div className="relative z-10 pt-6 mt-6 border-t border-ym flex items-center justify-between">
+                      <div className="px-3.5 py-1.5 rounded-xl bg-ym-subtle border border-ym text-[11px] font-bold text-ym-accent group-hover:border-[#4BA0A4]/50 transition-colors">
                         {val.highlight}
                       </div>
                     </div>

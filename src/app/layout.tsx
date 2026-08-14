@@ -3,6 +3,7 @@ import { Inter, Outfit, Fredoka } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SmoothScrollProvider from "@/components/story/SmoothScrollProvider";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -50,13 +51,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`${inter.variable} ${outfit.variable} ${fredoka.variable} scroll-smooth`}>
-      <body className="antialiased min-h-screen flex flex-col justify-between bg-[#0E2A2C] text-white selection:bg-[#4BA0A4] selection:text-[#0E2A2C]">
-        <SmoothScrollProvider>
-          <Navbar />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </SmoothScrollProvider>
+    <html lang="id" className={`${inter.variable} ${outfit.variable} ${fredoka.variable} scroll-smooth`} suppressHydrationWarning>
+      <body className="antialiased min-h-screen flex flex-col justify-between bg-ym-page text-ym-body selection:bg-[#4BA0A4] selection:text-[#0E2A2C] transition-colors duration-300">
+        <ThemeProvider>
+          <SmoothScrollProvider>
+            <Navbar />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+          </SmoothScrollProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

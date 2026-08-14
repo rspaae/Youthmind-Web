@@ -5,10 +5,16 @@ import Lenis from "lenis";
 
 export const SmoothScrollProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   useEffect(() => {
-    // Only enable Lenis smooth scroll on non-touch devices (desktop/trackpad)
-    // On mobile, native momentum scroll is faster and more natural
-    const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
-    if (isTouchDevice) return;
+    // Only enable Lenis smooth scroll on non-touch desktop devices
+    // On mobile & tablet, native momentum scroll is 100% natural, fast, and crash-free
+    const isTouchOrMobile =
+      typeof window !== "undefined" &&
+      (window.matchMedia("(pointer: coarse)").matches ||
+        "ontouchstart" in window ||
+        navigator.maxTouchPoints > 0 ||
+        window.innerWidth < 1024);
+
+    if (isTouchOrMobile) return;
 
     const lenis = new Lenis({
       duration: 1.2,

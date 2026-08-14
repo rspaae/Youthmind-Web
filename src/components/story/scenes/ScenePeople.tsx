@@ -10,7 +10,7 @@ interface Member {
   name: string;
   role: string;
   isDirector?: boolean;
-  badgeLabel?: string; // custom badge teks, default: "Director"
+  badgeLabel?: string;
   image?: string;
 }
 
@@ -19,7 +19,7 @@ interface DivisionGroup {
   title: string;
   badge: string;
   badgeBg: string;
-  members: Member[]; // Members ordered so Director/Higher position is on the left!
+  members: Member[];
 }
 
 const teamStructure: DivisionGroup[] = [
@@ -27,7 +27,7 @@ const teamStructure: DivisionGroup[] = [
     id: "executive",
     title: "Executive Leadership",
     badge: "Pimpinan Utama",
-    badgeBg: "bg-teal-500/15 text-teal-300 border-teal-500/40",
+    badgeBg: "bg-teal-500/15 text-teal-800 dark:text-teal-300 border-teal-500/40",
     members: [
       { name: "Muhammad Hatta Rasyahputra", role: "Chief Executive Officer (CEO)", isDirector: true, badgeLabel: "CEO", image: "/assets/TeamYM/CEO/Edit.png" },
       { name: "Bella Febriana", role: "Corporate Secretary", isDirector: false, image: "/assets/TeamYM/Corporate Secretary/Edit.png" },
@@ -37,7 +37,7 @@ const teamStructure: DivisionGroup[] = [
     id: "hrd",
     title: "Human Resources (HRD)",
     badge: "Pengembangan SDM",
-    badgeBg: "bg-sky-500/15 text-sky-300 border-sky-500/40",
+    badgeBg: "bg-sky-500/15 text-sky-800 dark:text-sky-300 border-sky-500/40",
     members: [
       { name: "Aurel Desiana Putri", role: "Director of HRD", isDirector: true, image: "/assets/TeamYM/HRD/Aurel/Edit.png" },
       { name: "Felita Nandatama Futura", role: "Attendance & Payroll Specialist", isDirector: false, image: "/assets/TeamYM/HRD/Felita/Edit.png" },
@@ -48,7 +48,7 @@ const teamStructure: DivisionGroup[] = [
     id: "pr",
     title: "Public Relations (PR)",
     badge: "Relasi Publik & Komunitas",
-    badgeBg: "bg-emerald-500/15 text-emerald-300 border-emerald-500/40",
+    badgeBg: "bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 border-emerald-500/40",
     members: [
       { name: "Rafa Ramdani", role: "Director of Public Relations", isDirector: true, image: "/assets/TeamYM/Public Relations/Rafa/Edit.png" },
       { name: "Miska Okta Diva Aria", role: "Public Relations Manager", isDirector: false, image: "/assets/TeamYM/Public Relations/Miska/Edit.png" },
@@ -59,7 +59,7 @@ const teamStructure: DivisionGroup[] = [
     id: "marketing",
     title: "Marketing & Creative",
     badge: "Pemasaran & Desain",
-    badgeBg: "bg-teal-500/15 text-teal-300 border-teal-500/40",
+    badgeBg: "bg-teal-500/15 text-teal-800 dark:text-teal-300 border-teal-500/40",
     members: [
       { name: "Nabila Safa Lesmana", role: "Director of Marketing", isDirector: true, image: "/assets/TeamYM/Marketing/Nabila/Edit.png" },
       { name: "Jessica Olivia", role: "Creative Design Manager", isDirector: false, image: "/assets/TeamYM/Marketing/Jessica/Edit.png" },
@@ -71,7 +71,7 @@ const teamStructure: DivisionGroup[] = [
     id: "sales",
     title: "Sales & Commercial",
     badge: "Penjualan & Kemitraan",
-    badgeBg: "bg-amber-500/15 text-amber-300 border-amber-500/40",
+    badgeBg: "bg-amber-500/15 text-amber-800 dark:text-amber-300 border-amber-500/40",
     members: [
       { name: "Nurianti Naesya Putriatna", role: "Director of Sales", isDirector: true, image: "/assets/TeamYM/Sales/Nuri/Edit.png" },
     ],
@@ -80,7 +80,7 @@ const teamStructure: DivisionGroup[] = [
     id: "finance",
     title: "Finance & Audit",
     badge: "Keuangan & Akuntansi",
-    badgeBg: "bg-cyan-500/15 text-cyan-300 border-cyan-500/40",
+    badgeBg: "bg-cyan-500/15 text-cyan-800 dark:text-cyan-300 border-cyan-500/40",
     members: [
       { name: "Senita Aprilia", role: "Director of Finance", isDirector: true, image: "/assets/TeamYM/Finance/Senita/Edit.png" },
       { name: "Muhammad Azriel Setiawan", role: "Finance Manager", isDirector: false, image: "/assets/TeamYM/Finance/Azriel/Edit.png" },
@@ -91,7 +91,7 @@ const teamStructure: DivisionGroup[] = [
     id: "production",
     title: "Production & R&D",
     badge: "Manufaktur & Game Design",
-    badgeBg: "bg-indigo-500/15 text-indigo-300 border-indigo-500/40",
+    badgeBg: "bg-indigo-500/15 text-indigo-800 dark:text-indigo-300 border-indigo-500/40",
     members: [
       { name: "Muhammad Fahri Ismail", role: "Director of Production", isDirector: true, image: "/assets/TeamYM/Production/Fahri/Edit.png" },
       { name: "Ziffara Anindya Putri", role: "R&D Manager", isDirector: false, image: "/assets/TeamYM/Production/Ziffara/Edit.png" },
@@ -111,9 +111,9 @@ const getInitials = (name: string) => {
 
 export const ScenePeople: React.FC = () => {
   return (
-    <section id="team" className="py-20 sm:py-36 bg-[#0E2A2C] text-white relative border-t border-[#4BA0A4]/20 overflow-hidden">
+    <section id="team" className="py-20 sm:py-36 bg-ym-page text-ym-body relative border-t border-ym overflow-hidden transition-colors duration-300">
       {/* Giant Translucent Watermark */}
-      <span className="absolute -top-8 sm:-top-12 left-1/2 -translate-x-1/2 text-5xl sm:text-9xl lg:text-[11rem] font-black text-[#4BA0A4]/5 pointer-events-none select-none font-mono tracking-tighter uppercase whitespace-nowrap z-0">
+      <span className="absolute -top-6 sm:-top-10 left-1/2 -translate-x-1/2 text-5xl sm:text-9xl lg:text-[11rem] font-black text-[#4BA0A4] opacity-[0.04] dark:opacity-[0.07] pointer-events-none select-none font-mono tracking-tighter uppercase whitespace-nowrap z-0">
         OUR TEAM
       </span>
 
@@ -123,17 +123,17 @@ export const ScenePeople: React.FC = () => {
       <Container>
         {/* Header Seksi Terpusat */}
         <div className="max-w-3xl mx-auto text-center space-y-4 mb-16 sm:mb-24 px-2">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4BA0A4]/20 border border-[#4BA0A4]/30 text-[#59AAAA] text-[11px] sm:text-xs font-extrabold tracking-wide">
-            <Sparkles className="w-3.5 h-3.5 text-[#4BA0A4] animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4BA0A4]/15 border border-[#4BA0A4]/30 text-teal-900 dark:text-teal-200 text-[11px] sm:text-xs font-extrabold tracking-wide">
+            <Sparkles className="w-3.5 h-3.5 text-[#4BA0A4]" />
             <span>Struktur Perusahaan Resmi · Second Generation</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-ym-heading leading-tight">
             Board of Directors & Management<br />
             <span className="text-image-clip inline-block">YouthMind Company</span>
           </h2>
 
-          <p className="text-[#94D4D4] text-xs sm:text-base max-w-xl mx-auto leading-relaxed font-medium">
+          <p className="text-ym-muted text-xs sm:text-base max-w-xl mx-auto leading-relaxed font-medium">
             Struktur Kepemimpinan Divisi.
           </p>
 
@@ -152,7 +152,7 @@ export const ScenePeople: React.FC = () => {
               key={group.id}
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
+              viewport={{ once: true, amount: 0.05 }}
               transition={{ duration: 0.4 }}
               className="space-y-6 sm:space-y-8"
             >
@@ -162,26 +162,27 @@ export const ScenePeople: React.FC = () => {
                   {group.badge}
                 </span>
 
-                <h3 className="text-xl sm:text-3xl font-black text-white tracking-tight">
+                <h3 className="text-xl sm:text-3xl font-black text-ym-heading tracking-tight">
                   {group.title}
                 </h3>
               </div>
 
               {/* Grid Anggota: Ukuran Lebih Besar di Desktop, Pas di Mobile */}
               <div className="flex flex-wrap justify-center items-stretch gap-4 sm:gap-6 lg:gap-8 max-w-6xl lg:max-w-7xl mx-auto">
-                {group.members.map((member, memberIdx) => (
+                {group.members.map((member) => (
                   <motion.div
                     key={member.name}
                     whileHover={{ scale: 1.04, y: -6 }}
                     transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                    className={`w-[calc(50%-8px)] sm:w-56 md:w-64 lg:w-72 xl:w-80 bg-[#194447] hover:bg-[#1E5256] backdrop-blur-md rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 lg:p-6 border transition-all duration-300 shadow-lg text-center flex flex-col justify-between items-center group touch-manipulation ${member.isDirector
-                        ? "border-[#4BA0A4] ring-2 ring-[#4BA0A4]/30 shadow-teal-900/60"
-                        : "border-[#4BA0A4]/30 hover:border-[#4BA0A4]/60"
-                      }`}
+                    className={`w-[calc(50%-8px)] sm:w-56 md:w-64 lg:w-72 xl:w-80 bg-ym-card backdrop-blur-md rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 lg:p-6 border transition-all duration-300 shadow-lg text-center flex flex-col justify-between items-center group touch-manipulation ${
+                      member.isDirector
+                        ? "border-[#4BA0A4] ring-2 ring-[#4BA0A4]/30 shadow-teal-900/40"
+                        : "border-ym hover:border-[#4BA0A4]/60"
+                    }`}
                   >
                     <div className="w-full space-y-3 sm:space-y-4 flex flex-col items-center">
                       {/* Frame Foto Ukuran Sama Presisi (Tampilan Penuh Tanpa Zoom Tight) */}
-                      <div className="relative aspect-square w-full rounded-xl sm:rounded-2xl overflow-hidden bg-[#0E2A2C] border border-[#4BA0A4]/30 group-hover:border-[#4BA0A4]/60 transition-colors shadow-inner flex flex-col items-center justify-center p-1">
+                      <div className="relative aspect-square w-full rounded-xl sm:rounded-2xl overflow-hidden bg-ym-subtle border border-ym group-hover:border-[#4BA0A4]/60 transition-colors shadow-inner flex flex-col items-center justify-center p-1">
                         {member.image ? (
                           <Image
                             src={member.image}
@@ -193,11 +194,11 @@ export const ScenePeople: React.FC = () => {
                             className="object-contain object-center group-hover:scale-105 transition-transform duration-500"
                           />
                         ) : (
-                          <div className="flex flex-col items-center justify-center p-2 text-center w-full h-full bg-gradient-to-b from-[#123638] via-[#194447] to-[#123638]">
-                            <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-full bg-[#4BA0A4]/20 border border-[#4BA0A4]/40 text-[#59AAAA] font-extrabold text-xs sm:text-base lg:text-xl flex items-center justify-center mb-1.5 sm:mb-2 ring-4 ring-teal-500/10 group-hover:scale-105 transition-transform shadow-md">
+                          <div className="flex flex-col items-center justify-center p-2 text-center w-full h-full bg-ym-subtle">
+                            <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-full bg-[#4BA0A4]/20 border border-[#4BA0A4]/40 text-teal-800 dark:text-teal-200 font-extrabold text-xs sm:text-base lg:text-xl flex items-center justify-center mb-1.5 sm:mb-2 ring-4 ring-teal-500/10 group-hover:scale-105 transition-transform shadow-md">
                               {getInitials(member.name)}
                             </div>
-                            <span className="text-[9px] sm:text-xs text-[#94D4D4] font-medium">
+                            <span className="text-[9px] sm:text-xs text-ym-muted font-medium">
                               Foto Member
                             </span>
                           </div>
@@ -216,19 +217,19 @@ export const ScenePeople: React.FC = () => {
 
                       {/* Nama & Role */}
                       <div className="space-y-1 sm:space-y-1.5 w-full text-center px-1">
-                        <h4 className="text-xs sm:text-base lg:text-lg font-extrabold text-white group-hover:text-[#59AAAA] transition-colors leading-snug line-clamp-2">
+                        <h4 className="text-xs sm:text-base lg:text-lg font-extrabold text-ym-heading group-hover:text-ym-accent transition-colors leading-snug line-clamp-2">
                           {member.name}
                         </h4>
-                        <p className="text-[10px] sm:text-xs lg:text-sm font-bold text-[#94D4D4] leading-tight">
+                        <p className="text-[10px] sm:text-xs lg:text-sm font-bold text-ym-muted leading-tight">
                           {member.role}
                         </p>
                       </div>
                     </div>
 
                     {/* Footer Tag Setara */}
-                    <div className="pt-2 sm:pt-3 mt-3 sm:mt-4 w-full border-t border-[#4BA0A4]/20 flex items-center justify-center gap-1.5 sm:gap-2 text-[9px] sm:text-xs text-[#94D4D4] font-semibold">
+                    <div className="pt-2 sm:pt-3 mt-3 sm:mt-4 w-full border-t border-ym flex items-center justify-center gap-1.5 sm:gap-2 text-[9px] sm:text-xs text-ym-muted font-semibold">
                       <ShieldCheck className="w-3.5 h-3.5 text-[#4BA0A4]" />
-                      <span>YouthMind Company</span>
+                      <span>Talenta SMKN 11 Bandung</span>
                     </div>
                   </motion.div>
                 ))}

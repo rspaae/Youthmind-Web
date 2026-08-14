@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Container from "@/components/ui/Container";
 import YouthMindLogo from "@/components/ui/YouthMindLogo";
+import ThemeToggle from "@/components/theme/ThemeToggle";
 import { NAV_ITEMS } from "@/constants/navigation";
 import {
   Menu,
@@ -87,6 +88,9 @@ export const Navbar: React.FC = () => {
     const sectionId = href.replace("#", "");
     setActiveSection(sectionId);
     setIsMobileMenuOpen(false);
+    if (typeof document !== "undefined") {
+      document.body.style.overflow = "unset";
+    }
   };
 
   return (
@@ -96,8 +100,8 @@ export const Navbar: React.FC = () => {
         className={clsx(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out",
           isScrolled
-            ? "py-3 bg-[#0E2A2C]/95 backdrop-blur-xl border-b border-[#4BA0A4]/30 shadow-xl shadow-[#0E2A2C]/90"
-            : "py-3.5 sm:py-6 bg-gradient-to-b from-[#0E2A2C]/95 via-[#0E2A2C]/70 to-transparent"
+            ? "py-3 bg-ym-page/95 backdrop-blur-xl border-b border-ym shadow-xl shadow-teal-900/10"
+            : "py-3.5 sm:py-6 bg-gradient-to-b from-ym-page/95 via-ym-page/60 to-transparent"
         )}
       >
         <Container>
@@ -117,19 +121,19 @@ export const Navbar: React.FC = () => {
 
               <div className="flex flex-col leading-none gap-0.5">
                 <span
-                  className="font-black tracking-tight text-white text-[16px] sm:text-[19px] leading-none"
+                  className="font-black tracking-tight text-ym-heading text-[16px] sm:text-[19px] leading-none"
                   style={{ fontFamily: "var(--font-fredoka), sans-serif" }}
                 >
                   Youth<span className="text-[#4BA0A4]">Mind</span>
                 </span>
-                <span className="text-[8px] sm:text-[8.5px] font-bold tracking-[0.2em] uppercase text-[#59AAAA] leading-none">
+                <span className="text-[8px] sm:text-[8.5px] font-bold tracking-[0.2em] uppercase text-teal-800 dark:text-[#59AAAA] leading-none">
                   Student&nbsp;Company
                 </span>
               </div>
             </a>
 
             {/* Desktop Nav Items */}
-            <nav aria-label="Navigasi Utama" className="hidden lg:flex items-center gap-1 bg-[#194447]/80 p-1.5 rounded-full border border-[#4BA0A4]/30 backdrop-blur-md shadow-xl shadow-black/30 ring-1 ring-white/10">
+            <nav aria-label="Navigasi Utama" className="hidden lg:flex items-center gap-1 bg-ym-card/80 p-1.5 rounded-full border border-ym backdrop-blur-md shadow-xl ring-1 ring-teal-500/10">
               {NAV_ITEMS.map((item) => {
                 const sectionId = item.href.replace("#", "");
                 const isActive = activeSection === sectionId;
@@ -142,8 +146,8 @@ export const Navbar: React.FC = () => {
                     className={clsx(
                       "relative px-4 py-2 text-xs font-semibold rounded-full transition-all duration-300 flex items-center gap-1.5 focus:outline-none",
                       isActive
-                        ? "text-white font-bold bg-[#4BA0A4]/30 border border-[#4BA0A4]/60 shadow-sm"
-                        : "text-[#94D4D4] hover:text-white hover:bg-[#23585C]/60"
+                        ? "text-ym-heading font-bold bg-[#4BA0A4]/25 border border-[#4BA0A4]/50 shadow-sm"
+                        : "text-ym-body hover:text-ym-heading hover:bg-ym-subtle/70"
                     )}
                   >
                     {isActive && (
@@ -155,8 +159,11 @@ export const Navbar: React.FC = () => {
               })}
             </nav>
 
-            {/* Right Side Buttons (Desktop CTA & Mobile Toggle) */}
+            {/* Right Side Buttons (Desktop CTA, Theme Toggle & Mobile Menu) */}
             <div className="flex items-center gap-2.5">
+              {/* Theme Toggle Button */}
+              <ThemeToggle />
+
               {/* Desktop CTA Button */}
               <a
                 href="mailto:youthmindcompany@gmail.com"
@@ -170,18 +177,18 @@ export const Navbar: React.FC = () => {
               {/* Mobile Top Toggle Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden px-3.5 py-2 rounded-xl bg-[#194447] border border-[#4BA0A4]/40 text-white hover:text-teal-200 active:scale-95 transition-all shadow-lg flex items-center gap-2 text-xs font-bold focus:outline-none"
+                className="lg:hidden px-3.5 py-2 rounded-xl bg-ym-card border border-ym text-ym-heading hover:text-teal-500 active:scale-95 transition-all shadow-lg flex items-center gap-2 text-xs font-bold focus:outline-none"
                 aria-label="Toggle Menu Navigasi"
               >
                 {isMobileMenuOpen ? (
                   <>
                     <X className="w-4 h-4 text-[#4BA0A4]" />
-                    <span className="text-[#94D4D4]">Tutup</span>
+                    <span className="text-ym-muted">Tutup</span>
                   </>
                 ) : (
                   <>
                     <Menu className="w-4 h-4 text-[#4BA0A4]" />
-                    <span className="text-white font-extrabold">Menu</span>
+                    <span className="text-ym-heading font-extrabold">Menu</span>
                   </>
                 )}
               </button>
@@ -198,20 +205,23 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="lg:hidden fixed inset-0 z-40 bg-[#0E2A2C]/98 backdrop-blur-2xl pt-20 pb-8 px-5 overflow-y-auto flex flex-col justify-between"
+            className="lg:hidden fixed inset-0 z-40 bg-ym-page/98 backdrop-blur-2xl pt-20 pb-8 px-5 overflow-y-auto flex flex-col justify-between"
           >
             <div className="space-y-5 max-w-md mx-auto w-full pt-2">
               {/* Drawer Header Badge */}
-              <div className="flex items-center justify-between pb-3.5 border-b border-[#4BA0A4]/25">
+              <div className="flex items-center justify-between pb-3.5 border-b border-ym">
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-[#4BA0A4]" />
                   <span className="text-xs font-black uppercase tracking-widest text-[#59AAAA]">
                     Menu Navigasi
                   </span>
                 </div>
-                <span className="text-[10px] font-extrabold px-3 py-1 rounded-full bg-[#4BA0A4]/20 text-[#94D4D4] border border-[#4BA0A4]/30">
-                  SMKN 11 Bandung
-                </span>
+                <div className="flex items-center gap-2">
+                  <ThemeToggle showLabel />
+                  <span className="text-[10px] font-extrabold px-3 py-1 rounded-full bg-[#4BA0A4]/20 text-ym-muted border border-[#4BA0A4]/30">
+                    SMKN 11 Bandung
+                  </span>
+                </div>
               </div>
 
               {/* Navigation Items List (All 7 items) */}
@@ -233,8 +243,8 @@ export const Navbar: React.FC = () => {
                       className={clsx(
                         "flex items-center justify-between p-3.5 rounded-2xl transition-all border group",
                         isActive
-                          ? "bg-[#4BA0A4]/25 border-[#4BA0A4]/60 text-white shadow-lg shadow-teal-500/10"
-                          : "bg-[#143B3D]/80 border-[#4BA0A4]/20 text-[#E0F4F4] hover:bg-[#194447]"
+                          ? "bg-[#4BA0A4]/25 border-[#4BA0A4]/60 text-ym-heading shadow-lg shadow-teal-500/10"
+                          : "bg-ym-subtle/60 border-ym text-ym-body hover:bg-ym-subtle"
                       )}
                     >
                       <div className="flex items-center gap-3">
@@ -243,17 +253,17 @@ export const Navbar: React.FC = () => {
                             "w-9 h-9 rounded-xl flex items-center justify-center border transition-colors",
                             isActive
                               ? "bg-[#4BA0A4] text-[#0E2A2C] border-[#4BA0A4]"
-                              : "bg-[#194447] text-[#4BA0A4] border-[#4BA0A4]/30"
+                              : "bg-ym-card text-[#4BA0A4] border-ym"
                           )}
                         >
                           <Icon className="w-4 h-4" />
                         </div>
 
                         <div className="flex flex-col text-left">
-                          <span className="text-sm font-black text-white group-hover:text-[#4BA0A4] transition-colors leading-tight">
+                          <span className="text-sm font-black text-ym-heading group-hover:text-[#4BA0A4] transition-colors leading-tight">
                             {item.label}
                           </span>
-                          <span className="text-[10px] text-[#94D4D4] font-medium leading-tight">
+                          <span className="text-[10px] text-ym-muted font-medium leading-tight">
                             {desc}
                           </span>
                         </div>
@@ -288,9 +298,9 @@ export const Navbar: React.FC = () => {
             </div>
 
             {/* Drawer Footer Branding */}
-            <div className="pt-4 border-t border-[#4BA0A4]/20 text-center space-y-0.5 max-w-md mx-auto w-full mt-4">
-              <p className="text-xs font-extrabold text-white">YouthMind Company · Student Company</p>
-              <p className="text-[10px] text-[#94D4D4]">SMKN 11 Bandung · Pelopor Board Game Kesehatan Mental</p>
+            <div className="pt-4 border-t border-ym text-center space-y-0.5 max-w-md mx-auto w-full mt-4">
+              <p className="text-xs font-extrabold text-ym-heading">YouthMind Company · Student Company</p>
+              <p className="text-[10px] text-ym-muted">SMKN 11 Bandung · Pelopor Board Game Kesehatan Mental</p>
             </div>
           </motion.div>
         )}
@@ -300,4 +310,5 @@ export const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+
 

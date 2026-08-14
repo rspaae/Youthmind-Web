@@ -15,7 +15,7 @@ const partners = [
     desc: "Mendukung pengembangan kewirausahaan generasi muda & kesehatan mental melalui Z Zurich Foundation.",
     logo: "/assets/partners/zurich.png",
     icon: Award,
-    badgeColor: "bg-sky-500/15 text-sky-300 border-sky-500/30",
+    badgeColor: "bg-sky-500/15 text-sky-800 dark:text-sky-300 border-sky-500/30",
     topGradient: "from-sky-400 via-teal-400 to-transparent",
     hoverBorder: "hover:border-sky-400/50",
   },
@@ -27,7 +27,7 @@ const partners = [
     desc: "Membina dan memfasilitasi program JA Student Company dalam pengelolaan bisnis dan inovasi sosial.",
     logo: "/assets/partners/pji.png",
     icon: Globe,
-    badgeColor: "bg-amber-500/15 text-amber-300 border-amber-500/30",
+    badgeColor: "bg-amber-500/15 text-amber-800 dark:text-amber-300 border-amber-500/30",
     topGradient: "from-amber-400 via-yellow-400 to-transparent",
     hoverBorder: "hover:border-amber-400/50",
   },
@@ -39,7 +39,7 @@ const partners = [
     desc: "Sekolah naungan yang memfasilitasi, membina, dan mendampingi pembentukan Student Company YouthMind.",
     logo: "/assets/partners/smkn11.png",
     icon: GraduationCap,
-    badgeColor: "bg-teal-500/15 text-teal-300 border-teal-500/30",
+    badgeColor: "bg-teal-500/15 text-teal-800 dark:text-teal-300 border-teal-500/30",
     topGradient: "from-teal-400 via-emerald-400 to-transparent",
     hoverBorder: "hover:border-teal-400/50",
   },
@@ -51,7 +51,7 @@ const partners = [
     desc: "Mitra dalam pengembangan media kreatif, strategi komunikasi digital, dan kehadiran online perusahaan.",
     logo: "/assets/partners/chlorine.png",
     icon: Building2,
-    badgeColor: "bg-emerald-500/15 text-emerald-300 border-emerald-500/30",
+    badgeColor: "bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 border-emerald-500/30",
     topGradient: "from-emerald-400 via-teal-400 to-transparent",
     hoverBorder: "hover:border-emerald-400/50",
   },
@@ -63,7 +63,7 @@ const partners = [
     desc: "Wadah ekspresi & publikasi media bagi pelajar serta dukungan kampanye edukasi di lingkungan sekolah.",
     logo: "/assets/partners/oz-cool-school.png",
     icon: Radio,
-    badgeColor: "bg-orange-500/15 text-orange-300 border-orange-500/30",
+    badgeColor: "bg-orange-500/15 text-orange-800 dark:text-orange-300 border-orange-500/30",
     topGradient: "from-orange-400 via-amber-400 to-transparent",
     hoverBorder: "hover:border-orange-400/50",
   },
@@ -75,7 +75,7 @@ const partners = [
     desc: "Forum Komunikasi Keluarga Mahasiswa BK UPI — mitra akademis dalam kajian dan edukasi bimbingan konseling.",
     logo: "/assets/partners/fkkmbk-upi.png",
     icon: Users,
-    badgeColor: "bg-cyan-500/15 text-cyan-300 border-cyan-500/30",
+    badgeColor: "bg-cyan-500/15 text-cyan-800 dark:text-cyan-300 border-cyan-500/30",
     topGradient: "from-cyan-400 via-blue-400 to-transparent",
     hoverBorder: "hover:border-cyan-400/50",
   },
@@ -83,9 +83,9 @@ const partners = [
 
 export const ScenePartners: React.FC = () => {
   return (
-    <section id="partners" className="py-24 sm:py-32 bg-[#123638] text-white border-t border-[#4BA0A4]/20 relative overflow-hidden">
+    <section id="partners" className="py-24 sm:py-32 bg-ym-subtle/30 text-ym-body border-t border-ym relative overflow-hidden transition-colors duration-300">
       {/* Giant Translucent Watermark */}
-      <span className="absolute -top-8 sm:-top-12 left-1/2 -translate-x-1/2 text-5xl sm:text-9xl lg:text-[11rem] font-black text-[#4BA0A4]/5 pointer-events-none select-none font-mono tracking-tighter uppercase whitespace-nowrap z-0">
+      <span className="absolute -top-6 sm:-top-10 left-1/2 -translate-x-1/2 text-5xl sm:text-9xl lg:text-[11rem] font-black text-[#4BA0A4] opacity-[0.04] dark:opacity-[0.07] pointer-events-none select-none font-mono tracking-tighter uppercase whitespace-nowrap z-0">
         PARTNERS
       </span>
 
@@ -96,16 +96,16 @@ export const ScenePartners: React.FC = () => {
         <div className="space-y-16 max-w-6xl mx-auto relative z-10">
           {/* Header */}
           <div className="text-center space-y-4 max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#4BA0A4]/20 border border-[#4BA0A4]/30 text-[#59AAAA] text-[11px] font-extrabold uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#4BA0A4]/15 border border-[#4BA0A4]/30 text-teal-900 dark:text-teal-200 text-[11px] font-extrabold uppercase tracking-widest">
               <Handshake className="w-3.5 h-3.5 text-[#4BA0A4]" />
               <span>Kemitraan Strategis</span>
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
+            <h2 className="text-3xl sm:text-5xl font-black text-ym-heading tracking-tight">
               Didukung Oleh Lembaga Terpercaya
             </h2>
 
-            <p className="text-xs sm:text-base text-[#94D4D4] leading-relaxed font-medium">
+            <p className="text-xs sm:text-base text-ym-muted leading-relaxed font-medium">
               Inovasi dan operasional YouthMind Company berjalan melalui pembinaan dan kolaborasi dengan instansi resmi.
             </p>
           </div>
@@ -121,7 +121,7 @@ export const ScenePartners: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: idx * 0.1 }}
-                  className={`relative bg-gradient-to-b from-[#194447] via-[#143B3D] to-[#0E2A2C] border border-[#4BA0A4]/30 rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 shadow-xl group hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#4BA0A4]/15 ${partner.hoverBorder}`}
+                  className={`relative bg-ym-card border border-ym rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 shadow-xl group hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#4BA0A4]/15 ${partner.hoverBorder}`}
                 >
                   {/* Glowing Top Edge Line */}
                   <div className={`absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r ${partner.topGradient} opacity-60 group-hover:opacity-100 transition-opacity duration-300`} />
@@ -136,7 +136,7 @@ export const ScenePartners: React.FC = () => {
                     </div>
 
                     {/* Logo Display Frame */}
-                    <div className="bg-white/95 rounded-2xl p-3 flex items-center justify-center h-24 border border-[#4BA0A4]/25 shadow-inner group-hover:border-[#4BA0A4] transition-colors">
+                    <div className="bg-white/95 rounded-2xl p-3 flex items-center justify-center h-24 border border-ym shadow-inner group-hover:border-[#4BA0A4] transition-colors">
                       <div className="relative w-full h-full flex items-center justify-center">
                         {partner.logo ? (
                           <img
@@ -154,14 +154,14 @@ export const ScenePartners: React.FC = () => {
 
                     {/* Content Info */}
                     <div className="space-y-2">
-                      <h3 className="text-base sm:text-lg font-black text-white group-hover:text-[#59AAAA] transition-colors leading-snug">
+                      <h3 className="text-base sm:text-lg font-black text-ym-heading group-hover:text-ym-accent transition-colors leading-snug">
                         {partner.name}
                       </h3>
                       <p className="text-[11px] font-bold text-[#4BA0A4] leading-tight flex items-center gap-1">
                         <CheckCircle2 className="w-3 h-3 text-[#59AAAA] shrink-0" />
                         <span>{partner.role}</span>
                       </p>
-                      <p className="text-xs text-[#94D4D4] font-normal leading-relaxed pt-1">
+                      <p className="text-xs text-ym-muted font-normal leading-relaxed pt-1">
                         {partner.desc}
                       </p>
                     </div>
@@ -172,10 +172,10 @@ export const ScenePartners: React.FC = () => {
           </div>
 
           {/* Bottom Trust Tag */}
-          <div className="bg-[#194447]/60 border border-[#4BA0A4]/25 rounded-2xl p-4 sm:p-5 text-center max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-3 text-xs text-[#94D4D4] font-medium">
+          <div className="bg-ym-card border border-ym rounded-2xl p-4 sm:p-5 text-center max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-3 text-xs text-ym-muted font-medium shadow-sm">
             <div className="w-2 h-2 rounded-full bg-[#4BA0A4] animate-ping shrink-0" />
             <span>
-              YouthMind Company beroperasi secara resmi dalam ekosistem <strong className="text-white">JA Student Company</strong> binaan <strong className="text-white">Prestasi Junior Indonesia</strong> & <strong className="text-white">Z Zurich Foundation</strong>.
+              YouthMind Company beroperasi secara resmi dalam ekosistem <strong className="text-ym-heading">JA Student Company</strong> binaan <strong className="text-ym-heading">Prestasi Junior Indonesia</strong> & <strong className="text-ym-heading">Z Zurich Foundation</strong>.
             </span>
           </div>
         </div>

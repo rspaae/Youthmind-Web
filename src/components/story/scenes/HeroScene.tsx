@@ -5,10 +5,19 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Container from "@/components/ui/Container";
 import Image from "next/image";
 import { ChevronDown } from "lucide-react";
+import { useTheme } from "@/components/theme/ThemeProvider";
 
 export const HeroScene: React.FC = () => {
   const targetRef = useRef<HTMLDivElement>(null);
   const [isMounted, setIsMounted] = useState(false);
+  let isLight = false;
+
+  try {
+    const { theme } = useTheme();
+    isLight = theme === "light";
+  } catch {
+    // Fallback if context not available
+  }
 
   useEffect(() => {
     setIsMounted(true);
@@ -24,15 +33,17 @@ export const HeroScene: React.FC = () => {
   const logoScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.9]);
   const logoY = useTransform(scrollYProgress, [0, 0.5], [0, -30]);
 
+  const logoSrc = isMounted && isLight ? "/assets/logo-ym-light.png?v=2" : "/assets/logo-ym.png?v=2";
+
   return (
     <section
       id="hero"
       ref={targetRef}
-      className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center bg-gradient-to-b from-[#0B2527] via-[#0E2A2C] to-[#123638] overflow-hidden pt-16 pb-12"
+      className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center bg-ym-page transition-colors duration-300 overflow-hidden pt-16 pb-12"
     >
       {/* Background Ambient Glow Spheres */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-[450px] sm:h-[450px] bg-[#4BA0A4]/25 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-[320px] sm:h-[320px] bg-[#59AAAA]/20 rounded-full blur-[90px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-[450px] sm:h-[450px] bg-[#4BA0A4]/20 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-[320px] sm:h-[320px] bg-[#59AAAA]/15 rounded-full blur-[90px] pointer-events-none" />
 
       <Container className="relative z-10 flex flex-col items-center justify-center">
         {/* Visually Hidden Accessible H1 Heading for Page Hierarchy */}
@@ -40,9 +51,7 @@ export const HeroScene: React.FC = () => {
 
         {/* Centered YM Logo & Tagline */}
         <motion.div
-          style={isMounted ? { opacity: logoOpacity, scale: logoScale, y: logoY } : { opacity: 1 }}
-          suppressHydrationWarning
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col items-center justify-center text-center space-y-3"
@@ -54,26 +63,26 @@ export const HeroScene: React.FC = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="relative w-40 sm:w-52 md:w-60 lg:w-64 aspect-square flex items-center justify-center filter drop-shadow-[0_15px_35px_rgba(0,0,0,0.4)]"
+            className="relative w-40 sm:w-52 md:w-60 lg:w-64 aspect-square flex items-center justify-center filter drop-shadow-[0_15px_35px_rgba(75,160,164,0.25)]"
           >
             <Image
-              src="/assets/logo-ym.png"
+              src={logoSrc}
               alt="YouthMind Company — Student Company SMKN 11 Bandung"
               fill
               priority
               fetchPriority="high"
               quality={90}
-              sizes="(max-width: 640px) 160px, (max-width: 768px) 208px, (max-width: 1024px) 240px, 256px"
-              className="object-contain"
+              sizes="(max-width: 640px) 208px, (max-width: 768px) 256px, (max-width: 1024px) 288px, 320px"
+              className="object-contain transition-all duration-300"
             />
           </motion.div>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#194447] border border-[#4BA0A4]/40 text-[#94D4D4] text-[10px] sm:text-xs font-bold shadow-lg">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-ym-card border border-ym text-ym-muted text-[10px] sm:text-xs font-bold shadow-lg">
             <span className="w-1.5 h-1.5 rounded-full bg-[#4BA0A4] animate-ping" />
             <span>Student Company SMKN 11 Bandung</span>
           </div>
 
-          <p className="text-xs sm:text-sm text-[#E0F4F4] font-medium max-w-xs sm:max-w-md leading-relaxed px-2">
+          <p className="text-xs sm:text-sm text-ym-body font-medium max-w-xs sm:max-w-md leading-relaxed px-2">
             Pelopor Board Game Edukasi Kesehatan Mental Remaja
           </p>
         </motion.div>
@@ -83,7 +92,7 @@ export const HeroScene: React.FC = () => {
       <motion.div
         style={isMounted ? { opacity: logoOpacity } : { opacity: 1 }}
         suppressHydrationWarning
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#94D4D4] text-xs tracking-widest uppercase font-medium pointer-events-none opacity-80"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-ym-muted text-xs tracking-widest uppercase font-medium pointer-events-none opacity-80"
       >
         <span>Scroll untuk jelajahi</span>
         <motion.div

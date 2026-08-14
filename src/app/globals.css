@@ -7,16 +7,55 @@
     --ym-main:   #4BA0A4;   /* Vibrant Cyan Teal */
     --ym-dark:   #396E6E;   /* Deep Slate Teal */
 
-    /* ── Rich Teal Surfaces (No plain white dominance) ──────────── */
+    /* ── Default Theme Variables (Dark Default) ──────────────────── */
     --bg-page:   #0E2A2C;   /* Deep Rich Teal */
     --bg-card:   #194447;   /* Rich Teal Card */
     --bg-subtle: #23585C;   /* Soft Cyan Teal Surface */
+    --bg-nav:    rgba(14, 42, 44, 0.95);
+    --bg-glass:  rgba(255, 255, 255, 0.10);
+    --border-color: rgba(75, 160, 164, 0.30);
 
-    /* ── Typography Tokens ──────────────────────────────────────── */
     --text-heading: #FFFFFF; /* Pure crisp white for headings */
     --text-body:    #E0F4F4; /* Light cyan-tinted text */
     --text-muted:   #94D4D4; /* Soft teal muted text */
     --text-accent:  #59AAAA;
+
+    --gradient-hero: linear-gradient(135deg, #0B2527 0%, #0E2A2C 55%, #123638 100%);
+    --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.25);
+  }
+
+  [data-theme="light"] {
+    --bg-page:   #F4FAFA;   /* Crisp soft mint surface */
+    --bg-card:   #FFFFFF;   /* Pure white card */
+    --bg-subtle: #E6F4F4;   /* Soft subtle surface */
+    --bg-nav:    rgba(244, 250, 250, 0.95);
+    --bg-glass:  rgba(255, 255, 255, 0.85);
+    --border-color: rgba(75, 160, 164, 0.25);
+
+    --text-heading: #092123; /* Very dark rich teal for maximum heading contrast */
+    --text-body:    #163E41; /* Deep slate teal for body text */
+    --text-muted:   #3B676A; /* High-contrast readable muted text */
+    --text-accent:  #1D595C; /* Strong accent color */
+
+    --gradient-hero: linear-gradient(135deg, #E6F5F5 0%, #F4FAFA 55%, #E1F2F2 100%);
+    --shadow-card: 0 4px 24px rgba(75, 160, 164, 0.10);
+  }
+
+  [data-theme="dark"] {
+    --bg-page:   #0E2A2C;
+    --bg-card:   #194447;
+    --bg-subtle: #23585C;
+    --bg-nav:    rgba(14, 42, 44, 0.95);
+    --bg-glass:  rgba(255, 255, 255, 0.10);
+    --border-color: rgba(75, 160, 164, 0.30);
+
+    --text-heading: #FFFFFF;
+    --text-body:    #E0F4F4;
+    --text-muted:   #94D4D4;
+    --text-accent:  #59AAAA;
+
+    --gradient-hero: linear-gradient(135deg, #0B2527 0%, #0E2A2C 55%, #123638 100%);
+    --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.25);
   }
 
   html {
@@ -28,23 +67,19 @@
   }
 
   body {
-    background-color: #0E2A2C;
-    color: #E0F4F4;
+    background-color: var(--bg-page);
+    color: var(--text-body);
     font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
-    overflow-x: hidden;
+    overflow-x: clip;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    -webkit-overflow-scrolling: touch;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   *,
   :focus,
   :focus-visible {
     outline: none !important;
-  }
-
-  @media (pointer: coarse) {
-    * { -webkit-overflow-scrolling: touch; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -57,46 +92,58 @@
   }
 }
 
+/* ── YouthMind Utility Theme Mappings ───────────────────────────── */
+.bg-ym-page { background-color: var(--bg-page); }
+.bg-ym-card { background-color: var(--bg-card); }
+.bg-ym-subtle { background-color: var(--bg-subtle); }
+.text-ym-heading { color: var(--text-heading); }
+.text-ym-body { color: var(--text-body); }
+.text-ym-muted { color: var(--text-muted); }
+.text-ym-accent { color: var(--text-accent); }
+.border-ym { border-color: var(--border-color); }
+
 /* ── Gradient Text (YouthMind brand gradient) ──────────────────── */
-.text-image-clip {
+.text-image-clip,
+.text-gradient-youthmind {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  background-image: linear-gradient(135deg, #396E6E 0%, #4BA0A4 55%, #59AAAA 100%);
+  background-image: linear-gradient(135deg, #62C8CC 0%, #4BA0A4 55%, #88DEDE 100%);
 }
 
-.text-gradient-youthmind {
-  background: linear-gradient(135deg, #396E6E 0%, #4BA0A4 55%, #59AAAA 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+[data-theme="light"] .text-image-clip,
+[data-theme="light"] .text-gradient-youthmind {
+  background-image: linear-gradient(135deg, #092123 0%, #164649 50%, #2A7377 100%);
 }
 
-/* ── Glassmorphism (light frosted) ─────────────────────────────── */
+/* ── Glassmorphism ─────────────────────────────────────────────── */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.70);
+  background: var(--bg-glass);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(75, 160, 164, 0.28);
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .card-ym {
-  background: #FFFFFF;
-  border: 1px solid rgba(89, 170, 170, 0.30);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
   border-radius: 1.25rem;
-  box-shadow: 0 4px 24px rgba(75, 160, 164, 0.08);
-  transition: box-shadow 0.2s, border-color 0.2s;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .card-ym:hover {
   border-color: rgba(75, 160, 164, 0.55);
-  box-shadow: 0 8px 32px rgba(75, 160, 164, 0.15);
+  box-shadow: 0 8px 32px rgba(75, 160, 164, 0.18);
 }
 
 /* ── Scrollbar ──────────────────────────────────────────────────── */
 @media (pointer: fine) {
   ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: #D4F0F0; }
+  ::-webkit-scrollbar-track { background: var(--bg-subtle); }
   ::-webkit-scrollbar-thumb { background: #59AAAA; border-radius: 5px; }
   ::-webkit-scrollbar-thumb:hover { background: #4BA0A4; }
 }
+
 
