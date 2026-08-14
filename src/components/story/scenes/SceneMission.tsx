@@ -35,7 +35,7 @@ export const SceneMission: React.FC = () => {
       className="py-24 sm:py-36 bg-ym-subtle/30 text-ym-body relative border-t border-ym overflow-hidden transition-colors duration-300"
     >
       {/* Giant Watermark Background Text — placed cleanly in background with subtle opacity */}
-      <span className="absolute -top-6 sm:-top-10 left-1/2 -translate-x-1/2 text-5xl sm:text-9xl lg:text-[11rem] font-black text-[#4BA0A4] opacity-[0.04] dark:opacity-[0.07] pointer-events-none select-none font-mono tracking-tighter uppercase whitespace-nowrap z-0">
+      <span className="absolute top-4 sm:top-0 left-1/2 -translate-x-1/2 text-[2rem] sm:text-9xl lg:text-[11rem] font-black text-[#4BA0A4] opacity-[0.04] dark:opacity-[0.07] pointer-events-none select-none font-mono tracking-tighter uppercase whitespace-nowrap z-0">
         MISSION
       </span>
 

@@ -21,7 +21,7 @@ export const SceneChallenge: React.FC = () => {
   return (
     <section id="challenge" ref={containerRef} className="py-20 sm:py-40 bg-ym-subtle/30 text-ym-body relative overflow-hidden border-t border-ym transition-colors duration-300">
       {/* Giant Translucent Watermark */}
-      <span className="absolute -top-6 sm:-top-10 left-1/2 -translate-x-1/2 text-5xl sm:text-9xl lg:text-[11rem] font-black text-[#4BA0A4] opacity-[0.04] dark:opacity-[0.07] pointer-events-none select-none font-mono tracking-tighter uppercase whitespace-nowrap z-0">
+      <span className="absolute top-4 sm:top-0 left-1/2 -translate-x-1/2 text-[2rem] sm:text-9xl lg:text-[11rem] font-black text-[#4BA0A4] opacity-[0.04] dark:opacity-[0.07] pointer-events-none select-none font-mono tracking-tighter uppercase whitespace-nowrap z-0">
         CHALLENGE
       </span>
 
