@@ -31,12 +31,11 @@ export const SceneFinal: React.FC = () => {
 
   React.useEffect(() => {
     const handleCategoryEvent = (e: Event) => {
-      const customEvent = e as CustomEvent;
+      const customEvent = e as CustomEvent<string>;
       if (customEvent.detail) {
         setFormData((prev) => ({
           ...prev,
-          category: typeof customEvent.detail === "string" ? customEvent.detail : customEvent.detail.category || prev.category,
-          message: customEvent.message || (typeof customEvent.detail === "object" && customEvent.detail.message) ? (customEvent.message || customEvent.detail.message) : prev.message,
+          category: customEvent.detail || prev.category,
         }));
       }
     };
