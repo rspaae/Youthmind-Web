@@ -103,7 +103,6 @@ export const SceneSupportJourney: React.FC = () => {
       window.dispatchEvent(
         new CustomEvent("set-contact-category", {
           detail: categoryName,
-          message: messageText,
         })
       );
     }
