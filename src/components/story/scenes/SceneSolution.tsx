@@ -94,9 +94,8 @@ const ProductGallery: React.FC<ProductGalleryProps> = ({ images, title }) => {
                 setActiveIdx(idx);
               }}
               aria-label={`Lihat foto ${idx + 1}`}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                idx === activeIdx ? "w-6 bg-[#4BA0A4]" : "w-2 bg-[#94D4D4]/40 hover:bg-[#94D4D4]"
-              }`}
+              className={`h-2 rounded-full transition-all duration-300 ${idx === activeIdx ? "w-6 bg-[#4BA0A4]" : "w-2 bg-[#94D4D4]/40 hover:bg-[#94D4D4]"
+                }`}
             />
           ))}
         </div>

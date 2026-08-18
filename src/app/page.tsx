@@ -4,6 +4,7 @@ import SceneAbout from "@/components/story/scenes/SceneAbout";
 
 // Dynamically import below-fold heavy scenes to reduce initial JS bundle + DOM size
 const ScenePartners = dynamic(() => import("@/components/story/scenes/ScenePartners"));
+const SceneSupportJourney = dynamic(() => import("@/components/story/scenes/SceneSupportJourney"));
 const SceneVision = dynamic(() => import("@/components/story/scenes/SceneVision"));
 const SceneMission = dynamic(() => import("@/components/story/scenes/SceneMission"));
 const SceneBeginning = dynamic(() => import("@/components/story/scenes/SceneBeginning"));
@@ -22,6 +23,7 @@ export default function Home() {
       <SceneAbout />
       {/* Below-fold: lazy-loaded to cut initial JS & DOM */}
       <ScenePartners />
+      <SceneSupportJourney />
       <SceneVision />
       <SceneMission />
       <SceneBeginning />

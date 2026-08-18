@@ -77,14 +77,30 @@ export const HeroScene: React.FC = () => {
             />
           </motion.div>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-ym-card border border-ym text-ym-muted text-[10px] sm:text-xs font-bold shadow-lg">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#4BA0A4] animate-ping" />
-            <span>Student Company SMKN 11 Bandung</span>
+          {/* ── Executive Status Pill Badge ── */}
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-ym-card/90 via-ym-card to-ym-card/90 border border-[#4BA0A4]/40 text-ym-heading text-[11px] sm:text-xs font-black tracking-wide shadow-xl shadow-teal-500/10 backdrop-blur-xl group hover:border-[#4BA0A4] transition-all">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#4BA0A4] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#4BA0A4]"></span>
+            </span>
+            <span className="text-ym-heading font-extrabold uppercase tracking-wider text-[10px] sm:text-[11px]">
+              Student Company
+            </span>
+            <span className="text-[#4BA0A4]/50 font-normal">|</span>
+            <span className="text-ym-accent font-extrabold tracking-wide">
+              SMKN 11 Bandung
+            </span>
           </div>
 
-          <p className="text-xs sm:text-sm text-ym-body font-medium max-w-xs sm:max-w-md leading-relaxed px-2">
-            Pelopor Board Game Edukasi Kesehatan Mental Remaja
-          </p>
+          {/* ── High-Impact Gradient Headline & Tagline ── */}
+          <div className="space-y-1.5 px-2 pt-1 max-w-sm sm:max-w-lg mx-auto text-center">
+            <h2 className="text-base sm:text-xl md:text-2xl font-black tracking-tight leading-snug text-ym-heading">
+              Pelopor <span className="text-image-clip inline-block font-black">Board Game Edukasi</span>
+            </h2>
+            <p className="text-xs sm:text-sm font-semibold text-ym-muted leading-relaxed tracking-wide">
+              Kesehatan Mental Remaja
+            </p>
+          </div>
         </motion.div>
       </Container>
 

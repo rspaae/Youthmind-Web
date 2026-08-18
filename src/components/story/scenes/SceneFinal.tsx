@@ -12,6 +12,11 @@ import {
   CheckCircle2,
   ExternalLink,
   ShieldCheck,
+  Coins,
+  Handshake,
+  ShoppingBag,
+  School,
+  MessageSquare,
 } from "lucide-react";
 
 export const SceneFinal: React.FC = () => {
@@ -20,9 +25,25 @@ export const SceneFinal: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    category: "Pemesanan Board Game",
+    category: "Sponsorship & Funding",
     message: "",
   });
+
+  React.useEffect(() => {
+    const handleCategoryEvent = (e: Event) => {
+      const customEvent = e as CustomEvent;
+      if (customEvent.detail) {
+        setFormData((prev) => ({
+          ...prev,
+          category: typeof customEvent.detail === "string" ? customEvent.detail : customEvent.detail.category || prev.category,
+          message: customEvent.message || (typeof customEvent.detail === "object" && customEvent.detail.message) ? (customEvent.message || customEvent.detail.message) : prev.message,
+        }));
+      }
+    };
+
+    window.addEventListener("set-contact-category", handleCategoryEvent);
+    return () => window.removeEventListener("set-contact-category", handleCategoryEvent);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -222,19 +243,50 @@ export const SceneFinal: React.FC = () => {
                           </div>
                         </div>
 
-                        <div className="space-y-1.5">
+                        <div className="space-y-2">
                           <label htmlFor="contact-category" className="text-xs font-extrabold text-ym-heading uppercase tracking-wider block">
                             Kategori Keperluan *
                           </label>
+
+                          {/* 1-Click Quick Category Selectors */}
+                          <div className="flex flex-wrap gap-2 pb-1">
+                            {[
+                              { label: "Sponsorship & Funding", cat: "Sponsorship & Funding", icon: Coins },
+                              { label: "Kemitraan & Partnership", cat: "Kemitraan & Partnership", icon: Handshake },
+                              { label: "Beli Board Game", cat: "Pemesanan Board Game", icon: ShoppingBag },
+                              { label: "Undangan Sekolah", cat: "Undangan Sosialisasi & Workshop", icon: School },
+                              { label: "Tanya Umum", cat: "Informasi Umum & Pertanyaan", icon: MessageSquare },
+                            ].map((item) => {
+                              const ItemIcon = item.icon;
+                              const isSelected = formData.category === item.cat || formData.category.includes(item.cat);
+                              return (
+                                <button
+                                  key={item.cat}
+                                  type="button"
+                                  onClick={() => setFormData({ ...formData, category: item.cat })}
+                                  className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
+                                    isSelected
+                                      ? "bg-[#4BA0A4] text-[#091D1E] shadow-sm font-black"
+                                      : "bg-ym-subtle border border-ym text-ym-body hover:border-[#4BA0A4]/50"
+                                  }`}
+                                >
+                                  <ItemIcon className="w-3.5 h-3.5 shrink-0" />
+                                  <span>{item.label}</span>
+                                </button>
+                              );
+                            })}
+                          </div>
+
                           <select
                             id="contact-category"
                             value={formData.category}
                             onChange={(e) => setFormData({ ...formData, category: e.target.value })}
                             className="w-full px-4 py-3 rounded-xl bg-ym-subtle border border-ym text-ym-heading text-xs sm:text-sm focus:outline-none focus:border-[#4BA0A4] focus:ring-1 focus:ring-[#4BA0A4] transition-all"
                           >
+                            <option value="Sponsorship & Funding">Sponsorship & Funding (Become Our Sponsor)</option>
+                            <option value="Kemitraan & Partnership">Kemitraan & Partnership (Partner With Us / Media / Venue / Mentorship)</option>
                             <option value="Pemesanan Board Game">Pemesanan Board Game (LudoLadder / Codenopoly)</option>
                             <option value="Undangan Sosialisasi & Workshop">Undangan Sosialisasi & Workshop Sekolah</option>
-                            <option value="Kemitraan Perusahaan & Sponsor">Kemitraan Perusahaan / Sponsor / Media</option>
                             <option value="Informasi Umum & Pertanyaan">Informasi Umum & Pertanyaan</option>
                           </select>
                         </div>
