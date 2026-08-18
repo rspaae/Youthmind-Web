@@ -38,7 +38,7 @@ const NAV_DESCS: Record<string, string> = {
   "#philosophy": "Nilai & Visi Misi Kami",
   "#products": "Board Game Edukasi",
   "#journey": "Pencapaian & Jejak Langkah",
-  "#team": "Struktur Tim & Talenta",
+  "#team": "Struktur Tim YouthMind",
   "#contact": "Hubungi & Berkolaborasi",
 };
 

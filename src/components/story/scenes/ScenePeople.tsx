@@ -229,7 +229,7 @@ export const ScenePeople: React.FC = () => {
                     {/* Footer Tag Setara */}
                     <div className="pt-2 sm:pt-3 mt-3 sm:mt-4 w-full border-t border-ym flex items-center justify-center gap-1.5 sm:gap-2 text-[9px] sm:text-xs text-ym-muted font-semibold">
                       <ShieldCheck className="w-3.5 h-3.5 text-[#4BA0A4]" />
-                      <span>Talenta SMKN 11 Bandung</span>
+                      <span>YouthMind Company</span>
                     </div>
                   </motion.div>
                 ))}
