@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
-import { Award, Globe, GraduationCap, Building2, Radio, Users, ShieldCheck, Handshake } from "lucide-react";
+import { Award, Globe, GraduationCap, Building2, Radio, Users, ShieldCheck, Handshake, Heart } from "lucide-react";
 
 // 1. Supported By (PJI, Zurich, SMKN 11 Bandung)
 const supportedBy = [
@@ -42,7 +42,7 @@ const supportedBy = [
   },
 ];
 
-// 2. Partners (Media, Digital & Academic Partners)
+// 2. Partners (Media, Digital, Psychological & Academic Partners)
 const partners = [
   {
     id: "chlorine",
@@ -76,6 +76,17 @@ const partners = [
     badgeColor: "bg-cyan-500/15 text-cyan-800 dark:text-cyan-300 border-cyan-500/30",
     topGradient: "from-cyan-400 via-blue-400 to-transparent",
     hoverBorder: "hover:border-cyan-400/50",
+  },
+  {
+    id: "edulity",
+    name: "Lembaga Psikologi Edulity",
+    role: "Mitra Layanan & Edukasi Psikologi",
+    category: "Partner",
+    logo: "/assets/partners/edulity.png",
+    icon: Heart,
+    badgeColor: "bg-rose-500/15 text-rose-800 dark:text-rose-300 border-rose-500/30",
+    topGradient: "from-pink-400 via-rose-400 to-transparent",
+    hoverBorder: "hover:border-rose-400/50",
   },
 ];
 
@@ -144,7 +155,7 @@ export const ScenePartners: React.FC = () => {
                         )}
                       </div>
 
-                      {/* Title & Role Only (No Description) */}
+                      {/* Title & Role Only */}
                       <div className="space-y-1 text-center pt-1">
                         <h3 className="text-base sm:text-lg font-black text-ym-heading group-hover:text-ym-accent transition-colors leading-snug">
                           {item.name}
@@ -172,7 +183,7 @@ export const ScenePartners: React.FC = () => {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {partners.map((item, idx) => {
                 const ItemIcon = item.icon;
                 return (
@@ -181,7 +192,7 @@ export const ScenePartners: React.FC = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: idx * 0.1 }}
+                    transition={{ duration: 0.4, delay: idx * 0.08 }}
                     className={`relative bg-ym-card border border-ym rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 shadow-xl group hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#4BA0A4]/15 ${item.hoverBorder}`}
                   >
                     {/* Glowing Top Edge Line */}
@@ -202,7 +213,7 @@ export const ScenePartners: React.FC = () => {
                           <img
                             src={item.logo}
                             alt={`${item.name} Logo`}
-                            className="max-h-20 max-w-[200px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                            className="max-h-20 max-w-[180px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105"
                           />
                         ) : (
                           <span className="text-[#0E2A2C] font-extrabold text-sm text-center">
@@ -211,7 +222,7 @@ export const ScenePartners: React.FC = () => {
                         )}
                       </div>
 
-                      {/* Title & Role Only (No Description) */}
+                      {/* Title & Role Only */}
                       <div className="space-y-1 text-center pt-1">
                         <h3 className="text-base sm:text-lg font-black text-ym-heading group-hover:text-ym-accent transition-colors leading-snug">
                           {item.name}
